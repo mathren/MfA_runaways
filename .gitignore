@@ -1,0 +1,10 @@
+*.toc
+*.snm
+*.out
+*.nav
+*.aux
+*.synctex.gz
+*.log
+fig_slides/*
+auto/
+*.csv
