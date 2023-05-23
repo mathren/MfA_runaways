@@ -9,3 +9,6 @@ fig_slides/
 fig_slides/*
 auto/
 *.csv
+flathub/*
+data/.ipynb_checkpoints/*
+.ipynb_checkpoints/*
