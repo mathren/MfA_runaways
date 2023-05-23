@@ -1,0 +1,107 @@
+#+title: Exercise with /Gaia/ DR3 data
+#+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
+
+
+These are notes on how to retrieve the /Gaia/ DR3 data from [[https://flathub.flatironinstitute.org/gaiadr3?sort=&limit=0&fields=source_id+ra+ra_error+dec+dec_error+parallax+parallax_error+pmra+pmra_error+pmdec+pmdec_error+ra_dec_corr+ra_parallax_corr+ra_pmra_corr+ra_pmdec_corr+dec_parallax_corr+dec_pmra_corr+dec_pmdec_corr+parallax_pmra_corr+parallax_pmdec_corr+pmra_pmdec_corr+astrometric_n_obs_al+astrometric_n_obs_ac+astrometric_n_good_obs_al+astrometric_excess_noise+visibility_periods_used+ruwe+phot_g_mean_mag+phot_bp_mean_mag+phot_rp_mean_mag+bp_rp+radial_velocity&ruwe=+1.4][FlatironHub]]
+for playing locally. The playground can also be directly the
+FlatironHub python interface.
+
+
+** Columns needed
+#+begin_src
+  - source_id
+  - ra
+  - ra_error
+  - dec
+  - dec_error
+  - parallax
+  - parallax_error
+  - parallax_over_error
+  - pmra
+  - pmra_error
+  - pmdec
+  - pmdec_error
+  - ra_dec_corr
+  - ra_parallax_corr
+  - ra_pmra_corr
+  - ra_pmdec_corr
+  - dec_parallax_corr
+  - dec_pmra_corr
+  - dec_pmdec_corr
+  - parallax_pmra_corr
+  - parallax_pmdec_corr
+  - pmra_pmdec_corr
+  - r_est
+  - r_lo
+  - r_hi
+  - astrometric_primary_flag
+  - duplicated_source
+  - radial_velocity
+  - radial_velocity_error
+  - phot_g_mean_flux
+  - phot_g_mean_flux_error
+  - phot_g_mean_mag
+  - phot_bp_mean_flux
+  - phot_bp_mean_flux_error
+  - phot_bp_mean_mag
+  - phot_rp_mean_flux
+  - phot_rp_mean_flux_error
+  - phot_rp_mean_mag
+  - phot_bp_rp_excess_factor
+  - bp_rp
+  - bp_g
+  - g_rp
+  - phot_variable_flag
+  - l
+  - b
+  - teff_val
+  - teff_percentile_lower
+  - teff_percentile_upper
+  - a_g_val
+  - a_g_percentile_lower
+  - a_g_percentile_upper
+  - e_bp_min_rp_val
+  - e_bp_min_rp_percentile_lower
+  - e_bp_min_rp_percentile_upper
+  - radius_val
+  - radius_percentile_lower
+  - radius_percentile_upper
+  - lum_val
+  - lum_percentile_lower
+  - lum_percentile_upper
+  - astrometric_chi2_al
+  - strometric_n_good_obs_al
+#+end_src
+
+** Quality cuts
+#+begin_src
+    - Rinormalized unit weight error <1.4
+    - astrometric_excess_noise <1 mas/yr
+    - visibility_period > 17
+#+end_src
+
+** List of possible exercises
+
+*** Find the peculiar velocity of the Sun
+
+
+*** Distribution of velocities of all the bright stars
+
+*** Betelgeuse's proper motion
+
+*** Galactic rotation
+
+*** Find structures
+
+**** Large Magellanic Cloud (LMC):
+    - RA range: Approximately 76 to 94 degrees
+    - DEC range: Approximately -74 to -66 degrees
+    - parallax: negative or zero
+**** Small Magellanic Cloud (SMC):
+    - RA range: Approximately 10 to 22 degrees
+    - DEC range: Approximately -76 to -66 degrees
+    - parallax: negative or zero
+**** Orion Nebula:
+    - RA range: Approximately 83.5 to 84.5 degrees
+    - DEC range: Approximately -6.5 to -5.5 degrees
+    - parallax:  2210 - 2700 milliarcseconds

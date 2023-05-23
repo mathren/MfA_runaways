@@ -1,0 +1,2113 @@
+%%% Author: Mathieu Renzo
+\documentclass[xcolor=dvipsnames,professionalfonts, aspectratio=169]{beamer}
+\input{./setup.tex}
+
+% uncomment these for adding comments for secondary screen with
+% \note
+% \setbeameroption{show notes}
+% \setbeameroption{show notes on second screen=right}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% \setbeamertemplate{background}[grid][step=10]        %%%%Grid on slides to help positioning
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Global Background must be put in preamble
+%%%% \setbeamercolor{background canvas}{bg=BGcol}
+
+\begin{document}
+
+
+% Massive stars, those with more than ten times the mass of our Sun,
+% live short and tumultuous lives ending in dramatic supernova
+% explosions that leave behind neutron stars or black holes. These
+% stars are typically not evolving alone: most have one (or more)
+% companion stars orbiting around them at distances such that as the
+% stars evolve, they will "touch each other," exchange mass, and
+% sometimes even merge. These interactions can modify the appearance,
+% evolution, and fate of both stars in the binary, with implications
+% for the galaxy they reside in and the compact objects they produce.
+% In most cases, when the first star reaches the end of its life and
+% explodes as a supernova, it ejects the surviving "widowed" companion
+% at speeds of several tens of km/s–these massive stars live fast in a
+% very literal sense. Join us in this seminar as Dr. Mathieu Renzo
+% guides teachers through a scientific exploration of the life and
+% death of massive binary stars over the last 2000 years, reviewing
+% the basics of stellar evolution, making connections to the visible
+% night sky, and sharing observations across the electromagnetic
+% spectrum and in gravitational waves. In the second half of the
+% seminar, teachers will continue with small group discussions as they
+% dive into the content and data presented. This seminar is best
+% suited for physics and mathematics teachers, but all are welcome.
+
+% Dr. Mathieu Renzo is a stellar physicist at the Center for
+% Computational Astrophysics of the Simons Foundation Flatiron
+% Institute. His research focuses on the double-sided relation between
+% the evolution of massive stars in binary systems and their final
+% explosions.
+
+
+
+
+\graphicspath{{./fig_slides/}}
+
+% %%%% Tikz stuff
+% %%%% For every picture that defines or uses external nodes, you'll have to
+% %%%% apply the 'remember picture' style. To avoid some typing, we'll apply
+% %%%% the style to all pictures.
+% \tikzstyle{every picture}+=[remember picture, overlay]
+% %%%% By default all math in TikZ nodes are set in inline mode. Change this to
+% %%%% displaystyle so that we don't get small fractions.
+% %%%% \everymath{\displaystyle}
+
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{zoph_onethird}}
+\begin{frame}[plain]
+  \begin{textblock}{0.5}[0.5,0.5](0.66,0.25)
+    % \begin{tcolorbox}[boxrule=0pt,standard jigsaw, colback=black,
+    %   left=0pt, right=0pt, top=0pt, bottom=0pt,
+    %   colframe=black,
+    %   opacityback=0.2]
+    \centering
+    \textbf{\textcolor{white!80!Yellow}{{\Large Live fast and die
+          young:\\}
+        Massive, exploding, and speeding stars}}
+    % \end{tcolorbox}
+  \end{textblock}
+
+  \begin{textblock}{1}[0,1](0.01,.99)% \centering
+    \textcolor{white!80!Yellow}{\tiny
+      Collaborators:~Y.~G\"otberg, E.~Zapartas, S.~Justham,
+      K.~Breivik, L.~van~Son, R.~Farmer, M.~Cantiello,
+      B.~D.~Metzger, D.~Hendricks,
+      C.~Xin, E.~Farag, S.~Oey, S.~de~Mink, ...}
+  \end{textblock}
+
+  \begin{textblock}{0.5}[0.5, 0.5](0.66, 0.85)
+    \centering
+    \textcolor{white!80!Yellow}{\textbf{\large Mathieu
+        Renzo}}\linebreak  \textcolor{whiteish}{\footnotesize\href{mailto:mrenzo@flatironinstitute.org}{mrenzo@flatironinstitute.org}}
+  \end{textblock}
+
+  \begin{textblock}{0.2}[1, 0](0.99, 0.01)
+    \includegraphics[width=\textwidth]{CCA_logo_color}
+  \end{textblock}
+\end{frame}
+\egroup
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth, keepaspectratio]{where_i_am_from}}
+\begin{frame}[plain]
+
+\end{frame}
+\egroup
+
+
+
+\begin{frame}
+  %%% So how do we study this process of stellar explosions? This is
+  %%% the perfect example of how theoretical astrophysics work: you
+  %%% make a physical model, write down the equations, plug them into
+  %%% a super-computer and obtain a numerical simulation. This however
+  %%% requires many layers of abstraction: how we write the equations
+  %%% and how we tell the computer to solve the equations matters a
+  %%% lot for the kind of answer that you get.
+
+  %%% Nature doesn't need to do all of this, it does not need to know
+  %%% how stars explode to make them explode! Therefore, and this is
+  %%% not true just to understand how stars explode, but in general
+  %%% for any theoretical astrophysics problem, we need to compare to
+  %%% observations to avoid fooling ourselves!
+  \frametitle{I am a theoretical and computational astrophysicist}
+  \centering
+  \begin{textblock}{0.35}[0.5,0](0.18,0.16)
+    \Large  \textcolor{red}{Theory} +
+  \end{textblock}
+
+  \includegraphics[height=0.7\textheight]{Cartesius_0}\\
+  \begin{textblock}{0.4}[0.5,1](0.64,0.835)
+    \color{black} \tiny Dutch national supercomputer Cartesius
+  \end{textblock}
+
+  \begin{textblock}{0.35}[0.5,0.0](0.8,0.85)
+    \Large =
+  \end{textblock}
+
+  \begin{textblock}{0.5}[0.5,1](0.8,0.95)
+    \textcolor{red}{ \Large Numerical Simulations\phantom{A}}
+  \end{textblock}
+
+
+  \begin{textblock}{0.4}[0.5,0.5](0.5,0.5)
+    \includegraphics[width=0.75\textwidth]{binary}
+  \end{textblock}
+
+\end{frame}
+
+\begin{frame}
+  \note{Teachers have a long lasting impact on the communities they
+    work with}
+  \frametitle{My main goals today}
+
+
+  \begin{textblock}{0.9}[0.5,0.5](0.5,0.5)
+    \centering
+    \begin{enumerate}\Large
+    \item Share my research\\[10pt]
+    \item \emph{\underline{Experiment}} together with high-school teachers\\[10pt]
+      \begin{itemize}\Large
+      \item Connect research, outreach, and education
+      \item Leverage \textbf{open science}
+      \end{itemize}
+    \item<2>[\textbf{Q.}] \emph{What would \underline{you} want from
+        researchers to support your mission?}
+    \end{enumerate}
+
+  \end{textblock}
+
+\end{frame}
+
+
+\section{\textcolor{Blue}{Stellar evolution quickstart}}
+
+
+\bgroup
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}{\color{whiteish} The nearest star to us is the Sun}
+\note{The main thing that is special to astrophysicists about the Sun
+  is that it is much much closer than any other star.}
+  \begin{textblock}{0.45}[0,0.5](0,0.55)
+    \includegraphics[width=\linewidth]{./fig_slides/physics1.jpg}
+  \end{textblock}
+
+  \begin{textblock}{0.65}[0.5,0.5](0.75,0.5)
+    \begin{itemize}
+      \Large
+    \item[\color{red}\textbullet] \textcolor{whiteish}{Current age $\sim 4.5\cdot 10^9$\,yr}
+    \item[\color{red}\textbullet] \textcolor{whiteish}{Expected lifetime $\sim 10^{10}$\,yr}
+    \item[\color{red}\textbullet]
+      \textcolor{whiteish}{$L_\odot\simeq 4\cdot 10^{33}\,\mathrm{erg\ s^{-1}}$}
+    \item[\color{red}\textbullet]
+     \textcolor{whiteish}{$M_\odot\simeq 2\cdot 10^{33}\,\mathrm{g}\simeq 10^4\,M_\Jupiter \sim3\cdot 10^5\,M_\Earth$}
+
+    \item[\color{red}\textbullet] \textcolor{whiteish}{$R_\odot \simeq 6.95\cdot 10^{10}$\,cm}
+    \end{itemize}
+  \end{textblock}
+
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny credits: NASA}
+  \end{textblock}
+\end{frame}
+
+
+
+\begin{frame}{\textcolor{whiteish}{Stars are large balls of matter that ``resist'' their own weight}}
+      \note{Analogy: if someone pushes a door, and you are behind and
+        try to keep the door closed, it takes you energy.\\
+
+        Similarly the weight of a star tries to crush it to a point, but
+        the star resist. But to do so the star has to spend energy}
+
+    \begin{textblock}{0.45}[0,0.5](0,0.55)
+      \includegraphics[width=\linewidth]{./fig_slides/physics_gravity.jpg}
+    \end{textblock}
+
+  \begin{textblock}{0.5}[0.5,0](0.75,0.16)
+    \centering
+    \textcolor{whiteish}{
+      Pushing against gravity \\
+      costs energy}
+  \end{textblock}
+
+\end{frame}
+
+
+\begin{frame}{\textcolor{whiteish}{Stars produce their own energy by nuclear fusion}}
+      \note{
+        \newline \textcolor{red}{Nucleosynthesis} deep
+        \textbf{inside}, in the \textbf{center} which we usually call
+        ``core''.
+
+        Fe cannot release energy through nuclear fusion
+
+      }
+
+      \begin{textblock}{0.5}[0.5,0](0.75,0.16)
+        \centering
+        \textcolor{whiteish}{Pushing against gravity \\
+          costs energy}\\[10pt]
+        % \begin{center}
+        %   \begin{sideways}
+        %     \Leftrightarrow
+        %   \end{sideways}
+        % \end{center}
+        \textcolor{whiteish}{Energy leaks as $\gamma$ (and $\nu$)\\[10pt]
+          To compensate,\\
+          stars produce energy by\\
+          \textbf{nuclear fusion}\\[10pt]
+          \includegraphics[width=0.3\textwidth]{Nucleosynthesis_fuel}\\
+          When they run out of ``\textcolor{Orange}{fuel}'' \\
+          and are forced to evolve}
+      \end{textblock}
+
+    \begin{textblock}{0.45}[0,0.5](0,0.55)
+      \includegraphics[width=\linewidth]{./fig_slides/physics_star.jpg}
+    \end{textblock}
+\end{frame}
+\egroup
+
+
+\begin{frame}[c]
+  \frametitle{Core burns heavier fuel, shells burn the leftovers}
+  \begin{textblock}{0.75}[0.,0.0](0.01,0.12)
+    \includegraphics[width=0.54\textwidth]{binding_nuc}
+  \end{textblock}
+
+  \begin{textblock}{1}[1,1](1.30,0.99)
+    \includegraphics[width=0.7\textwidth]{onion.png}
+  \end{textblock}
+
+  \begin{textblock}{0.4}[0.5,0.5](0.755,0.56)
+    \begin{rotate}{30}
+      \centering
+      ``Onion'' structure
+    \end{rotate}
+  \end{textblock}
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo 2015}\hfill\,
+  \end{textblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stars are like people: they get bigger as they grow}
+  \only<1>{\includegraphics[height=\textheight]{16MsunRadius_empty}
+  \note{Introduce log-scale}}
+  \only<2>{\includegraphics[height=\textheight]{16MsunRadius_MS}}
+  \only<3-4>{\includegraphics[height=\textheight]{16MsunRadius_no_annotations}}
+
+  \only<2>{
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
+      \centering
+      \textbf{Main sequence:}\\
+      H$\rightarrow$ He, 90\% of stellar lifetime
+    \end{textblock}
+  }
+
+  \only<2-4>{
+    \begin{textblock}{0.1}[0.5,0.5](0.15,0.75)
+      \includegraphics[width=\textwidth]{MS}
+    \end{textblock}
+  }
+
+  \only<3>{
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
+      \centering
+      \textbf{Red (super) giant:}\\
+      Core+shell burning, 10\% of stellar lifetime
+    \end{textblock}
+  }
+
+  \only<3-4>{
+    \begin{textblock}{0.3}[0.5,0.5](0.28,0.35)
+      \includegraphics[width=\textwidth]{RSG}
+    \end{textblock}
+  }
+
+
+%   \only<4>{
+%     \begin{textblock}{0.55}[1,0.5](1.05,0.5)
+%       \includegraphics[width=\textwidth]{onion.pdf}
+%     \end{textblock}
+%     \frametitle{Only the center is hot enough to burn heavy fuel}
+%     \begin{textblock}{0.4}[0.,0.5](0.5,0.35)
+%       \centering
+%       ``Onion'' structure
+%     \end{textblock}
+
+
+%     \note{Fe cannot release energy through nuclear fusion}
+% }
+
+
+  \only<4>{
+    \begin{textblock}{0.2}[0.5,0.5](0.53,0.27)
+      \includegraphics[width=\textwidth]{SN}
+    \end{textblock}
+
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.53)
+      \centering
+      \textbf{Core collapse} and possibly \textbf{supernova
+        explosion}:\\
+      $\tau(M)\propto M^{-\alpha} \simeq 3-50$\,Myr\\
+      \hfill\textcolor{gray!50}{\tiny e.g., Zapartas et al. 2017}
+    \end{textblock}
+
+  }
+
+
+
+  \begin{textblock}{0.3}[0.5,1](0.75,0.99)
+    \centering
+    \small
+    \color{gray!50}{\tiny Simulation output from}\\
+    \includegraphics[width=0.35\textwidth]{MESA}
+  \end{textblock}
+\end{frame}
+
+
+
+
+
+\AtBeginSection[]{}
+\section*{\textcolor{Blue}{Massive stars drive the evolution of the Universe}}
+
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{zoph_onethird}}
+\begin{frame}
+  \color{whiteish}
+  \only<1>{
+    \note{\textbf{But why would you care about massive stars?}
+      This is $\zeta$ Ophiuchi, the nearest 20$M_\odot$ star to
+      Earth, I'll explain later why it looks this way.
+
+      Massive stars like this one are really central to most fields in
+      astrophysics, and despite that they still pose significant
+      challenges.\\
+
+      Be upfront: Massive $\gtrsim 7.5\,M_\odot$ = early B and O type stars
+    }
+    \frametitle{\textcolor{whiteish}{Why massive stars?~{\footnotesize ($M_\mathrm{initial} \gtrsim 7.5\,M_\odot$)}}}
+    \begin{textblock}{0.66}[0.,0.5](0.35,0.55)
+      \textcolor{whiteish}{\large \bf $\zeta$ Ophiuchi is the nearest O-type star to Earth}
+    \end{textblock}
+  }
+
+
+
+  \tikz[remember picture, overlay]\node [xshift=85pt, yshift=-13pt] at (current page.west)  (O) {};
+  \only<2>{
+    \note{As I said, they produce the compact objects in their
+      explosions, and these explosions are some of the most
+      powerful phenomena available to observations, but even
+      during their life, they stir and pollute their surrounding
+      gas and have a huge influence on the evolution of galaxies
+      (their composition, how they form stars and clusters) and
+      the universe as a whole, such as during the epoch of
+      ionization\\
+
+      \todo{Mention time-domain, GW, and multimessenger and connection}
+    }
+
+
+    \frametitle{\textcolor{whiteish}{They are the progenitors of
+        neutron stars \& black holes}}
+
+
+    \begin{textblock}{0.4}[0.5,0.](0.75,0.18) \tiny
+      \textcolor{gray!50}{
+        \emph{EM}:\\[-1pt]
+        O'Connor \& Ott 2011, Ertl \emph{et al.} 2016, 2020, Farmer
+        \emph{et al.} 2016, Morozova \emph{et al.}
+        2015, 2016, Renzo \emph{et al.} 2017, 2020a,
+        b, c, Laplace \emph{et al.}  2021, Vartanyan
+        \emph{et al.}  2021, Zapartas \emph{et al.}
+        2017a, 2019, 2021a, b, Marchant \emph{et al.}
+        2019, Farmer \emph{et al.}  2019,
+        2020}, ...\\[5pt]
+      \textcolor{gray!50}{
+        \emph{GW}:\\[-1pt]
+        LVK collaboration 2015-23, Vigna-G\'omez \emph{et al.}
+        2018, van~Son \emph{et al.}
+        2020, 2021, Callister, Renzo, Farr 2021, Renzo \emph{et al.}
+        2021}, ...
+    \end{textblock}
+  }
+
+
+  \only<2-3>{
+    \tikz[remember picture, overlay]\node [xshift=-30pt,yshift=60pt, text width=
+    90pt] at (current page.center)
+    (SNe) {\centering
+      \includegraphics[width=50pt]{BHNS.png}\\
+      \centering
+      \small
+      Compact objects\\
+      \& transients\\
+      (incl.~GW)\\
+    };
+    \Connectw{O}{SNe}
+  }
+
+  \only<3>{
+    \note{\todo{Mention Katlyn Kratter's work on SF}}
+    \frametitle{\textcolor{whiteish}{They shape their environment \& the Universe as a whole}}
+
+    \tikz[remember picture, overlay]\node [xshift=140pt,yshift=15pt, text width=
+    180pt] at (current page.center)
+    (SF) {
+      \includegraphics[width=50pt]{reion}\\
+      \centering
+      \small
+      Ionizing rad.
+      % \\[-3pt]
+      % \hfill \textcolor{gray!50}{\tiny Hopkins \emph{et al.} 2014}
+    };
+
+
+    \tikz[remember picture, overlay]\node [xshift=160pt,yshift=-55pt, text width=
+    90pt] at (current page.center)
+    (Ioniz) {\centering
+      \includegraphics[width=50pt]{star_form_cluster}\linebreak
+      \small Star Formation\\
+      \& cluster evolution\\
+      % \hfill \textcolor{gray!50}{\tiny Lada \& Lada 2003}
+    };
+
+    \tikz[remember picture, overlay]\node [xshift=40pt,yshift=-95pt, text width=
+    90pt] at (current page.center)
+    (Nucl) {\centering\includegraphics[width=50pt]{nucleosynthesis}\\
+      \centering
+      \small
+      Nucleosynthesis \&\\
+      chemical evolution\\
+      % \hfill \textcolor{gray!50}{\tiny Larson 1974, Nomoto \emph{et al.} 2013}
+    };
+
+
+    \Connectw{O}{Nucl}
+    \Connectw{O}{SF}
+    \Connectw{O}{Ioniz}
+
+    \begin{textblock}{0.01}[0.5,0.5](0.75,0.2)
+      \begin{rotate}{-30}
+        \centering
+        \textcolor{whiteish}{\bf Stellar feedback}
+      \end{rotate}
+    \end{textblock}
+  }
+
+
+  \begin{textblock}{0.33}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Spitzer, NASA/JPL}
+  \end{textblock}
+
+
+\end{frame}
+\egroup
+
+
+
+
+\begin{frame}
+  \note{So why binaries? well it turns out that wherever we look,
+    young massive stars almost always have companions.\\
+
+    This plot shows the fraction of stars that have at least one
+    companion in bold, and two or more companions (so triple, quadruple,
+    etc.) as a function of mass. For massive stars, 70-100\% have one
+    companion, and the majority has more than one companion.\\
+
+    Not shown here is the distribution of separations, but accounting
+    for that, we expect that 70\% of young O-type hot stars will
+    exchange mass with a companion before they die.
+  }
+  \frametitle{Most massive stars are born with companion(s)}
+  \vspace*{-2pt}
+  \includegraphics[height=\textheight]{bin_frac}
+
+  \begin{textblock}{0.33}[0.5,0.5](0.8,0.55)
+    \begin{block}{\centering Binary interactions\\ are \textcolor{red}{common}}
+      \centering
+      \includegraphics[width=\textwidth]{binary}\\[-1pt]
+      \phantom{\tiny a}
+    \end{block}
+  \end{textblock}
+  \begin{textblock}{0.32}[0.5,0.5](0.8, 0.74)
+    \begin{center}
+      \textcolor{whiteish}{70\% of O-type stars}\\[-2pt]
+      \hfill\textcolor{gray!50}{\tiny Sana \emph{et al.} 2012}\,
+    \end{center}
+  \end{textblock}
+
+  \begin{textblock}{0.3}[0.5,0.5](0.265, 0.77)
+    \begin{rotate}{28}
+      \footnotesize \textbf{At least one companion}
+    \end{rotate}
+  \end{textblock}
+
+  \begin{textblock}{0.3}[0.5,0.5](0.455, 0.85)
+    \begin{rotate}{32}
+      \footnotesize Two or more companions
+    \end{rotate}
+  \end{textblock}
+
+
+  \begin{textblock}{0.5}[0, 1](0.01, 0.99)
+    \textcolor{gray!50}{\tiny modified from Offner \emph{et al.} 2022}
+  \end{textblock}
+  \begin{textblock}{0.75}[1, 1](0.99, 0.99)
+    \hfill\textcolor{gray!50}{\tiny
+      see also Mason \emph{et al.} 2010, Kobulnicky \& Fryer 2007,
+      Moe \& di Stefano 2017}\,
+  \end{textblock}
+\end{frame}
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+\note{  But let's start with something a bit more familiar. This is a
+  constellation of the northern sky which probably most of you
+  know. You can use it to find the direction of north by
+  taking this side and prolonging fine times in it's direction to
+  find the Polaris.
+
+  This constellation was used in ancient Greece as an entry-test
+  to become a student of astronomy. The question is how many
+  stars are in this constellation?
+
+  In reality there are more: Mizar and Alcor are a visual binary,
+  that is two stars orbiting each other in a binary system, and it
+  is such that if you have a very good sight, you can distinguish
+  them by naked eye. The greeks used this to test the sight of
+  perspective students.
+
+  In reality things are even more complicated, infact Mizar itself
+  is a quadruple system (but these stars you cannot distinguish
+  with your naked eye). Alcor itself in 2009 has been claimed as a
+  binary, so this system in the end is actually three pairs of
+  binaries!
+  Stars are typically born in binary or multiple systems.
+
+  Broadly speaking, what I study is how this fact changes the
+  evolution of stars, and how they die.
+}
+\includegraphics[height=\paperheight]{fig_slides/zoom0}
+
+  \begin{textblock}{0.45}[0.5,0.5](0.75,0.75)
+    \centering
+    \textcolor{whiteish}{\huge The big dipper}
+  \end{textblock}
+\end{frame}
+
+\begin{frame}
+  \includegraphics[height=\paperheight]{fig_slides/zoom1}
+
+    \begin{textblock}{0.45}[0.5,0.5](0.75,0.75)
+    \centering
+    \textcolor{whiteish}{\huge Mizar \& Alcor}
+  \end{textblock}
+
+\end{frame}
+
+\begin{frame}
+  \includegraphics[height=\paperheight]{fig_slides/zoom2}
+  \begin{textblock}{0.45}[0.5,0.5](0.75,0.75)
+    \begin{tcolorbox}[boxrule=0pt,standard jigsaw, colback=black,
+      left=0pt, right=0pt, top=0pt, bottom=0pt,
+      colframe=black,
+      opacityback=0.2]
+      \color{whiteish}
+      \centering \bf \Large Most stars are in binaries\\ or multiple systems
+      \end{tcolorbox}
+    \end{textblock}
+\end{frame}
+
+
+\begin{frame}[c]
+  \frametitle{\textcolor{whiteish}{Binary interactions \emph{change} massive star feedback}}
+  \note{And binary interactions can cause the stars to evolve
+    differently, and change what compact objects they make, if and how
+    they explode, where and when they explode, and all this changes the
+    role they play in the universe}
+  \vspace*{0.25\textheight}
+  \includegraphics[width=0.3\textwidth]{bin_small}
+  \begin{textblock}{0.3}[0,0](0.01,0.78)
+    \textcolor{gray!50}{\tiny ESO, L. Calçada, M. Kornmesser, S.E. de Mink}
+  \end{textblock}
+  {
+    \color{whiteish}
+    \tikz[remember picture, overlay]\node [xshift=85pt, yshift=-13pt] at (current page.west)  (O) {};
+
+    \tikz[remember picture, overlay]\node [xshift=-30pt,yshift=60pt, text width=
+    90pt] at (current page.center)
+    (SNe) {\centering
+      \includegraphics[width=50pt]{BHNS.png}\\
+      \centering
+      \small
+      Compact objects\\
+      \& transients\\
+      (incl.~GW)\\
+    };
+    \Connectw{O}{SNe}
+    \tikz[remember picture, overlay]\node [xshift=140pt,yshift=15pt, text width=
+    180pt] at (current page.center)
+    (SF) {
+      \includegraphics[width=50pt]{reion}\\
+      \centering
+      \small
+      Ionizing rad.
+      % \\[-3pt]
+      % \hfill \textcolor{gray!50}{\tiny Hopkins \emph{et al.} 2014}
+    };
+
+
+    \tikz[remember picture, overlay]\node [xshift=160pt,yshift=-55pt, text width=
+    90pt] at (current page.center)
+    (Ioniz) {\centering
+      \includegraphics[width=50pt]{star_form_cluster}\linebreak
+      \small Star Formation\\
+      \& cluster evolution\\
+      % \hfill \textcolor{gray!50}{\tiny Lada \& Lada 2003}
+    };
+
+    \tikz[remember picture, overlay]\node [xshift=40pt,yshift=-95pt, text width=
+    90pt] at (current page.center)
+    (Nucl) {\centering\includegraphics[width=50pt]{nucleosynthesis}\\
+      \centering
+      \small
+      Nucleosynthesis \&\\
+      chemical evolution\\
+      % \hfill \textcolor{gray!50}{\tiny Larson 1974, Nomoto \emph{et al.} 2013}
+    };
+
+
+    \Connectw{O}{Nucl}
+    \Connectw{O}{SF}
+    \Connectw{O}{Ioniz}
+
+    \begin{textblock}{0.01}[0.5,0.5](0.75,0.2)
+      \begin{rotate}{-30}
+        \centering
+        \textcolor{whiteish}{\bf Stellar feedback}
+      \end{rotate}
+    \end{textblock}
+  }
+
+\end{frame}
+\egroup
+
+
+\begin{frame}
+  \frametitle{Stars move through their host galaxy: peculiar motion on
+  top of orbit}
+  \includegraphics[height=0.9\textheight]{tetzlaff11_marked}
+  \begin{textblock}{1}[0.5,0](0.4,0.92)
+    \centering
+    \color{black}$v_\mathrm{3D} \ \mathrm{[km\ s^{-1}]}$
+  \end{textblock}
+
+    \begin{textblock}{0.32}[1,0.5](0.98,0.35)
+      \centering
+      \setbeamercolor{block title}{use=structure,fg=Blue,bg=white!80!Yellow}
+      \setbeamercolor{block body}{use=structure,fg=black,bg=white!80!Yellow}
+      \begin{block}{\centering Runaway stars}
+        \centering Tail of the velocity distribution\\
+        Typically have fewer companion stars\\[5pt]
+        {\tiny \hfill \textcolor{gray!50}{Blaauw 61}\,}
+      \end{block}
+    \end{textblock}
+    \only<2>{
+      \frametitle{\textcolor{red}{Runaway} stars are common among massive stars}
+      \note{ what is typically done is to ARBITRARILY draw a line to give an
+        effective definition of what ``tail'' is: everything on the right is
+        defined as a runaway star. Typical threshold (no physical meaning) are
+        30 or 40 $kms$.I use $30kms$. For O type stars about 10-30\% of stars
+        are in the tail, and this is comparable to Be stars (and maybe slightly
+        more than all early B-type stars), although these fractions are very
+        uncertain because of the difficulty of measuring the 3 components of the
+        velocity of a star and defining what is the tail of the distribution.\\
+
+        Note that HYPERvelocity star, with velocities larger than the escape
+        velocity from the Galaxy have also been found, but these require
+        different ejection mechanisms I will not touch upon.
+      }
+    \begin{textblock}{0.32}[1,0.5](0.98,0.6)
+      \centering
+      \setbeamercolor{block title}{use=structure,fg=Blue,bg=white!80!Yellow}
+      \setbeamercolor{block body}{use=structure,fg=black,bg=white!80!Yellow}
+      \begin{block}{\centering Observed fraction}
+        \centering
+        $M\gtrsim 15\,M_\odot,\,\sim10-20\%$
+        \vspace{0.5em}
+      \end{block}
+    \end{textblock}
+  }
+
+  \begin{textblock}{1}[0.,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Tetzlaff \emph{et al.} 2011}
+  \end{textblock}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How to measure stellar velocities}
+  \note{  but how do we know that a significant fraction of massive stars
+    are runaways? To measure their velocities is not always easy. We
+    can have bow shocks if they move supersonically compared to the
+    ambient ISM, which can be used to constrain the velocity. We can
+    use the Doppler shift of spectral lines to measure their velocity
+    along the line of sight, and IF their distance is known, we can in
+    principle also use their proper motion, to measure the transverse
+    velocity of the star. I care to mention this because the future
+    Gaia data release will provide distances (through parallax) and
+    proper motions of many more stars, potentially increasing the
+    sample of runaways known in the galaxy.
+  }
+  \only<1>{
+    \begin{textblock}{0.35}[0.5,0.5](0.75,0.6)
+      \centering
+      \textcolor{black}{``Bow wave''}\\[-3pt]
+      \textcolor{black}{$v_\mathrm{boat} > v_\mathrm{wave}$}\\
+      \includegraphics[width=\textwidth]{bow_wave_cargo}
+    \end{textblock}
+    \begin{textblock}{0.25}[0.5,0](0.15,0.6)
+      \centering
+      \textcolor{black}{``Bow shock''}\\[-3pt]
+      \textcolor{black}{$v>c_s$}
+    \end{textblock}
+  }
+
+  \begin{center}
+    \begin{minipage}[hb]{0.25\linewidth}
+      \vspace*{-95pt}
+      \includegraphics[width=\textwidth]{./fig_slides/Zoph}\\
+    \end{minipage} \vspace*{30pt}
+    \begin{minipage}[hb]{0.4\linewidth}
+      \begin{itemize}\Large
+      \item<1->[$\Leftarrow$] Special features\\
+        {\small \centering (\textcolor{red}{if} relatively \textcolor{red}{nearby})}
+        \vspace*{5pt}
+      \item<2->[] Doppler shifts \hfill
+        \textcolor{Blue}{$\Rightarrow$}
+        \vspace*{5pt}
+      \item<3>[] Proper motions\\
+        {\small \centering (\textcolor{red}{if} distance known)}
+        \begin{center}
+          \begin{sideways}
+            $\Leftarrow$
+          \end{sideways}
+          \linebreak \hspace*{-20pt}\includegraphics[width=0.7\textwidth]{./fig_slides/Proper_motion}
+        \end{center}
+      \end{itemize}
+    \end{minipage}
+    \only<1>{
+      \begin{minipage}[hb]{0.25\linewidth}
+        \vspace*{-45pt}
+        \hspace*{-5pt}\phantom{\includegraphics[width=1.2\textwidth]{./fig_slides/line2}}
+      \end{minipage}
+    }
+    \only<2->{
+      \begin{minipage}[hb]{0.25\linewidth}
+        \vspace*{-45pt}
+        \hspace*{-5pt}\includegraphics[width=1.2\textwidth]{./fig_slides/line2}
+      \end{minipage}}
+\end{center}
+\end{frame}
+
+
+\bgroup
+% \metroset{progressbar=none}
+\setbeamertemplate{background}{\centering\includegraphics[width=\paperwidth, keepaspectratio]{sky_empty}}
+\begin{frame}
+  \frametitle{Measuring distances is one of the most difficult things
+    in astrophysics}
+
+\end{frame}
+
+\egroup
+\bgroup
+% \metroset{progressbar=none}
+\setbeamertemplate{background}{\centering \includegraphics[width=\paperwidth, keepaspectratio]{sky_plane}}
+\begin{frame}
+  \frametitle{Measuring distances is one of the most difficult things
+    in astrophysics}
+
+\end{frame}
+\egroup
+\bgroup
+% \metroset{progressbar=none}
+\setbeamertemplate{background}{\centering \includegraphics[width=\paperwidth, keepaspectratio]{sky_plane_fly}}
+\begin{frame}
+  \frametitle{Measuring distances is one of the most difficult things
+    in astrophysics}
+
+\end{frame}
+\egroup
+\bgroup
+% \metroset{progressbar=none}
+\setbeamertemplate{background}{\centering \includegraphics[width=\paperwidth, keepaspectratio]{sky_vel}}
+\begin{frame}
+  \frametitle{Angular velocity + parallax = projected physical velocity}
+
+  \begin{textblock}{0.33}[0.5,0.5](0.75,0.75)
+    \includegraphics[width=\textwidth]{Proper_motion}
+  \end{textblock}
+
+
+\end{frame}
+\egroup
+
+
+
+
+\section{\textcolor{Blue}{A ``renaissance'' of stellar physics}}
+\subsection{driven by the \textcolor{Blue}{\emph{Gaia}} space-telescope}
+
+\begin{frame}{\emph{Gaia}~scans the sky to measure distances and
+    velocities of \underline{billions} of stars}
+  \note{European Space Agency mission, public data}
+
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.15)
+    \centering\small
+    \url{https://flathub.flatironinstitute.org/gaiadr3}
+  \end{textblock}
+
+
+  \begin{textblock}{0.35}[0,0.5](0.01,0.3)
+    \includegraphics[width=100pt]{fig_slides/Gaia_spacecraft_cut_out}
+  \end{textblock}
+  \begin{textblock}{0.35}[0,1](0.03,0.55)
+    \includegraphics[width=40pt]{fig_slides/Gaialogo}
+  \end{textblock}
+
+  \begin{textblock}{0.45}[0,0.](0.01,0.56)
+    \begin{itemize}\color{black}
+    \item Parallax$\equiv$ distance
+    \item Velocities ($\mu$ and RV)
+    \end{itemize}
+    \vspace*{-10pt}
+    % \hspace*{40pt}for $\gtrsim 10^9$ stars\\
+    \hspace*{70pt}\begin{sideways}
+      $\Leftarrow$
+    \end{sideways}
+
+    \textbf{\textcolor{Blue}{Enables lots of astrophysics}}
+  \end{textblock}
+
+  \begin{textblock}{0.6}[0.5,1](0.66,0.95)
+    \centering
+    \movie[width=0.9\textwidth,
+    height=0.75\textheight,showcontrols=true,autostart=true]{}{./fig_slides/Gaia_scanning_law_no_audio.mp4}\\
+    \textcolor{gray!50}{\tiny Credits: New Scientist/ESA}
+  \end{textblock}
+\end{frame}
+
+\begin{frame}[c,plain]
+  \begin{textblock}{0.5}[0,0](0.01,0.01)
+    \centering
+    \textcolor{Blue}{{\large Apparent motion}\\
+      {\small reflection of Earth's orbit around the Sun}}\\[70pt]
+    \vfill
+      \movie[width=0.9\textwidth,
+      height=0.5\textheight,showcontrols=true,autostart=true]{}{./fig_slides/Gaia_parallax.mp4}\\
+      \textcolor{gray!50}{\tiny \url{https://www.youtube.com/watch?v=0-jhyRIupY4}}
+    \end{textblock}
+    \begin{textblock}{0.5}[0,0](0.5,0.01)
+      \centering
+      \textcolor{Blue}{{\large Long term drift}\\
+        {\small Stars' orbit around Galaxy + intrinsic motion}}\\[68pt]
+      \vfill
+      \movie[width=0.9\textwidth,
+      height=0.5\textheight,showcontrols=true,autostart=false]{}{./fig_slides/Gaia_motion.mp4}\\
+      \textcolor{gray!50}{\tiny \url{https://www.youtube.com/watch?v=cEsfqFDSpm0}}
+  \end{textblock}
+\end{frame}
+
+
+
+\section{\textcolor{Blue}{Why some star ``run''?}}
+\note{By this I mean their ``peculiar'' velocity with respect to the
+  Galactic rotation curve is high (say $>30\,\mathrm{km\ s^{-1}}$)}
+\subsection{\textcolor{Blue}{\textbullet}~Binary SuperNova scenario
+  (BSN) \\\textcolor{Blue}{\textbullet}~Dynamical Ejection Scenario (DES)}
+
+
+\begin{frame}
+  \frametitle{\textcolor{red}{BSN:} the most common massive binary evolution path}
+  \centering
+  \vspace*{8pt}
+
+  %% multimedia -- okular and pympress
+  \movie[width=0.9\textwidth,
+  height=0.95\textheight,showcontrols=true,autostart=true]{}{./fig_slides/binary2.mp4}
+
+  \begin{textblock}{1}[0.5,0](0.5,0.13)
+    \textcolor{gray!50}{\tiny Credits: ESO, L. Calçada, M. Kornmesser, S.E. de Mink}
+  \end{textblock}
+\end{frame}
+
+
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{binary}}
+\begin{frame}[plain]
+  \note{\todo{modeling is very challenging}}
+  % \only<1>{\frametitle{\textcolor{white!80!Yellow}{The most common massive binary evolution path}}}
+
+  % \begin{textblock}{1}[0.5,0.](0.5,0.1)
+  %   \centering
+  %   \includegraphics[width=\textwidth]{binary}
+  % \end{textblock}
+
+  % \only<2>{
+  \frametitle{\textcolor{white!80!Yellow}{Mass
+      transfer occurs before the  $1^\mathrm{st}$ explosion}}
+  \begin{textblock}{0.54}[0.,0.5](0.0,0.28)
+    \centering
+    \begin{itemize}
+    \item<2->[\textcolor{white!80!Yellow}{\textbullet}]
+      \textcolor{white!80!Yellow}{\bf Spin-up}\\[-4pt]
+      \textcolor{gray!50}{\tiny Packet 1981, Cantiello \emph{et al.}
+        2007, de Mink \emph{et al.} 2013, Renzo \& G\"otberg 2021}\\[3pt]
+    \item<3->[\textcolor{white!80!Yellow}{\textbullet}]
+      \textcolor{white!80!Yellow}{\bf Pollution}\\[-4pt]
+      \textcolor{gray!50}{\tiny Blaauw 1993, Renzo \& G\"otberg 2021}\\[3pt]
+    \item<4>[\textcolor{white!80!Yellow}{\textbullet}]
+      \textcolor{white!80!Yellow}{\bf Rejuvenation}\\[-4pt]
+      \textcolor{gray!50}{\tiny Hellings 1983, 1985, Renzo \emph{et al.} 2023}
+    \end{itemize}
+  \end{textblock}
+  % }
+  \begin{textblock}{0.5}[0.45,0.5](0.25,0.85)
+    \centering
+    \textcolor{whiteish}{
+      \bf The ``widowed'' star carries signatures of its past in a binary}\\[-2pt]
+    \hfill\textcolor{gray!50}{\tiny Renzo \& Zapartas 2020}\ \,
+  \end{textblock}
+\end{frame}
+\egroup
+
+
+
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{zoph_onethird}}
+\begin{frame}
+  \frametitle{\textcolor{whiteish}{Using the nearest O-type star to
+      Earth to pin accretor's models}}
+
+  \begin{textblock}{1}[0,1](0.34,0.99)
+    \textcolor{gray!50}{\tiny
+      Walker \emph{et al.} 1979,\\
+      Herrero \emph{et al.} 1994,\\
+      van~Rensbergen \emph{et al.} 1996,\\
+      Hoogerwerf \emph{et al.} 2001,\\
+      Villamariz \& Herrero 2005,\\
+      Walker \& Koushnik 2005,\\
+      Zee \emph{et al.} 2018,\\
+      Gordon \emph{et al.} 2018,\\
+      Neuh\"auser \emph{et al.} 2019, 2020,\\
+      Renzo \& G\"otberg 2021,\\[-7pt]
+      Shepard \emph{et al.} 2022
+    }
+  \end{textblock}
+
+  \begin{textblock}{0.33}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Spitzer, NASA/JPL}
+  \end{textblock}
+
+
+  % \only<2>{
+  %   \begin{textblock}{0.45}[1,0.5](0.98,0.5)
+  %     \centering
+  %     \includegraphics[width=0.75\textwidth]{bow_wave_cargo}\\
+  %     % \end{textblock}
+  %     % \begin{textblock}{0.4}[1,0](0.895,0.79)
+  %     \textcolor{gray!50}{\tiny e.g., \underline{Sexton \emph{et al.} 2015, Kiminki \emph{et al.} 2017},\\[-7pt]
+  %       Bodensteiner \emph{et al.} 2018, Raga \emph{et al.} 2022}\ \,
+  %   \end{textblock}
+  % }
+
+
+
+  \only<2>{
+    \begin{textblock}{0.45}[1,0.5](0.98, 0.52)
+      \begin{block}{Observational constraints of $\zeta$ Oph.:}
+        \begin{itemize}
+        \item distance $\simeq 107\pm4\,\mathrm{pc}$
+        \item total mass$\simeq 20\,M_\odot$
+        \item speed $\gtrsim 30\,\mathrm{km\ s^{-1}}$
+        \item rotation $v\sin(i)\gtrsim 310$
+        \item inclination $i \gtrsim 56^\circ$
+        \item ``looks'' $(T_\mathrm{eff}, L)$
+        \item age $\simeq$ 8\,Myr
+        \item strange surface composition
+        \item[\textcolor{red}{\xmark}] \textcolor{red}{\bf Rotating
+            single stars}\\
+          \hspace*{-23pt}\textcolor{gray!50}{\tiny (e.g., van Rensbergen \emph{et
+              al.} 96, Howarth \& Smith 01, Villamariz \& Herrero 05)} \,
+
+        \end{itemize}
+      \end{block}
+    \end{textblock}
+  }
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{\textcolor{whiteish}{$\zeta$ Ophiuchi is single but we can trace it back to a neutron star}}
+
+  \begin{textblock}{0.5}[0.5,0](0.75,0.12)
+    \includegraphics[height=.9\textheight]{kinematics_zeta.pdf}
+  \end{textblock}
+
+
+  % \begin{textblock}{0.6}[1,0.5](1,0.5)
+  %   \centering
+  %   \includegraphics[width=\textwidth]{neuhauser20_title}
+  % \end{textblock}
+
+
+  \begin{textblock}{1}[0,1](0.34,0.99)
+    \textcolor{gray!50}{\tiny Neuh\"auser \emph{et al.} 2019, 2020 see
+      also Blaauw 1952, 1961,\\[-7pt]
+      van Rensbergen \emph{et al.} 1996,
+      Hoogerwerf \emph{et al.} 2001, Lux \emph{et al.} 2020}\hfill\,
+  \end{textblock}
+
+  \only<2>{
+    \begin{textblock}{0.4}[0.5,0.5](0.68,0.81)
+      \centering\small
+      \begin{block}{\centering SN explosion $\sim$$1.78\pm0.21$\,Myr ago\\}
+        \centering
+        $\Rightarrow$Radioactive iron rain on Earth\\
+        \hfill\textcolor{gray!50}{\tiny Benitez \emph{et al.} 2002, Fry \emph{et al.} 2016, Neuh\"auser \emph{et al.} 2020}
+      \end{block}
+    \end{textblock}
+
+  }
+\end{frame}
+\egroup
+
+
+
+\begin{frame}
+  \frametitle{What exactly disrupts  the binary?}
+
+
+  \only<1>{
+    \begin{textblock}{1}[0.5,1](0.5,0.99)
+      \centering
+      \includegraphics[height=0.85\textheight]{SN_bin.pdf}
+    \end{textblock}
+  }
+
+\only<2>{
+    \begin{textblock}{1}[0.5,1](0.5,0.99)
+      \centering
+      \includegraphics[height=0.85\textheight]{SN_bin_arrow.pdf}
+    \end{textblock}
+
+    \begin{textblock}{0.31}[1,0.5](0.99,0.58)
+      %% semi-transparent box
+      \addtobeamertemplate{block
+        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+      \begin{block}{\centering \textcolor{red}{\bf SN Natal kick}}
+        \textcolor{gray!50}{\tiny (Shklovskii 70, Katz 75, Janka 13, 17)}
+      \end{block}
+    \end{textblock}
+   }
+
+  \begin{textblock}{0.28}[0.5,0.5](0.36,0.37)
+    %% semi-transparent box
+    \addtobeamertemplate{block
+      begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+    \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+    \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+    \begin{block}{\centering \bf Ejecta impact}
+      \textcolor{gray!50}{\tiny (Tauris \&
+        Takens 98,
+        Liu \emph{et al.} 15)}
+    \end{block}
+  \end{textblock}
+
+  \begin{textblock}{0.28}[0.5,0.5](0.6,0.8)
+    %% semi-transparent box
+    \addtobeamertemplate{block
+      begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+    \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+    \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+    \begin{block}{\centering \bf Loss of SN ejecta}
+      \textcolor{gray!50}{\tiny (Blaauw '61)}
+    \end{block}
+  \end{textblock}
+
+
+
+
+  \begin{textblock}{1}[0.5,0.08](0.5,0.15)
+    \centering\Large \textcolor{Blue}{{\Huge $86^{+11}_{-22}\%$} of massive binaries are
+      disrupted}
+  \end{textblock}
+
+  \begin{textblock}{0.5}[0, 1](0.01, 0.99) \textcolor{gray!50}{\tiny
+      Renzo \emph{et al.} 19b, Kochanek  \emph{et al.} 19,\\[-7pt]
+      Eldridge \emph{et al.} 11, De~Donder \emph{et al. 97}}
+\end{textblock}
+
+\end{frame}
+
+
+\section{\textcolor{Blue}{SN kicks}}
+
+\begin{frame}[c]
+  \frametitle{Why kicks?~Neutron stars are usually faster than their
+    progenitor stars}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.53)
+    \centering
+    \includegraphics[width=\textwidth]{guitar_nebula_complete}\\
+    {``Guitar nebula'':  $v_{\rm NS}\simeq1000\,\mathrm{km \ s^{-1}}$}
+  \end{textblock}
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Cordes \emph{et al.} 1993, Chatterjee
+      \& Cordes 2004, de~Vries
+      \emph{et al.} 2022, }
+  \end{textblock}
+  \begin{textblock}{1}[0.5,1](0.5,0.15)
+    \centering \textcolor{gray!50}{\tiny \emph{HST}}
+  \end{textblock}
+
+  \only<2>{
+    \begin{textblock}{0.2}[1,1](0.92,0.99)
+      \includegraphics[width=\textwidth]{fig_slides/bow_wave_cargo}
+    \end{textblock}
+  }
+
+\end{frame}
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+  \note{What causes these natal kicks responsible for the binary
+  disruption?
+  From an observational point of view we know they exists because
+  we see pulsars moving much faster than their parent O and early B
+  type stars. From a theoretical perspective, we think that these
+  kicks are due to asymmetries in the explosion dynamics, either in
+  the neutrino flux that drives the explosion (although this is
+  presently a bit disfavored) or because of the hydrodynamical
+  instabilities in the explosion. For instance, here you see an
+  entropy rendering of the core of an exploding 15Msun star, but
+  for simplicity you can think of the color as the density. As you
+  can see, this is not spherically symmetric: here you have a big
+  red clump, which if it is denser, can gravitationally pull the
+  proto-compact object (for up to a second) and as long as we have
+  some ejecta in the other direction to conserve momentum, we can
+  accelerate the proto compact object in the direction of the
+  densest ejecta. }
+  \frametitle{\textcolor{white!80!Yellow}{Asymmetries in the explosion
+    cause the ``kick''}}
+  \centering
+  % \begin{textblock}{1}[0.5,1](0.5,0.13)
+  %   \textcolor{white!80!Yellow}{Observationally:~$v_\mathrm{pulsar} \gg v_\mathrm{OB-stars}$}
+  % \end{textblock}
+
+  \only<1>{
+    \begin{textblock}{0.2}[1,1](0.99,0.35)
+      \includegraphics[width=\textwidth]{onion.png}
+    \end{textblock}
+  }
+
+
+  \only<2>{
+    \begin{textblock}{0.3}[0.,0](0.0,0.15)
+      \begin{itemize}
+        \color{whiteish}
+      \item[\textcolor{whiteish}{\textbullet}] $\nu$-driven convection
+      \item[\textcolor{whiteish}{\textbullet}] rotation
+      \item[\textcolor{whiteish}{\textbullet}] hydrodynamical flow
+      \end{itemize}
+    \end{textblock}
+  }
+  % \vspace*{30pt}
+  % {
+  %   \Large \centering
+  %   \textcolor{white!80!Yellow}{
+  %   Physically:~$\nu$ emission and/or ejecta anisotropies}\linebreak
+  %   \phantom{Bla}
+  % }
+  % \vspace*{10pt}
+  \only<1-2>{\includegraphics[height=0.95\textheight]{SN_asymmetry}} \only<3>{\hspace*{-6pt}\vspace*{-1pt}\includegraphics[height=0.95\textheight]{SN_asymmetry2}}
+
+
+  \begin{textblock}{1}[1, 1](0.99,0.99)
+    \hfill\textcolor{gray!50}{\tiny Credits: C.~D.~Ott, S.~Drasco}\,
+  \end{textblock}
+\end{frame}
+\egroup
+
+
+\begin{frame}{Kicks do not change companion velocity}
+
+    \begin{textblock}{1}[0.5,1](0.5,0.99)
+      \centering
+      \includegraphics[height=0.85\textheight]{SN_bin_arrow2.pdf}
+    \end{textblock}
+
+    \begin{textblock}{0.3}[1,0.5](0.99,0.58)
+      %% semi-transparent box
+      \addtobeamertemplate{block
+        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+      \begin{block}{\centering \textcolor{red}{\bf SN Natal kick}}
+        \textcolor{gray!50}{\tiny (Shklovskii 70, Katz 75, Janka 13, 17)}
+      \end{block}
+    \end{textblock}
+
+    \begin{textblock}{0.32}[0.5,0.5](0.2,0.42)
+            \addtobeamertemplate{block
+        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+      \begin{block}{\centering \Huge \bf $v_\mathrm{dis}\simeq v_2^\mathrm{orb}$}
+        \hfill before the SN\,
+      \end{block}
+    \end{textblock}
+
+
+  % \begin{textblock}{0.28}[0.5,0.5](0.36,0.37)
+  %   %% semi-transparent box
+  %   \addtobeamertemplate{block
+  %     begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+  %   \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+  %   \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+  %   \begin{block}{\centering \bf Ejecta impact}
+  %     \textcolor{gray!50}{\tiny (Tauris \&
+  %       Takens 98,
+  %       Liu \emph{et al.} 15, Hirai \emph{et al.} 18)}
+  %   \end{block}
+  % \end{textblock}
+
+  % \begin{textblock}{0.28}[0.5,0.5](0.6,0.8)
+  %   %% semi-transparent box
+  %   \addtobeamertemplate{block
+  %     begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+  %   \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+  %   \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+  %   \begin{block}{\centering \bf Loss of SN ejecta}
+  %     \textcolor{gray!50}{\tiny (Blaauw '61)}
+  %   \end{block}
+  % \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.08](0.5,0.15)
+    \centering\Large \textcolor{Blue}{{\Huge $86^{+11}_{-22}\%$} of massive binaries are
+      disrupted}
+  \end{textblock}
+
+  \begin{textblock}{0.5}[0, 1](0.01, 0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 19b, Kochanek
+      \emph{et al.} 19,\\[-7pt]
+      Eldridge \emph{et al.} 11,
+    De~Donder \emph{et al. 97}}
+\end{textblock}
+\end{frame}
+
+
+
+\begin{frame}
+  \note{The first thing I want to draw your attention on is of course the velocity
+    distribution of ejected widowed stars. Here you see the tail of
+    the distribution above 30km/s (the typical threshold to define
+    runaways). The three colors correspond to three lower mass cuts.
+    The main thing to notice here is that *BINARIES HAVE A VERY HARD
+    TIME PRODUCING MASSIVE RUNAWAYS FASTER THAN ~60kms*.}
+  \frametitle{Accretor stars can be \emph{runaways}...}
+  \centering
+  \only<1>{\includegraphics[width=\textwidth]{incomplete_vdist}}
+
+  \begin{textblock}{0.45}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 2019b}\hfill\,
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.94)
+    \textcolor{gray!50}{Velocity w.r.t. pre-explosion binary center of mass}
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Numerical results:   \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
+  \end{textblock}
+\end{frame}
+
+\begin{frame}
+  \note{Take home points:
+    \begin{itemize}
+    \item {Walkaways outnumber the runaways by
+        $\sim10\times$}
+    \item {Binaries barely produce fast runaways}
+    \item {All runaways from binaries are post-interaction objects}
+    \end{itemize}
+  }
+  \frametitle{...but most are only \emph{walkaways}}
+  \centering
+  \includegraphics[width=\textwidth]{complete_vdist}
+  \begin{textblock}{0.45}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 2019b}\hfill\,
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.94)
+    \textcolor{gray!50}{Velocity w.r.t. pre-explosion binary center of mass}
+  \end{textblock}
+
+
+
+  \begin{textblock}{1}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Numerical results:
+      \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
+  \end{textblock}
+
+
+
+
+  \only<2>{
+    \begin{textblock}{0.95}[0.5,0.5](0.5,0.54)
+      \includegraphics[height=0.95\textheight]{binary_arrows}
+    \end{textblock}
+    \begin{textblock}{0.75}[0.5,0.5](0.5,0.195)
+      \textcolor{white!80!Yellow}{\Large Under-production of runaways because}
+    \end{textblock}
+
+    \begin{textblock}{0.75}[0.5,0.5](0.5,0.81)
+      \textcolor{white!80!Yellow}{\Large mass transfer increases the\linebreak
+        accretors' masses\linebreak and \emph{overall} widens the
+        binaries}
+    \end{textblock}
+  }
+\end{frame}
+
+
+
+
+\section{\textcolor{Blue}{Why some star ``run''?}}
+\subsection{\textcolor{gray!40}{\textbullet~Binary SuperNova scenario
+  (BSN)} \\\textcolor{Blue}{\textbullet}~Dynamical Ejection Scenario (DES)}
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\centering \includegraphics[width=\paperwidth, keepaspectratio]{JWST_R136}}
+\begin{frame}
+  \note{Emphasize $~10^{5}$ stars in the volume between the Sun and
+    Proxima centauri:
+    \begin{itemize}
+    \item $\sim10^5$ stars within $\sim 1\,$pc
+    \item current age $\lesssim 2$\,Myr
+    \item distance $\sim 50\,$ kpc
+    \end{itemize}
+  }
+  \begin{textblock}{0.55}[0,1](0.01,0.1)
+  \begin{tcolorbox}[boxrule=0pt,standard jigsaw, colback=black,
+      left=0pt, right=0pt, top=0pt, bottom=0pt,
+      colframe=black,
+      opacityback=0.5]
+      \textcolor{whiteish}{\large \bf Most stars are born in dense environments}
+  \end{tcolorbox}
+  \end{textblock}
+  \only<2>{
+    \begin{textblock}{0.4}[1., 0.5](0.99, 0.35)
+      \begin{block}{\centering N-body interactions}
+         (typically) least massive thrown out.\linebreak
+         \phantom{AAAAAA}\textcolor{red}{Binaries matter...}
+          \begin{itemize}
+          \item Cross section $\propto a^2 \gg R_*^2$
+          \item (Binding) Energy reservoir \\
+            \textcolor{gray!50}{\tiny Poveda \emph{et al.} 67}
+          \end{itemize}
+          \textcolor{red}{...but don't necessarily leave imprints!}
+        \end{block}
+    \end{textblock}
+}
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny \emph{JWST} view of R136 in the LMC}
+  \end{textblock}
+
+\end{frame}
+\egroup
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}{\textcolor{red}{DES:}~\textcolor{whiteish}{typically eject the lowest mass star}}
+  \centering
+  \movie[width=0.9\textwidth,
+  height=0.95\textheight,showcontrols=true,autostart=true]{}{./fig_slides/nopn_dvd.mp4}
+
+  \begin{textblock}{1}[0.,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Credits: Carl Rodriguez}
+  \end{textblock}
+
+\end{frame}
+
+
+
+\begin{frame}
+   \frametitle{\textcolor{white!80!Yellow}{Typical outcome of dynamical
+       interactions}}
+   \begin{textblock}{1}[0.5,0.5](0.5,0.55)
+     \centering
+     \includegraphics[width=0.8\textwidth]{fig_slides/dyn_res}
+   \end{textblock}
+
+   \begin{textblock}{0.5}[0.5,0.01](0.65,0.18)
+     \centering
+     \textcolor{white!80!Yellow}{\Large \bf Fast runaway }
+   \end{textblock}
+
+
+   \begin{textblock}{0.9}[0.5,0.5](0.5,0.9)
+     \centering
+     \textcolor{white!80!Yellow}{\Large \bf \phantom{Fast ejection +}Tighter and more massive binary}\\
+     \hfill\textcolor{gray!50}{\tiny e.g., Fujii \& Portegies-Zwart
+       11}
+   \end{textblock}
+
+
+\end{frame}
+\egroup
+
+
+\begin{frame}
+  \frametitle{Timing of ejection}
+
+  \includegraphics[height=0.9\textheight]{fig_slides/oh_kroupa16}
+  %\textcolor{gray!50}{\tiny from Oh \& Kroupa 16}
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny from Oh \& Kroupa 16, \linebreak see also, Poveda \emph{et
+      al.} 64, Fujii \& Portegies-Zwart 11, Banerjee \emph{et al.} 12,
+  14}\hfill\,
+  \end{textblock}
+
+  \begin{textblock}{0.45}[0.5,0.5](0.75,0.5)
+    \centering
+    \textcolor{Blue}{Most ejections happen early}\\
+    \textcolor{Black}{Before the first stellar death}\\
+    $$ \tau_\mathrm{ej} < \tau_*$$\\
+    \vspace*{30pt}
+    \textcolor{Blue}{{\bf Very} sensitive to initial conditions}
+  \end{textblock}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The most massive runaways known}
+  \vspace*{5pt}
+  \only<1>{\includegraphics[height=0.95\textheight]{fig_slides/R136_clean.pdf}}
+  \only<2>{\includegraphics[height=0.95\textheight]{fig_slides/682_gaia_only}}
+  \only<3>{\includegraphics[height=0.95\textheight]{fig_slides/682_gaia_hst_only}}
+  \only<4>{\includegraphics[height=0.95\textheight]{fig_slides/682_complete}}
+  \begin{textblock}{1}[0.5,1](0.5,0.99)
+    \textcolor{gray!50}{\tiny \phantom{A}Renzo \emph{et al.} 2019a\hfill
+      Lennon \emph{et al.}, 2018\ \,}
+  \end{textblock}
+
+    \begin{textblock}{0.18}[0.,0](0.7,0.65)
+      \setbeamercolor{block title}{use=structure,fg=Blue,bg=white!80!Yellow}
+      \setbeamercolor{block body}{use=structure,fg=black,bg=white!80!Yellow}
+      \begin{block}{}
+        \scriptsize
+        \hspace*{5pt}\vspace*{3pt}$M=91.6^{+11.5}_{-10.5}\,M_\odot$\\
+        \only<3-4>{\hspace*{5pt}\vspace*{3pt}$v_\mathrm{2D}=80\pm11\,\mathrm{km\ s^{-1}}$\\
+        % \hspace*{5pt}\vspace*{3pt}$v_\mathrm{3D}=112\pm8\,\mathrm{km\
+        % s^{-1}}$
+        }
+      \end{block}
+    \end{textblock}
+
+
+    \begin{textblock}{0.18}[0,0](0.7,0.25)
+      \setbeamercolor{block title}{use=structure,fg=Blue,bg=white!80!Yellow}
+      \setbeamercolor{block body}{use=structure,fg=black,bg=white!80!Yellow}
+      \begin{block}{}
+        \scriptsize
+        \hspace*{5pt}\vspace*{3pt}$M=97.6^{+22.2}_{-23.1}\,M_\odot$\\
+        % $\mathrm{age} =0.4^{+0.8}_{-0.4}$\,Myr\\
+        % $\tau_\mathrm{kin}=0.9\pm0.15$\,Myr\\
+        % \only<1-2>{\hspace*{5pt}\vspace*{3pt}$v_\mathrm{LOS}\simeq0\,\mathrm{km\ s^{-1}}$}
+        \only<3-4>{\hspace*{5pt}\vspace*{3pt}$v_\mathrm{2D}=93\pm15\,\mathrm{km\
+          s^{-1}}$\\
+        % \hspace*{5pt}\vspace*{3pt}$v_\mathrm{3D}\simeq v_\mathrm{2D}$
+      }
+      \end{block}
+    \end{textblock}
+
+    \begin{textblock}{0.18}[1,0](0.3,0.13)
+      \setbeamercolor{block title}{use=structure,fg=Blue,bg=white!80!Yellow}
+      \setbeamercolor{block body}{use=structure,fg=black,bg=white!80!Yellow}
+      \begin{block}{}
+        \scriptsize
+        \hspace*{5pt}\vspace*{5pt}$M =
+        137.8^{+27.5}_{-15.9}\,M_\odot$\\
+        \only<4>{\hspace*{5pt}\vspace*{5pt}$v_\mathrm{2D}=38\pm17\,\mathrm{km\
+          s^{-1}}$}
+      \end{block}
+    \end{textblock}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Summary of ejection mechanisms}
+   \begin{columns}
+      \begin{column}{.48\textwidth}
+      \begin{textblock}{0.45}[0,0](0.01,0.12)
+        \begin{block}{\centering \bf Dynamical ejections}
+          \begin{itemize}
+          \item Happen before SNe
+          \item Can produce higher velocities %($v\gtrsim100\,\mathrm{km\ s^{-1}}$)
+          \item Least massive thrown out
+          \item \emph{Gaia} hint: high efficiency
+          \end{itemize}
+          \textcolor{red}{\small ...Binaries are still important!}
+          % \begin{itemize}
+          % \item (Binding) Energy reservoir
+          % \item Cross section $\propto a^2 \gg R_*^2$
+          % \end{itemize}
+          \textcolor{red}{\small but might not leave signature}
+          \begin{center}
+            \begin{textblock}{0.45}[0,0](0.01,0.658)
+              \includegraphics[width=170pt]{JWST_R136}\\
+            \end{textblock}
+            \end{center}
+        \end{block}
+      \end{textblock}
+    \end{column}
+    \begin{column}{.48\textwidth}
+       \begin{textblock}{0.45}[1,0](0.99,0.12)
+         \begin{block}{\centering \bf Binary SN disruption}
+           \begin{itemize}
+           \item Most binaries are disrupted
+           \item Determined by SN kick
+           \item Ejects accretor
+           \item $v \simeq v_2^\mathrm{orb}$ typically slow
+           \item Leaves \textcolor{red}{binary signature} \\[3pt]
+             {\small \textcolor{red}{spin up, pollution, rejuvenation}}
+           \end{itemize}
+           \begin{textblock}{0.45}[1,0](0.999,0.658)
+             \includegraphics[width=170pt]{complete.png}\\
+           \end{textblock}
+         \end{block}
+       \end{textblock}
+     \end{column}
+   \end{columns}
+
+   \only<2>{
+     \begin{textblock}{0.4}[0.5,0.5](0.5,0.8)
+       \setbeamercolor{block title}{use=structure,fg=Blue,bg=whiteish}
+       \setbeamercolor{block body}{use=structure,fg=black,bg=whiteish}
+       \begin{block}{\centering Relative efficiency \textcolor{red}{\huge ?}}
+       % \centering
+       % $\sim\,10\%$ O-type stars are runaways\\
+       % \vspace*{1em}
+        % $\sim$\,$\frac{2}{3}$ of runaways from binaries\\
+       \hfill\textcolor{gray!50}{\tiny Hoogerwerf \emph{et al.} 2001,
+         Jilinksi \emph{et al.} 2010, Sana \emph{et al.} 2023}\,
+       \end{block}
+     \end{textblock}
+   }
+
+\end{frame}
+
+
+\begin{frame}{\emph{Both} mechanism at play in the same population}
+
+
+  \begin{textblock}{0.3}[0,0](0.01,0.15)
+    \centering
+    \includegraphics[width=\textwidth]{ORWsLMC}\\[-10pt]
+    \textcolor{gray!50}{\tiny\phantom{AAAA}(30 Doradus region of LMC)}
+  \end{textblock}
+
+  \begin{textblock}{0.65}[0.5,0.5](0.75,0.55)
+    \only<1-2>{\includegraphics[width=0.8\textwidth]{vsini_rot}}
+    \only<3>{\includegraphics[width=0.8\textwidth]{vsini_3D}}
+  \end{textblock}
+
+  \begin{textblock}{0.1}[0.5,0.5](0.43,0.5)
+    \begin{sideways}
+      \bf Projected rotational velocity
+    \end{sideways}
+  \end{textblock}
+
+  \begin{textblock}{0.65}[0.5,0.5](0.95,0.95)
+    \only<1-2>{\bf Line-of-sight velocity}
+    \only<3>{\bf 3D velocity}
+  \end{textblock}
+
+  \only<2>{
+    \begin{textblock}{0.11}[0.,0.](0.5,0.16)
+      \begin{tcolorbox}[boxrule=2pt,standard jigsaw, colback=whiteish,
+      left=0pt, right=0pt, top=0pt, bottom=0pt,
+      colframe=red,
+      opacityback=1]
+      \centering
+      \textcolor{red}{\huge BSN}
+      \end{tcolorbox}
+    \end{textblock}
+
+    \begin{textblock}{0.11}[0.,0.5](0.85,0.85)
+      \begin{tcolorbox}[boxrule=2pt,standard jigsaw, colback=whiteish,
+      left=0pt, right=0pt, top=0pt, bottom=0pt,
+      colframe=blue,
+      opacityback=1]
+      \centering
+      \textcolor{blue}{\huge DES}
+      \end{tcolorbox}
+    \end{textblock}
+  }
+  \only<2-3>{
+    \begin{textblock}{0.3}[0,0](0.01,0.72)
+      \centering
+      General conclusion\\
+      or\\
+      lucky age of 30\,Doradus
+      {\huge \textcolor{red}{?}}
+    \end{textblock}
+  }
+
+
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Sana \emph{et al.} 2023}
+  \end{textblock}
+
+\end{frame}
+
+\section{\textcolor{Blue}{Conclusions}}
+\subsection{}
+
+
+
+\begin{frame}
+  \frametitle{\emph{Gaia} ``renaissance'' of stellar
+    physics $\Rightarrow$ implications for astro}
+
+  \begin{textblock}{0.3}[0,0.5](0.01,0.5)
+    \centering
+  \movie[width=\textwidth,height=0.5\textheight, showcontrols=true,autostart=true]{}{./fig_slides/what_can_we_learn.mp4}\\
+  \end{textblock}
+
+
+  \begin{textblock}{0.62}[1,0.5](0.97,0.5)
+    \begin{block}{Runaways: \textcolor{black}{\normalfont
+          many massive stars are fast $v\gtrsim 30\,\mathrm{km\ s^{-1}}$}}
+      Two mechanisms for $v\lesssim$ hundreds of $\mathrm{km\ s^{-1}}$:
+      \begin{itemize}
+      \item \textcolor{Blue}{\textbf{BSN}} Supernova explosion in a binary
+      \item \textcolor{Blue}{\textbf{DES}} Dynamical ejection from clusters
+      \end{itemize}
+    \end{block}
+  \end{textblock}
+
+\end{frame}
+
+\bgroup
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+  \note{  To conclude, I want to show you a widowed star that you can find
+    in the skies of the Netherlands with your naked eyes. Some of
+    you probably recognize this constellation, it's orion. It is
+    visible in the winter, and you can recognize it from the "orion
+    belt". This dongle here is full of massive stars. But here, you
+    see Betelgeuse, a famous massive star because it is said to be
+    about to explode (i.e. in the next ~1000 years). The interesting
+    thing, is that this is also most likely a widowed star: it moves
+    at 30km/s and also has the bow shock (like the wave in front of
+    the boat!). So every night, you can see one of the stars that I
+    wish we will use to understand BH formation and SN explosion
+    without seeing either the BH or the SN.
+  }
+  \begin{textblock}{1}[0.5,0.5](0.5,0.5)
+    \centering
+    \includegraphics[height=\paperheight]{fig_slides/orion}
+  \end{textblock}
+
+
+  \begin{textblock}{0.04}[0.5,0.5](0.97,0.5)
+      \begin{block}{}
+            \begin{sideways}
+              \color{Blue}
+              \centering
+              \Large Orion
+            \end{sideways}
+          \end{block}
+  \end{textblock}
+\end{frame}
+
+\begin{frame}[plain]
+  \begin{textblock}{1}[0.5,0.5](0.5,0.5)
+    \centering
+    \includegraphics[height=\paperheight]{fig_slides/orion2}
+  \end{textblock}
+
+  \begin{textblock}{0.04}[0.5,0.5](0.97,0.5)
+      \begin{block}{}
+            \begin{sideways}
+              \color{Blue}
+              \centering
+              \Large Orion
+            \end{sideways}
+          \end{block}
+  \end{textblock}
+\end{frame}
+\egroup
+
+
+\appendix
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{bin_expl_shade.png}}
+\begin{frame}[plain]% {\textcolor{whiteish}{The explosive connection between binaries and transients}}
+  \begin{textblock}{0.14}[0.5,0.5](0.666,0.45)
+    % \includegraphics[width=\textwidth]{link_chain_blue.png}
+    \begin{block}{}
+      \centering
+      \textcolor{Blue}{\Large \bf Backup}
+    \end{block}
+  \end{textblock}
+\end{frame}
+\egroup
+
+\begin{frame}[c]
+  \frametitle{Do BHs receive kicks\textcolor{red}{\bf ?}}
+  \vspace*{5pt}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      {\Huge NO}\\
+      {$\Rightarrow$ most remain bound to companion}\\[20pt]
+      \includegraphics[width=120pt]{fig_slides/XRB}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      {\Huge YES}\\
+      {$\Rightarrow$ most are single and we can't see them...}\\[20pt]
+      \includegraphics[width=120pt]{fig_slides/BH}
+  \end{column}
+\end{columns}
+
+\only<2>{
+  \begin{textblock}{0.4}[0.50,0](0.75,0.86)
+    \centering
+    \textcolor{Blue}{\Large ...but we can see the \mbox{``widowed'' companions}}
+  \end{textblock}
+}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{BH kicks by weighting the companions}
+  \centering
+  %\vspace*{18pt}
+  % \includegraphics[height=0.9\textheight]{fig_slides/BH_MF_sigma100}
+  \only<1>{
+    \begin{textblock}{1}[0.5,0.5](0.5,0.525)
+      \includegraphics[height=0.8\textheight]{fig_slides/BH_MFempty}
+    \end{textblock}
+  }
+  \only<2>{
+    \begin{textblock}{1}[0.5,0.5](0.5,0.525)
+      \includegraphics[height=0.8\textheight]{fig_slides/BH_MF1}
+    \end{textblock}
+    }
+    \only<3>{
+      \begin{textblock}{1}[0.5,0.5](0.5,0.525)
+        \includegraphics[height=0.8\textheight]{fig_slides/BH_MF2}
+      \end{textblock}
+  }
+  \only<4>{
+    \begin{textblock}{1}[0.5,0.5](0.5,0.525)
+      \includegraphics[height=0.8\textheight]{fig_slides/BH_MFcomplete}
+      \end{textblock}
+    }
+    \begin{textblock}{1}[0.5,1](0.52,0.92)
+      \bf Mass
+    \end{textblock}
+    \begin{textblock}{0.065}[0,0.5](0.1,0.5)
+      \begin{sideways}
+        \bf \# stars
+      \end{sideways}
+    \end{textblock}
+
+   % \begin{textblock}{0.25}[1,1](0.99,0.93)
+   %    \includegraphics[width=100pt]{fig_slides/Gaia_spacecraft_cut_out}
+   %  \end{textblock}
+   %  \begin{textblock}{0.25}[1,1](0.97,0.999)
+   %    \includegraphics[width=40pt]{fig_slides/Gaialogo}
+   %  \end{textblock}
+
+
+  \begin{textblock}{1}[0.53,0](0.5,0.12)
+      \centering
+      \small
+      {Massive runaways mass function
+        ($v\geq30\,\mathrm{km\ s^{-1}}$, $M\geq7.5\,M_\odot$)}
+  \end{textblock}
+  \begin{textblock}{0.45}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 19b}\hfill\,
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Numerical results publicly available at::\\[-5pt]
+      \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
+  \end{textblock}
+\end{frame}
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{binary}}
+\begin{frame}{\textcolor{white!80!Yellow}{Self-consistent}~\includegraphics[width=50pt]{mesa}~\textcolor{white!80!Yellow}{model}}
+  % \begin{textblock}{1}[0.5,0](0.5,0.1)
+  %   \centering
+  %   \includegraphics[width=\textwidth]{binary}
+  % \end{textblock}
+
+
+  \begin{textblock}{0.3}[0.5,0.5](0.34,0.46)
+    \textcolor{white!80!Yellow}{$M_2=17\,M_\odot$}
+  \end{textblock}
+
+  \begin{textblock}{0.3}[0.5,0.5](0.85,0.87)
+    \textcolor{white!80!Yellow}{$M_1=25\,M_\odot$}
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.5](0.45,0.87)
+    \centering
+    \textcolor{white!80!Yellow}{$P=100\,\mathrm{days}$}\\[2pt]
+    \textcolor{gray!50}{\small (case B RLOF)}
+  \end{textblock}
+
+  % \begin{textblock}{1}[1,1](0.99,0.99)
+  %   \centering
+  %   \hfill\textcolor{gray!50}{\tiny To detach \includegraphics[height=5pt]{mesa}
+  %   binary on the fly:
+  %   \href{https://github.com/MESAHub/mesa-contrib/}{https://github.com/MESAHub/mesa-contrib/}
+  %   $\rightarrow$ \texttt{hooks/detach\_binary}}
+  % \end{textblock}
+
+
+  \begin{textblock}{0.3}[0.5,0.5](0.08,0.3)
+    \centering
+    \textcolor{white!80!Yellow}{$Z=0.01$}\\
+    \textcolor{gray!50}{\tiny (Murphy \emph{et al.} 2021)}
+  \end{textblock}
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}\,
+  \end{textblock}
+\end{frame}
+\egroup
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{bin_expl.png}}
+\begin{frame}[plain]
+
+  \begin{textblock}{0.33}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Not simultaneous!}
+  \end{textblock}
+\end{frame}
+\egroup
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{complete.png}}
+\begin{frame}[plain]
+
+
+  \begin{textblock}{0.33}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Not simultaneous!}
+  \end{textblock}
+\end{frame}
+\egroup
+
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{zoph_onethird}}
+\begin{frame}
+
+  \only<1>{
+    \begin{textblock}{0.66}[0,0.5](0.34,0.5)
+      \centering
+      \textcolor{whiteish}{\Large \bf Does a binary
+        past help with $\zeta$ Oph.~{\Huge?}}\\
+      \textcolor{whiteish}{\large Spin-up -- Pollution --
+        Rejuvenation}\\[-3pt]
+      \hfill{\textbf{\textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}}}\ \,
+    \end{textblock}
+
+  }
+
+  \only<2>{
+    \begin{textblock}{0.66}[0,0](0.34,0.1)
+      \centering
+      \textcolor{red}{\Large \xmark}~\textcolor{whiteish}{\Large \bf Spin up:}\\
+      \textcolor{whiteish}{\large Natal rotation would need to be extreme
+        to match}
+    \end{textblock}
+    \begin{textblock}{0.66}[0,1](0.34,0.95)
+      \centering
+      \includegraphics[width=0.75\textwidth]{rot_surf_single_only}\linebreak
+      \textcolor{gray!50}{\footnotesize weak-wind problem, neglecting inclination}
+    \end{textblock}
+
+
+    \begin{textblock}{0.66}[0,1](0.34,0.99)
+      \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}\,
+    \end{textblock}
+  }
+  \only<3>{
+    \begin{textblock}{0.66}[0,0](0.34,0.1)
+      \centering
+      \textcolor{green!80!black}{\Large \cmark}~\textcolor{whiteish}{\Large \bf Spin up:}\\
+      \textcolor{whiteish}{\large late and to critical rotation}
+    \end{textblock}
+    \begin{textblock}{0.66}[0,1](0.34,0.95)
+      \centering
+      \includegraphics[width=0.75\textwidth]{rot_surf_acc}\linebreak
+      \textcolor{gray!50}{\footnotesize weak-wind problem, neglecting inclination}
+    \end{textblock}
+
+
+    \begin{textblock}{0.66}[0,1](0.34,0.99)
+      \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}\,
+    \end{textblock}
+  }
+  \only<4>{
+    \begin{textblock}{0.66}[0,0](0.34,0.1)
+      \centering
+      \textcolor{green!80!black}{\Large \cmark}~\textcolor{whiteish}{\Large \bf Spin up:}\\
+      \textcolor{whiteish}{\large late and to critical rotation}
+    \end{textblock}
+    \begin{textblock}{0.66}[0,1](0.34,0.95)
+      \centering
+      \includegraphics[width=0.75\textwidth]{rot_surf_acc_inset}\linebreak
+      \textcolor{gray!50}{\footnotesize weak-wind problem, neglecting inclination}
+    \end{textblock}
+
+
+    \begin{textblock}{0.66}[0,1](0.34,0.99)
+      \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}\,
+    \end{textblock}
+  }
+
+
+
+  \only<5>{
+    \begin{textblock}{0.66}[0,0](0.34,0.1)
+      \centering
+      \textcolor{green!80!black}{\Large \cmark}~\textcolor{whiteish}{\Large \bf Pollution:}\\
+      \textcolor{whiteish}{\large Surface composition partly comes
+        from the donor's core}
+    \end{textblock}
+    \begin{textblock}{0.66}[0,0.5](0.34,0.57)
+      \centering
+      \includegraphics[width=0.5\textwidth]{N14_only.pdf}\linebreak
+      \textcolor{gray!50}{\footnotesize Joint constrain on accretion
+        and internal mixing}
+    \end{textblock}
+
+    \begin{textblock}{0.1}[0.5,0.5](0.91,0.34)
+      \begin{rotate}{-90}
+        \textcolor{whiteish}{Nitrogen mass fraction}
+      \end{rotate}
+    \end{textblock}
+
+
+    \begin{textblock}{0.66}[0,1](0.34,0.99)
+      \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}\,
+    \end{textblock}
+  }
+
+  \only<6>{
+    \begin{textblock}{0.66}[0,0](0.34,0.1)
+      \centering
+      \textcolor{green!80!black}{\Large \cmark}~\textcolor{whiteish}{\Large \bf Pollution:}\\
+      \textcolor{whiteish}{\large Surface composition partly comes
+        from the donor's core}
+    \end{textblock}
+    \begin{textblock}{0.66}[0,0.5](0.34,0.57)
+      \centering
+      \includegraphics[width=0.5\textwidth]{mix.pdf}\linebreak
+      \textcolor{gray!50}{\footnotesize Joint constrain on accretion
+        and internal mixing}
+    \end{textblock}
+
+    \begin{textblock}{0.1}[0.5,0.5](0.91,0.34)
+      \begin{rotate}{-90}
+        \textcolor{whiteish}{Nitrogen mass fraction}
+      \end{rotate}
+    \end{textblock}
+
+
+    \begin{textblock}{0.66}[0,1](0.34,0.99)
+      \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021}\,
+    \end{textblock}
+
+
+    \begin{textblock}{0.1}[0.5,0.5](0.51,0.52)
+      \begin{sideways}
+        \textcolor{whiteish}{``Mixing strength''}
+      \end{sideways}
+    \end{textblock}
+
+
+  }
+
+  \only<7>{
+    \note{binding energy of the envelope, reverse shock SNe}
+    \begin{textblock}{0.66}[0,0](0.34,0.1)
+      \centering
+      \textcolor{green!80!black}{\Large \cmark}~\textcolor{whiteish}{\Large \bf Rejuvenation:}\\
+      \textcolor{whiteish}{\large Core growth changes its outer boundary}
+    \end{textblock}
+    \begin{textblock}{0.66}[0,0.5](0.34,0.57)
+      \centering
+      \includegraphics[width=0.5\textwidth]{rho_comparison}\linebreak
+      \textcolor{gray!50}{\footnotesize \@ end of H-core burning,\\
+        later evolution amplifies differences\\[-5pt]
+        {\tiny (e.g., Renzo \emph{et al.} 2017)}}
+    \end{textblock}
+
+    \begin{textblock}{0.1}[0.5,0.5](0.51,0.52)
+      \begin{sideways}
+        \textcolor{whiteish}{``Density''}
+      \end{sideways}
+    \end{textblock}
+
+
+    \begin{textblock}{0.66}[0,1](0.34,0.99)
+      \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021, Renzo \emph{et al.} 2023}\,
+    \end{textblock}
+  }
+\end{frame}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

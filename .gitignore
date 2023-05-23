@@ -5,6 +5,7 @@
 *.aux
 *.synctex.gz
 *.log
+fig_slides/
 fig_slides/*
 auto/
 *.csv
