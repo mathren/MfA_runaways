@@ -8,5 +8,5 @@ The folder [[./talk]] contains the source code for the slides of
 [[file:talk/MfA_renzo_20230530.pdf][presentation]] (images and videos are not in the repo, but available on
 request).
 
-The folder [[./data]] contains materials for suggested exercises using
+The folder [[./playground][./playground]] contains materials for suggested exercises using
 /Gaia/ third data release.

@@ -7,10 +7,12 @@
 *.log
 fig_slides/
 fig_slides/*
+*.mp4
 auto/
 *.csv
 flathub/*
-data/.ipynb_checkpoints/*
+playground/.ipynb_checkpoints/*
 .ipynb_checkpoints/*
-data/orion/*
+playground/orion/*
 orion.zip
+*.fits
