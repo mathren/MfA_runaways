@@ -161,7 +161,7 @@ dependencies:
       - asciitree==0.3.3
       - astropy==5.3
       - astropy-healpix==0.7
-      - astroquery==0.4.7.dev8660
+      - astroquery==0.4.6
       - certifi==2023.5.7
       - charset-normalizer==3.1.0
       - click==8.1.3
