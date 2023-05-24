@@ -45,5 +45,4 @@ dataset as =csv= (comma separated values), which can be open in a spreadsheet.
 ** Image credits
 
 *** Orion Nebula composite
-  Downloaded from NSF's Noirlab.
-  [[https://noirlab.edu/public/products/education/edu024/][source zip]]
+  Downloaded from NSF's Noirlab  [[https://noirlab.edu/public/products/education/edu024/][source zip]] (download the fullRGB image)
