@@ -73,6 +73,7 @@ FlatironHub python interface.
   - strometric_n_good_obs_al
 #+end_src
 
+
 ** Quality cuts
 #+begin_src
     - Rinormalized unit weight error <1.4
@@ -80,10 +81,10 @@ FlatironHub python interface.
     - visibility_period > 17
 #+end_src
 
+
 ** List of possible exercises
 
 *** Find the peculiar velocity of the Sun
-
 
 *** Distribution of velocities of all the bright stars
 
@@ -105,3 +106,9 @@ FlatironHub python interface.
     - RA range: Approximately 83.5 to 84.5 degrees
     - DEC range: Approximately -6.5 to -5.5 degrees
     - parallax:  2210 - 2700 milliarcseconds
+
+** Image credits
+
+*** Orion Nebula composite
+
+  source zip: https://noirlab.edu/public/products/education/edu024/

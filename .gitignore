@@ -12,3 +12,5 @@ auto/
 flathub/*
 data/.ipynb_checkpoints/*
 .ipynb_checkpoints/*
+data/orion/*
+orion.zip
