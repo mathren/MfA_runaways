@@ -55,20 +55,22 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
 ** Low code (requires Google account)
 
-  [[./explore_Gaia_dr3_catalog.ipynb]] is an ipython notebook which is
-  closer to how professional astronomers work with the data, that you
-  can hopefully use as a starting point for your exploration. It
-  downloads data for stars around the Orion Nebula, and makes plots of
-  their velocities and positions.
+  [[explore_Gaia_dr3_catalog.ipynb]] is an ipython notebook which is
+  closer to how astronomers work with the data. You can hopefully use
+  it as a starting point for your exploration.
 
-  Anyone can scroll the notebook, but to run it without setting up a
-  whole tool-chain for python, you can use [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]]. Look into
-  [[mybinder.org]] for free-tier use.
+  The notebook downloads data for stars around the Orion Nebula, and
+  makes plots of their velocities and positions.
+
+  Anyone can scroll the notebook to see the output. You can also run
+  it _without setting up a whole tool-chain for python_ using [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]].
+  Look into [[mybinder.org]] for free-tier use.
 
   Flatiron Institute self-hosts an instance of binder, that you can
   use to run this notebook on Flatiron's machines. Unfortunately, this
   requires using a google account, and works better on Chrome/Chromium
-  than Firefox (I have not tested it with other browsers). To use it go to:
+  than Firefox (I have not tested it with other browsers). To use it
+  go to:
 
   https://binder.flatironinstitute.org/
 
@@ -80,30 +82,42 @@ space telescope /Gaia/, in particular the third data release (DR3).
   cuts are very rough. But you can improve all that -- and maybe find
   something not yet known to the astrophysics community!
 
+*** Tips
+
+  The Flatiron binder allows *one server per user*. If you run into an
+  error saying that there is already a server running, use the link in
+  the top right (opens in a new browser tab) to kill your existing
+  server and retry.
 
 *** Image credits
 
-   *Orion Nebula Composite* :Downloaded from NSF's Noirlab  [[https://noirlab.edu/public/products/education/edu024/][source zip]] (download the fullRGB image)
+  In the notebook I use a composite image of the Orion Nebula
+  downloaded from NSF's Noirlab [[https://noirlab.edu/public/products/education/edu024/][source zip]].
+
+  You don't need to do anything to use it in the Flatiron binder
+  enviromnet. To obtain it locally on your machine, download the
+  fullRGB image and unpack it inside of =./playground/=.
 
 
 ** Ideas of exercises
 
-*** Find the peculiar velocity of the Sun
+ - Find the peculiar velocity of the Sun
 
-  Download a sample of stars "nearby" and find the velocity common to
-  all of those (which is a reflection of the peculiar motion of the Sun)
+   Download a sample of stars "nearby" and find the velocity common to
+   all of those (which is a reflection of the peculiar motion of the
+   Sun)
 
-*** Distribution of velocities of all the bright stars
+  - Distribution of velocities of all the bright stars
 
-  Similar to the figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data
-  rather than /Gaia/'s predecessor /Hipparcos/.
+    Similar to the figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data
+    rather than /Gaia/'s predecessor /Hipparcos/.
 
-*** Galactic rotation
+  - Galactic rotation
 
-  Visualize the rotation of the Galaxy with the absolute proper
-  motions of a large sample of /Gaia/ data
+    Visualize the rotation of the Galaxy with the absolute proper
+    motions of a large sample of /Gaia/ data
 
-*** Find structures
+  - Find structures
 
 **** Galactic disk
 **** Large Magellanic Cloud (LMC):
@@ -114,7 +128,3 @@ space telescope /Gaia/, in particular the third data release (DR3).
     - RA range: Approximately 10 to 22 degrees
     - DEC range: Approximately -76 to -66 degrees
     - parallax: negative or zero
-**** Orion Nebula:
-    - RA range: Approximately 83.5 to 84.5 degrees
-    - DEC range: Approximately -6.5 to -5.5 degrees
-    - parallax:  2210 - 2700 milliarcseconds
