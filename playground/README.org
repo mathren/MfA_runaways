@@ -1,16 +1,93 @@
-#+title: Exercise with /Gaia/ DR3 data
+* Playground with /Gaia/ DR3 data
 #+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
 
+The aim is to allow you to download real bleeding-edge scientific data
+from ESA's space telescope /Gaia/, in particular the third data release
+(DR3).
 
-These are notes on how to retrieve the /Gaia/ DR3 data and play with
-them. With no coding experience, the playground can also be directly
-the FlatironHub python interface.
+** No code
 
-You can download from [FlatironHub] (fractions of) the /Gaia/ DR3
-dataset as =csv= (comma separated values), which can be open in a spreadsheet.
+ If you don't feel like coding anything to analyze these data, you can
+ still play with the data! Of course there is a limit on what you can
+ achieve, but that should be plenty for today.
+
+ Go to https://flathub.flatironinstitute.org/ and select the =Gaia DR3=
+ catalog. This will bring you to this interface:
+
+#+DOWNLOADED: screenshot @ 2023-05-25 15:22:05
+[[file:.org_notes_figures/Playground_with_/Gaia/_DR3_data/2023-05-25_15-22-05_screenshot.png]]
+
+ This allows you to use the copy of the /Gaia/ DR3 data hosted at the
+ Flatiron Institute, which contains >1.8 billion stars (see the number
+ in the bottom left)
+
+*** Tips
+
+  The tools on the right allow you to select which columns of the
+  dataset you want to download Try the =All Fields= tab, where all the
+  available columns of the dataset are listed. This is 152 columns,
+  i.e. /Gaia/ DR3 contains 152 information on each star (position,
+  velocity, errors, metadata, etc.). You probably never want all of
+  them, but what you want to plot determines what you select there.
+  Quantities you typically want:
+  - (=ra=, =dec=) which are the angles defining a position on the sky,
+  - =pmra=, =pmdec=, =rv= which are the  velocity component (in the sky and along the line of sight),
+  - =ruwe= which stands "renormalized unit weight error", a quality
+    control on the data that should be <1.4 for good data
+  - ...
 
 
-** Idea of exercises
+
+  The =Filter= tab allows to filter the data (e.g., remove bad
+  datapoints, select one region in the sky). You could for example
+  select stars in a patch of the sky and see if you find a cluster.
+
+  The top right contains a tool for on-the-fly plotting. Select the
+  type of plot, x- and y-axis and see it appear. For example you could
+  try to find the location of the Galactic disk where most stars
+  reside.
+
+*** Downloading data
+
+  From FlatironHub you can download the data as =csv=, which can then be
+  analyzed using spread sheets. Look at the bottom right format and
+  download button.
+
+
+** Low code (requires Google account)
+
+  [[./explore_Gaia_dr3_catalog.ipynb]] is an ipython notebook which is
+  closer to how professional astronomers work with the data, that you
+  can hopefully use as a starting point for your exploration. It
+  downloads data for stars around the Orion Nebula, and makes plots of
+  their velocities and positions.
+
+  Anyone can scroll the notebook, but to run it without setting up a
+  whole tool-chain for python, you can use [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]]. Look into
+  [[mybinder.org]] for free-tier use.
+
+  Flatiron Institute self-hosts an instance of binder, that you can
+  use to run this notebook on Flatiron's machines. Unfortunately, this
+  requires using a google account, and works better on Chrome/Chromium
+  than Firefox (I have not tested it with other browsers). To use it go to:
+
+  https://binder.flatironinstitute.org/
+
+  After logging in with your google credentials, enter my username
+  (will be provided) and the name of this repo =MfA_runaways=, and each
+  google user will be able to run one kernel and modify this notebook.
+
+  In this example I've not really dealt with error-bars, and quality
+  cuts are very rough. But you can improve all that -- and maybe find
+  something not yet known to the astrophysics community!
+
+
+*** Image credits
+
+   *Orion Nebula Composite* :Downloaded from NSF's Noirlab  [[https://noirlab.edu/public/products/education/edu024/][source zip]] (download the fullRGB image)
+
+
+** Ideas of exercises
 
 *** Find the peculiar velocity of the Sun
 
@@ -29,6 +106,7 @@ dataset as =csv= (comma separated values), which can be open in a spreadsheet.
 
 *** Find structures
 
+**** Galactic disk
 **** Large Magellanic Cloud (LMC):
     - RA range: Approximately 76 to 94 degrees
     - DEC range: Approximately -74 to -66 degrees
@@ -41,8 +119,3 @@ dataset as =csv= (comma separated values), which can be open in a spreadsheet.
     - RA range: Approximately 83.5 to 84.5 degrees
     - DEC range: Approximately -6.5 to -5.5 degrees
     - parallax:  2210 - 2700 milliarcseconds
-
-** Image credits
-
-*** Orion Nebula composite
-  Downloaded from NSF's Noirlab  [[https://noirlab.edu/public/products/education/edu024/][source zip]] (download the fullRGB image)
