@@ -85,8 +85,8 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
   The Flatiron binder allows *one server per user*. If you run into an
   error saying that there is already a server running, use the link in
-  the top right (opens in a new browser tab) to kill your existing
-  server and retry.
+  the top right to kill your existing server, go back, and retry
+  clicking =launch=.
 
   In this example notebook I've not really dealt with error-bars, and
   quality cuts are very rough. But you can improve all that -- and
@@ -131,3 +131,8 @@ space telescope /Gaia/, in particular the third data release (DR3).
     - RA range: Approximately 10 to 22 degrees
     - DEC range: Approximately -76 to -66 degrees
     - parallax: negative or zero
+
+** TODO list
+
+  - binder update, how to fix?
+  - how to make local files available?
