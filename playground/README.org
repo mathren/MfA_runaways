@@ -1,9 +1,8 @@
 * Playground with /Gaia/ DR3 data
 #+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
 
-The aim is to allow you to download real bleeding-edge scientific data
-from ESA's space telescope /Gaia/, in particular the third data release
-(DR3).
+The aim is to allow you to download _real bleeding-edge_ data from ESA's
+space telescope /Gaia/, in particular the third data release (DR3).
 
 ** No code
 
