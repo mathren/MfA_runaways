@@ -1,7 +1,7 @@
 * Playground with /Gaia/ DR3 data
 #+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
 
-The aim is to allow you to download _real bleeding-edge_ data from ESA's
+The aim is to allow you to download *real bleeding-edge*  data from ESA's
 space telescope /Gaia/, in particular the third data release (DR3).
 
 ** No code
@@ -63,14 +63,16 @@ space telescope /Gaia/, in particular the third data release (DR3).
   makes plots of their velocities and positions.
 
   Anyone can scroll the notebook to see the output. You can also run
-  it _without setting up a whole tool-chain for python_ using [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]].
-  Look into [[mybinder.org]] for free-tier use.
+  it *without setting up a whole tool-chain for python* using [[https://mybinder.readthedocs.io/en/latest/index.html][BinderHub]].
+  Look into [[mybinder.org]] for free-tier options if you want to deploy
+  your own notebooks for others to use without them needing to manage
+  a python installation (useful for example with students!).
 
-  Flatiron Institute self-hosts an instance of binder, that you can
-  use to run this notebook on Flatiron's machines. Unfortunately, this
-  requires using a google account, and works better on Chrome/Chromium
-  than Firefox (I have not tested it with other browsers). To use it
-  go to:
+  For today, we will use a Flatiron Institute instance of binder,
+  already set up, which allows you to run this notebook on Flatiron's
+  computers. Unfortunately, this requires using a google account, and
+  works better on Chrome/Chromium than Firefox (I have not tested it
+  with other browsers). To use it go to:
 
   https://binder.flatironinstitute.org/
 
@@ -78,9 +80,6 @@ space telescope /Gaia/, in particular the third data release (DR3).
   (will be provided) and the name of this repo =MfA_runaways=, and each
   google user will be able to run one kernel and modify this notebook.
 
-  In this example I've not really dealt with error-bars, and quality
-  cuts are very rough. But you can improve all that -- and maybe find
-  something not yet known to the astrophysics community!
 
 *** Tips
 
@@ -88,6 +87,10 @@ space telescope /Gaia/, in particular the third data release (DR3).
   error saying that there is already a server running, use the link in
   the top right (opens in a new browser tab) to kill your existing
   server and retry.
+
+  In this example notebook I've not really dealt with error-bars, and
+  quality cuts are very rough. But you can improve all that -- and
+  maybe find something not yet known to the astrophysics community!
 
 *** Image credits
 
