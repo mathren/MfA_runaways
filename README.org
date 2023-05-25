@@ -1,12 +1,15 @@
-#+Title: Live fast and die young: Massive, exploding, and speeding stars
 #+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
+
+* Live fast and die young: Massive, exploding, and speeding stars
 
 This repo contains materials for a workshop with high-school teachers
 run at [[https://www.mathforamerica.org/][Math for America]].
 
 The folder [[./talk]] contains the source code for the slides of the
-[[file:talk/MfA_renzo_20230530.pdf][presentation]] (images and videos are not in the repo, only the compiled
-pdf of the slides).
+[[file:talk/MfA_renzo_20230530.pdf][presentation (PDF, 95Mb)]]. Images and videos are not in the repo).
 
 The folder [[./playground][./playground]] contains materials for suggested exercises using
-/Gaia/ third data release.
+/Gaia/ third data release. See the [[file:./playground/README.org][instructions there]] for how to
+start playing with /Gaia/ DR3 data
+
+Feel free to fork this repo to build on it.
