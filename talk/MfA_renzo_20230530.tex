@@ -102,7 +102,10 @@
 \end{frame}
 \egroup
 
-
+\begin{frame}
+  \frametitle{Rules of engagement}
+  \todo{text from Uzma}
+\end{frame}
 
 \begin{frame}
   %%% So how do we study this process of stellar explosions? This is
@@ -160,7 +163,7 @@
       \item Leverage \textbf{open science}
       \end{itemize}
     \item<2>[\textbf{Q.}] \emph{What would \underline{you} want from
-        researchers to support your mission?}
+        researchers?}
     \end{enumerate}
 
   \end{textblock}
@@ -382,7 +385,7 @@
     }
     \frametitle{\textcolor{whiteish}{Why massive stars?~{\footnotesize ($M_\mathrm{initial} \gtrsim 7.5\,M_\odot$)}}}
     \begin{textblock}{0.66}[0.,0.5](0.35,0.55)
-      \textcolor{whiteish}{\large \bf $\zeta$ Ophiuchi is the nearest O-type star to Earth}
+      \textcolor{whiteish}{\large \bf $\zeta$ Ophiuchi is the nearest massive star to Earth}
     \end{textblock}
   }
 
@@ -528,7 +531,7 @@
   \end{textblock}
   \begin{textblock}{0.32}[0.5,0.5](0.8, 0.74)
     \begin{center}
-      \textcolor{whiteish}{70\% of O-type stars}\\[-2pt]
+      \textcolor{whiteish}{70\% of massive stars}\\[-2pt]
       \hfill\textcolor{gray!50}{\tiny Sana \emph{et al.} 2012}\,
     \end{center}
   \end{textblock}
@@ -702,13 +705,12 @@
     \color{black}$v_\mathrm{3D} \ \mathrm{[km\ s^{-1}]}$
   \end{textblock}
 
-    \begin{textblock}{0.32}[1,0.5](0.98,0.35)
+    \begin{textblock}{0.35}[1,0.5](0.98,0.35)
       \centering
       \setbeamercolor{block title}{use=structure,fg=Blue,bg=white!80!Yellow}
       \setbeamercolor{block body}{use=structure,fg=black,bg=white!80!Yellow}
-      \begin{block}{\centering Runaway stars}
-        \centering Tail of the velocity distribution\\
-        Typically have fewer companion stars\\[5pt]
+      \begin{block}{\centering Runaways are the tail}
+        Typically have fewer companions\\[5pt]
         {\tiny \hfill \textcolor{gray!50}{Blaauw 61}\,}
       \end{block}
     \end{textblock}
@@ -742,6 +744,12 @@
   \begin{textblock}{1}[0.,1](0.01,0.99)
     \textcolor{gray!50}{\tiny Tetzlaff \emph{et al.} 2011}
   \end{textblock}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How to measure stellar velocities \textcolor{red}{?}}
 
 \end{frame}
 
@@ -808,6 +816,13 @@
         \vspace*{-45pt}
         \hspace*{-5pt}\includegraphics[width=1.2\textwidth]{./fig_slides/line2}
       \end{minipage}}
+    \only<2>{
+      \begin{textblock}{0.25}[0.5,1](0.5,0.99)
+        \centering
+        \includegraphics[width=\textwidth]{dark_side_of_the_moon.png}\\
+        \textcolor{gray!50}{\tiny Credits: Pink Floyd}
+      \end{textblock}
+    }
 \end{center}
 \end{frame}
 
@@ -818,7 +833,7 @@
 \begin{frame}
   \frametitle{Measuring distances is one of the most difficult things
     in astrophysics}
-
+  \note{\todo{Explain Parallax!}}
 \end{frame}
 
 \egroup
@@ -860,8 +875,8 @@
 \section{\textcolor{Blue}{A ``renaissance'' of stellar physics}}
 \subsection{driven by the \textcolor{Blue}{\emph{Gaia}} space-telescope}
 
-\begin{frame}{\emph{Gaia}~scans the sky to measure distances and
-    velocities of \underline{billions} of stars}
+\begin{frame}{\emph{Gaia}~scans the sky to measure $d$ and
+    $v$ of \underline{10s of billions} of stars}
   \note{European Space Agency mission, public data}
 
 
@@ -966,14 +981,14 @@
   \begin{textblock}{0.54}[0.,0.5](0.0,0.28)
     \centering
     \begin{itemize}
-    \item<2->[\textcolor{white!80!Yellow}{\textbullet}]
+    \item[\textcolor{white!80!Yellow}{\textbullet}]
       \textcolor{white!80!Yellow}{\bf Spin-up}\\[-4pt]
       \textcolor{gray!50}{\tiny Packet 1981, Cantiello \emph{et al.}
         2007, de Mink \emph{et al.} 2013, Renzo \& G\"otberg 2021}\\[3pt]
-    \item<3->[\textcolor{white!80!Yellow}{\textbullet}]
+    \item[\textcolor{white!80!Yellow}{\textbullet}]
       \textcolor{white!80!Yellow}{\bf Pollution}\\[-4pt]
       \textcolor{gray!50}{\tiny Blaauw 1993, Renzo \& G\"otberg 2021}\\[3pt]
-    \item<4>[\textcolor{white!80!Yellow}{\textbullet}]
+    \item[\textcolor{white!80!Yellow}{\textbullet}]
       \textcolor{white!80!Yellow}{\bf Rejuvenation}\\[-4pt]
       \textcolor{gray!50}{\tiny Hellings 1983, 1985, Renzo \emph{et al.} 2023}
     \end{itemize}
@@ -989,14 +1004,313 @@
 \egroup
 
 
+\begin{frame}
+  \frametitle{What exactly disrupts  the binary?}
+
+
+  \only<1>{
+    \begin{textblock}{1}[0.5,1](0.5,0.99)
+      \centering
+      \includegraphics[height=0.85\textheight]{SN_bin.pdf}
+    \end{textblock}
+  }
+
+\only<2>{
+    \begin{textblock}{1}[0.5,1](0.5,0.99)
+      \centering
+      \includegraphics[height=0.85\textheight]{SN_bin_arrow.pdf}
+    \end{textblock}
+
+    \begin{textblock}{0.31}[1,0.5](0.99,0.58)
+      %% semi-transparent box
+      \addtobeamertemplate{block
+        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+      \begin{block}{\centering \textcolor{red}{\bf SN Natal kick}}
+        \textcolor{gray!50}{\tiny (Shklovskii 70, Katz 75, Janka 13, 17)}
+      \end{block}
+    \end{textblock}
+   }
+
+  \begin{textblock}{0.28}[0.5,0.5](0.36,0.37)
+    %% semi-transparent box
+    \addtobeamertemplate{block
+      begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+    \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+    \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+    \begin{block}{\centering \bf Ejecta impact}
+      \textcolor{gray!50}{\tiny (Tauris \&
+        Takens 98,
+        Liu \emph{et al.} 15)}
+    \end{block}
+  \end{textblock}
+
+  \begin{textblock}{0.28}[0.5,0.5](0.6,0.8)
+    %% semi-transparent box
+    \addtobeamertemplate{block
+      begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+    \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+    \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+    \begin{block}{\centering \bf Loss of SN ejecta}
+      \textcolor{gray!50}{\tiny (Blaauw '61)}
+    \end{block}
+  \end{textblock}
+
+
+
+
+  \begin{textblock}{1}[0.5,0.08](0.5,0.15)
+    \centering\Large \textcolor{Blue}{{\Huge $86^{+11}_{-22}\%$} of massive binaries are
+      disrupted}
+  \end{textblock}
+
+  \begin{textblock}{0.5}[0, 1](0.01, 0.99) \textcolor{gray!50}{\tiny
+      Renzo \emph{et al.} 19b, Kochanek  \emph{et al.} 19,\\[-7pt]
+      Eldridge \emph{et al.} 11, De~Donder \emph{et al. 97}}
+\end{textblock}
+
+\end{frame}
+
+
+
+\begin{frame}[c]
+  \frametitle{Why kicks?~Neutron stars are usually faster than their
+    progenitor stars}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.53)
+    \centering
+    \includegraphics[width=\textwidth]{guitar_nebula_complete}\\
+    {``Guitar nebula'':  $v_{\rm NS}\simeq1000\,\mathrm{km \ s^{-1}}$}
+  \end{textblock}
+
+  \begin{textblock}{1}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Cordes \emph{et al.} 1993, Chatterjee
+      \& Cordes 2004, de~Vries
+      \emph{et al.} 2022, }
+  \end{textblock}
+  \begin{textblock}{1}[0.5,1](0.5,0.15)
+    \centering \textcolor{gray!50}{\tiny \emph{HST}}
+  \end{textblock}
+
+  \only<2>{
+    \begin{textblock}{0.2}[1,1](0.92,0.99)
+      \includegraphics[width=\textwidth]{fig_slides/bow_wave_cargo}
+    \end{textblock}
+  }
+
+\end{frame}
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+  \note{What causes these natal kicks responsible for the binary
+  disruption?
+  From an observational point of view we know they exists because
+  we see pulsars moving much faster than their parent O and early B
+  type stars. From a theoretical perspective, we think that these
+  kicks are due to asymmetries in the explosion dynamics, either in
+  the neutrino flux that drives the explosion (although this is
+  presently a bit disfavored) or because of the hydrodynamical
+  instabilities in the explosion. For instance, here you see an
+  entropy rendering of the core of an exploding 15Msun star, but
+  for simplicity you can think of the color as the density. As you
+  can see, this is not spherically symmetric: here you have a big
+  red clump, which if it is denser, can gravitationally pull the
+  proto-compact object (for up to a second) and as long as we have
+  some ejecta in the other direction to conserve momentum, we can
+  accelerate the proto compact object in the direction of the
+  densest ejecta. }
+  \frametitle{\textcolor{white!80!Yellow}{Asymmetries in the explosion
+    cause the ``kick''}}
+  \centering
+  % \begin{textblock}{1}[0.5,1](0.5,0.13)
+  %   \textcolor{white!80!Yellow}{Observationally:~$v_\mathrm{pulsar} \gg v_\mathrm{OB-stars}$}
+  % \end{textblock}
+
+  \only<1>{
+    \begin{textblock}{0.2}[1,1](0.99,0.35)
+      \includegraphics[width=\textwidth]{onion.png}
+    \end{textblock}
+    \begin{textblock}{0.3}[0.,0](0.0,0.15)
+      \begin{itemize}
+        \color{whiteish}
+      \item[\textcolor{whiteish}{\textbullet}] $\nu$-driven convection
+      \item[\textcolor{whiteish}{\textbullet}] rotation
+      \item[\textcolor{whiteish}{\textbullet}] hydrodynamical flow
+      \end{itemize}
+    \end{textblock}
+  }
+  % \vspace*{30pt}
+  % {
+  %   \Large \centering
+  %   \textcolor{white!80!Yellow}{
+  %   Physically:~$\nu$ emission and/or ejecta anisotropies}\linebreak
+  %   \phantom{Bla}
+  % }
+  % \vspace*{10pt}
+  \only<1>{\includegraphics[height=0.95\textheight]{SN_asymmetry}} \only<2>{\hspace*{-6pt}\vspace*{-1pt}\includegraphics[height=0.95\textheight]{SN_asymmetry2}}
+
+
+  \begin{textblock}{1}[1, 1](0.99,0.99)
+    \hfill\textcolor{gray!50}{\tiny Credits: S.~Drasco}\,
+  \end{textblock}
+\end{frame}
+\egroup
+
+
+\begin{frame}{Kicks do not change companion velocity}
+
+    \begin{textblock}{1}[0.5,1](0.5,0.99)
+      \centering
+      \includegraphics[height=0.85\textheight]{SN_bin_arrow2.pdf}
+    \end{textblock}
+
+    \begin{textblock}{0.3}[1,0.5](0.99,0.58)
+      %% semi-transparent box
+      \addtobeamertemplate{block
+        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+      \begin{block}{\centering \textcolor{red}{\bf SN Natal kick}}
+        \textcolor{gray!50}{\tiny (Shklovskii 70, Katz 75, Janka 13, 17)}
+      \end{block}
+    \end{textblock}
+
+    \begin{textblock}{0.32}[0.5,0.5](0.2,0.42)
+            \addtobeamertemplate{block
+        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+      \begin{block}{\centering \Huge \bf $v_\mathrm{dis}\simeq v_2^\mathrm{orb}$}
+        \hfill before the SN\,
+      \end{block}
+    \end{textblock}
+
+
+  % \begin{textblock}{0.28}[0.5,0.5](0.36,0.37)
+  %   %% semi-transparent box
+  %   \addtobeamertemplate{block
+  %     begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+  %   \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+  %   \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+  %   \begin{block}{\centering \bf Ejecta impact}
+  %     \textcolor{gray!50}{\tiny (Tauris \&
+  %       Takens 98,
+  %       Liu \emph{et al.} 15, Hirai \emph{et al.} 18)}
+  %   \end{block}
+  % \end{textblock}
+
+  % \begin{textblock}{0.28}[0.5,0.5](0.6,0.8)
+  %   %% semi-transparent box
+  %   \addtobeamertemplate{block
+  %     begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+  %   \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
+  %   \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
+  %   \begin{block}{\centering \bf Loss of SN ejecta}
+  %     \textcolor{gray!50}{\tiny (Blaauw '61)}
+  %   \end{block}
+  % \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.08](0.5,0.15)
+    \centering\Large \textcolor{Blue}{{\Huge $86^{+11}_{-22}\%$} of massive binaries are
+      disrupted}
+  \end{textblock}
+
+  \begin{textblock}{0.5}[0, 1](0.01, 0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 19b, Kochanek
+      \emph{et al.} 19,\\[-7pt]
+      Eldridge \emph{et al.} 11,
+    De~Donder \emph{et al. 97}}
+\end{textblock}
+\end{frame}
+
+
+
+
+\begin{frame}
+  \note{The first thing I want to draw your attention on is of course the velocity
+    distribution of ejected widowed stars. Here you see the tail of
+    the distribution above 30km/s (the typical threshold to define
+    runaways). The three colors correspond to three lower mass cuts.
+    The main thing to notice here is that *BINARIES HAVE A VERY HARD
+    TIME PRODUCING MASSIVE RUNAWAYS FASTER THAN ~60kms*.}
+  \frametitle{Accretor stars can be \emph{runaways}...}
+  \centering
+  \only<1>{\includegraphics[width=\textwidth]{incomplete_vdist}}
+
+  \begin{textblock}{0.45}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 2019b}\hfill\,
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.94)
+    \textcolor{gray!50}{Velocity w.r.t. pre-explosion binary center of mass}
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Numerical results:   \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
+  \end{textblock}
+\end{frame}
+
+\begin{frame}
+  \note{Take home points:
+    \begin{itemize}
+    \item {Walkaways outnumber the runaways by
+        $\sim10\times$}
+    \item {Binaries barely produce fast runaways}
+    \item {All runaways from binaries are post-interaction objects}
+    \end{itemize}
+  }
+  \frametitle{...but most are only \emph{walkaways}}
+  \centering
+  \includegraphics[width=\textwidth]{complete_vdist}
+  \begin{textblock}{0.45}[0,1](0.01,0.99)
+    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 2019b}\hfill\,
+  \end{textblock}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.94)
+    \textcolor{gray!50}{Velocity w.r.t. pre-explosion binary center of mass}
+  \end{textblock}
+
+
+
+  \begin{textblock}{1}[0.5,1](0.5,0.99)
+    \centering
+    \textcolor{gray!50}{\tiny Numerical results:
+      \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
+  \end{textblock}
+
+
+
+
+  \only<2>{
+    \begin{textblock}{0.95}[0.5,0.5](0.5,0.54)
+      \includegraphics[height=0.95\textheight]{binary_arrows}
+    \end{textblock}
+    \begin{textblock}{0.75}[0.5,0.5](0.5,0.195)
+      \textcolor{white!80!Yellow}{\Large Under-production of runaways because}
+    \end{textblock}
+
+    \begin{textblock}{0.75}[0.5,0.5](0.5,0.81)
+      \textcolor{white!80!Yellow}{\Large mass transfer increases the\linebreak
+        accretors' masses\linebreak and \emph{overall} widens the
+        binaries}
+    \end{textblock}
+  }
+\end{frame}
+
+
+
 
 
 \bgroup
 \metroset{progressbar=none}
 \setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{zoph_onethird}}
 \begin{frame}
-  \frametitle{\textcolor{whiteish}{Using the nearest O-type star to
-      Earth to pin accretor's models}}
+  \frametitle{\textcolor{whiteish}{Constrain BSN with the nearest massive star to
+      Earth}}
 
   \begin{textblock}{1}[0,1](0.34,0.99)
     \textcolor{gray!50}{\tiny
@@ -1090,310 +1404,6 @@
   }
 \end{frame}
 \egroup
-
-
-
-\begin{frame}
-  \frametitle{What exactly disrupts  the binary?}
-
-
-  \only<1>{
-    \begin{textblock}{1}[0.5,1](0.5,0.99)
-      \centering
-      \includegraphics[height=0.85\textheight]{SN_bin.pdf}
-    \end{textblock}
-  }
-
-\only<2>{
-    \begin{textblock}{1}[0.5,1](0.5,0.99)
-      \centering
-      \includegraphics[height=0.85\textheight]{SN_bin_arrow.pdf}
-    \end{textblock}
-
-    \begin{textblock}{0.31}[1,0.5](0.99,0.58)
-      %% semi-transparent box
-      \addtobeamertemplate{block
-        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-      \begin{block}{\centering \textcolor{red}{\bf SN Natal kick}}
-        \textcolor{gray!50}{\tiny (Shklovskii 70, Katz 75, Janka 13, 17)}
-      \end{block}
-    \end{textblock}
-   }
-
-  \begin{textblock}{0.28}[0.5,0.5](0.36,0.37)
-    %% semi-transparent box
-    \addtobeamertemplate{block
-      begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-    \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-    \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-    \begin{block}{\centering \bf Ejecta impact}
-      \textcolor{gray!50}{\tiny (Tauris \&
-        Takens 98,
-        Liu \emph{et al.} 15)}
-    \end{block}
-  \end{textblock}
-
-  \begin{textblock}{0.28}[0.5,0.5](0.6,0.8)
-    %% semi-transparent box
-    \addtobeamertemplate{block
-      begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-    \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-    \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-    \begin{block}{\centering \bf Loss of SN ejecta}
-      \textcolor{gray!50}{\tiny (Blaauw '61)}
-    \end{block}
-  \end{textblock}
-
-
-
-
-  \begin{textblock}{1}[0.5,0.08](0.5,0.15)
-    \centering\Large \textcolor{Blue}{{\Huge $86^{+11}_{-22}\%$} of massive binaries are
-      disrupted}
-  \end{textblock}
-
-  \begin{textblock}{0.5}[0, 1](0.01, 0.99) \textcolor{gray!50}{\tiny
-      Renzo \emph{et al.} 19b, Kochanek  \emph{et al.} 19,\\[-7pt]
-      Eldridge \emph{et al.} 11, De~Donder \emph{et al. 97}}
-\end{textblock}
-
-\end{frame}
-
-
-\section{\textcolor{Blue}{SN kicks}}
-
-\begin{frame}[c]
-  \frametitle{Why kicks?~Neutron stars are usually faster than their
-    progenitor stars}
-
-  \begin{textblock}{1}[0.5,0.5](0.5,0.53)
-    \centering
-    \includegraphics[width=\textwidth]{guitar_nebula_complete}\\
-    {``Guitar nebula'':  $v_{\rm NS}\simeq1000\,\mathrm{km \ s^{-1}}$}
-  \end{textblock}
-
-  \begin{textblock}{1}[0,1](0.01,0.99)
-    \textcolor{gray!50}{\tiny Cordes \emph{et al.} 1993, Chatterjee
-      \& Cordes 2004, de~Vries
-      \emph{et al.} 2022, }
-  \end{textblock}
-  \begin{textblock}{1}[0.5,1](0.5,0.15)
-    \centering \textcolor{gray!50}{\tiny \emph{HST}}
-  \end{textblock}
-
-  \only<2>{
-    \begin{textblock}{0.2}[1,1](0.92,0.99)
-      \includegraphics[width=\textwidth]{fig_slides/bow_wave_cargo}
-    \end{textblock}
-  }
-
-\end{frame}
-
-\bgroup
-\metroset{progressbar=none}
-\setbeamercolor{background canvas}{bg=black}
-\begin{frame}
-  \note{What causes these natal kicks responsible for the binary
-  disruption?
-  From an observational point of view we know they exists because
-  we see pulsars moving much faster than their parent O and early B
-  type stars. From a theoretical perspective, we think that these
-  kicks are due to asymmetries in the explosion dynamics, either in
-  the neutrino flux that drives the explosion (although this is
-  presently a bit disfavored) or because of the hydrodynamical
-  instabilities in the explosion. For instance, here you see an
-  entropy rendering of the core of an exploding 15Msun star, but
-  for simplicity you can think of the color as the density. As you
-  can see, this is not spherically symmetric: here you have a big
-  red clump, which if it is denser, can gravitationally pull the
-  proto-compact object (for up to a second) and as long as we have
-  some ejecta in the other direction to conserve momentum, we can
-  accelerate the proto compact object in the direction of the
-  densest ejecta. }
-  \frametitle{\textcolor{white!80!Yellow}{Asymmetries in the explosion
-    cause the ``kick''}}
-  \centering
-  % \begin{textblock}{1}[0.5,1](0.5,0.13)
-  %   \textcolor{white!80!Yellow}{Observationally:~$v_\mathrm{pulsar} \gg v_\mathrm{OB-stars}$}
-  % \end{textblock}
-
-  \only<1>{
-    \begin{textblock}{0.2}[1,1](0.99,0.35)
-      \includegraphics[width=\textwidth]{onion.png}
-    \end{textblock}
-  }
-
-
-  \only<2>{
-    \begin{textblock}{0.3}[0.,0](0.0,0.15)
-      \begin{itemize}
-        \color{whiteish}
-      \item[\textcolor{whiteish}{\textbullet}] $\nu$-driven convection
-      \item[\textcolor{whiteish}{\textbullet}] rotation
-      \item[\textcolor{whiteish}{\textbullet}] hydrodynamical flow
-      \end{itemize}
-    \end{textblock}
-  }
-  % \vspace*{30pt}
-  % {
-  %   \Large \centering
-  %   \textcolor{white!80!Yellow}{
-  %   Physically:~$\nu$ emission and/or ejecta anisotropies}\linebreak
-  %   \phantom{Bla}
-  % }
-  % \vspace*{10pt}
-  \only<1-2>{\includegraphics[height=0.95\textheight]{SN_asymmetry}} \only<3>{\hspace*{-6pt}\vspace*{-1pt}\includegraphics[height=0.95\textheight]{SN_asymmetry2}}
-
-
-  \begin{textblock}{1}[1, 1](0.99,0.99)
-    \hfill\textcolor{gray!50}{\tiny Credits: C.~D.~Ott, S.~Drasco}\,
-  \end{textblock}
-\end{frame}
-\egroup
-
-
-\begin{frame}{Kicks do not change companion velocity}
-
-    \begin{textblock}{1}[0.5,1](0.5,0.99)
-      \centering
-      \includegraphics[height=0.85\textheight]{SN_bin_arrow2.pdf}
-    \end{textblock}
-
-    \begin{textblock}{0.3}[1,0.5](0.99,0.58)
-      %% semi-transparent box
-      \addtobeamertemplate{block
-        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-      \begin{block}{\centering \textcolor{red}{\bf SN Natal kick}}
-        \textcolor{gray!50}{\tiny (Shklovskii 70, Katz 75, Janka 13, 17)}
-      \end{block}
-    \end{textblock}
-
-    \begin{textblock}{0.32}[0.5,0.5](0.2,0.42)
-            \addtobeamertemplate{block
-        begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-      \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-      \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-      \begin{block}{\centering \Huge \bf $v_\mathrm{dis}\simeq v_2^\mathrm{orb}$}
-        \hfill before the SN\,
-      \end{block}
-    \end{textblock}
-
-
-  % \begin{textblock}{0.28}[0.5,0.5](0.36,0.37)
-  %   %% semi-transparent box
-  %   \addtobeamertemplate{block
-  %     begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-  %   \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-  %   \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-  %   \begin{block}{\centering \bf Ejecta impact}
-  %     \textcolor{gray!50}{\tiny (Tauris \&
-  %       Takens 98,
-  %       Liu \emph{et al.} 15, Hirai \emph{et al.} 18)}
-  %   \end{block}
-  % \end{textblock}
-
-  % \begin{textblock}{0.28}[0.5,0.5](0.6,0.8)
-  %   %% semi-transparent box
-  %   \addtobeamertemplate{block
-  %     begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
-  %   \setbeamercolor{block body}{use=structure,bg=white!80!Yellow}
-  %   \setbeamercolor{block title}{use=structure,bg=white!80!Yellow}
-  %   \begin{block}{\centering \bf Loss of SN ejecta}
-  %     \textcolor{gray!50}{\tiny (Blaauw '61)}
-  %   \end{block}
-  % \end{textblock}
-
-  \begin{textblock}{1}[0.5,0.08](0.5,0.15)
-    \centering\Large \textcolor{Blue}{{\Huge $86^{+11}_{-22}\%$} of massive binaries are
-      disrupted}
-  \end{textblock}
-
-  \begin{textblock}{0.5}[0, 1](0.01, 0.99)
-    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 19b, Kochanek
-      \emph{et al.} 19,\\[-7pt]
-      Eldridge \emph{et al.} 11,
-    De~Donder \emph{et al. 97}}
-\end{textblock}
-\end{frame}
-
-
-
-\begin{frame}
-  \note{The first thing I want to draw your attention on is of course the velocity
-    distribution of ejected widowed stars. Here you see the tail of
-    the distribution above 30km/s (the typical threshold to define
-    runaways). The three colors correspond to three lower mass cuts.
-    The main thing to notice here is that *BINARIES HAVE A VERY HARD
-    TIME PRODUCING MASSIVE RUNAWAYS FASTER THAN ~60kms*.}
-  \frametitle{Accretor stars can be \emph{runaways}...}
-  \centering
-  \only<1>{\includegraphics[width=\textwidth]{incomplete_vdist}}
-
-  \begin{textblock}{0.45}[0,1](0.01,0.99)
-    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 2019b}\hfill\,
-  \end{textblock}
-
-  \begin{textblock}{1}[0.5,0.5](0.5,0.94)
-    \textcolor{gray!50}{Velocity w.r.t. pre-explosion binary center of mass}
-  \end{textblock}
-
-  \begin{textblock}{1}[0.5,1](0.5,0.99)
-    \centering
-    \textcolor{gray!50}{\tiny Numerical results:   \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
-  \end{textblock}
-\end{frame}
-
-\begin{frame}
-  \note{Take home points:
-    \begin{itemize}
-    \item {Walkaways outnumber the runaways by
-        $\sim10\times$}
-    \item {Binaries barely produce fast runaways}
-    \item {All runaways from binaries are post-interaction objects}
-    \end{itemize}
-  }
-  \frametitle{...but most are only \emph{walkaways}}
-  \centering
-  \includegraphics[width=\textwidth]{complete_vdist}
-  \begin{textblock}{0.45}[0,1](0.01,0.99)
-    \textcolor{gray!50}{\tiny Renzo \emph{et al.} 2019b}\hfill\,
-  \end{textblock}
-
-  \begin{textblock}{1}[0.5,0.5](0.5,0.94)
-    \textcolor{gray!50}{Velocity w.r.t. pre-explosion binary center of mass}
-  \end{textblock}
-
-
-
-  \begin{textblock}{1}[0.5,1](0.5,0.99)
-    \centering
-    \textcolor{gray!50}{\tiny Numerical results:
-      \href{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}{http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/624/A66}}
-  \end{textblock}
-
-
-
-
-  \only<2>{
-    \begin{textblock}{0.95}[0.5,0.5](0.5,0.54)
-      \includegraphics[height=0.95\textheight]{binary_arrows}
-    \end{textblock}
-    \begin{textblock}{0.75}[0.5,0.5](0.5,0.195)
-      \textcolor{white!80!Yellow}{\Large Under-production of runaways because}
-    \end{textblock}
-
-    \begin{textblock}{0.75}[0.5,0.5](0.5,0.81)
-      \textcolor{white!80!Yellow}{\Large mass transfer increases the\linebreak
-        accretors' masses\linebreak and \emph{overall} widens the
-        binaries}
-    \end{textblock}
-  }
-\end{frame}
-
 
 
 
@@ -1698,7 +1708,7 @@
 
 \begin{frame}
   \frametitle{\emph{Gaia} ``renaissance'' of stellar
-    physics $\Rightarrow$ implications for astro}
+    physics $\Rightarrow$ \textcolor{red}{wide} implications for astro}
 
   \begin{textblock}{0.3}[0,0.5](0.01,0.5)
     \centering
@@ -1770,7 +1780,29 @@
           \end{block}
   \end{textblock}
 \end{frame}
+
+
+\begin{frame}[plain]
+  \begin{textblock}{1}[0.5,0.5](0.5,0.5)
+    \centering
+    \includegraphics[height=\paperheight]{fig_slides/orion3}
+  \end{textblock}
+
+
+
+  \begin{textblock}{0.04}[0.5,0.5](0.97,0.5)
+      \begin{block}{}
+            \begin{sideways}
+              \color{Blue}
+              \centering
+              \Large Orion
+            \end{sideways}
+          \end{block}
+  \end{textblock}
+\end{frame}
 \egroup
+
+
 
 
 \appendix
