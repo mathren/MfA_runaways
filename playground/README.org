@@ -9,7 +9,7 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
  If you don't feel like coding anything to analyze these data, you can
  still play with the data! Of course there is a limit on what you can
- achieve, but that should be plenty for today.
+ achieve, but that should be plenty for today
 
  Go to https://flathub.flatironinstitute.org/ and select the =Gaia DR3=
  catalog. This will bring you to this interface:
@@ -79,8 +79,6 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
   *Disclaimer: *All storage is temporary and regularly purged.
   Do not store any sensitive or critical data.*
-
-  https://binder.flatironinstitute.org/
 
   [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
 
