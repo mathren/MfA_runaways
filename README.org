@@ -12,4 +12,6 @@ The folder [[./playground][./playground]] contains materials for suggested exerc
 /Gaia/ third data release. See the [[file:./playground/README.org][instructions there]] for how to
 start playing with /Gaia/ DR3 data
 
+Jump to running an ipython notebook exploring /Gaia/ DR3 data: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+
 Feel free to fork this repo to build on it.
