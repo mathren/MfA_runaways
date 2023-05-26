@@ -62,6 +62,7 @@
 \metroset{progressbar=none}
 \setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{zoph_onethird}}
 \begin{frame}[plain]
+  \note{I will \textbf{NOT} talk about stars like the Sun}
   \begin{textblock}{0.5}[0.5,0.5](0.66,0.25)
     % \begin{tcolorbox}[boxrule=0pt,standard jigsaw, colback=black,
     %   left=0pt, right=0pt, top=0pt, bottom=0pt,
@@ -94,6 +95,13 @@
 \end{frame}
 \egroup
 
+
+\begin{frame}
+  \frametitle{Rules of engagement}
+  \todo{text from Uzma}
+\end{frame}
+
+
 \bgroup
 \metroset{progressbar=none}
 \setbeamertemplate{background}{\includegraphics[width=\paperwidth, keepaspectratio]{where_i_am_from}}
@@ -101,11 +109,6 @@
 
 \end{frame}
 \egroup
-
-\begin{frame}
-  \frametitle{Rules of engagement}
-  \todo{text from Uzma}
-\end{frame}
 
 \begin{frame}
   %%% So how do we study this process of stellar explosions? This is
@@ -227,8 +230,7 @@
 
 
 \begin{frame}{\textcolor{whiteish}{Stars produce their own energy by nuclear fusion}}
-      \note{
-        \newline \textcolor{red}{Nucleosynthesis} deep
+      \note{ \textcolor{red}{Nucleosynthesis} deep
         \textbf{inside}, in the \textbf{center} which we usually call
         ``core''.
 
@@ -260,19 +262,39 @@
 \end{frame}
 \egroup
 
-
 \begin{frame}[c]
   \frametitle{Core burns heavier fuel, shells burn the leftovers}
-  \begin{textblock}{0.75}[0.,0.0](0.01,0.12)
-    \includegraphics[width=0.54\textwidth]{binding_nuc}
+  \begin{textblock}{1}[0.5,0.5](0.6,0.6)
+    \centering
+    \only<1>{\includegraphics[width=0.7\textwidth]{onion_sun0.png}}
+    \only<2>{\includegraphics[width=0.7\textwidth]{onion_sun.png}}
+  \end{textblock}
+  \only<2>{
+
+   \begin{textblock}{0.355}[0,0](0.02,0.15)
+    \includegraphics[width=\textwidth]{WD}
   \end{textblock}
 
-  \begin{textblock}{1}[1,1](1.30,0.99)
+  \begin{textblock}{0.355}[0,0](0.03,0.14)
+    \begin{center}
+      \textcolor{whiteish}{The Sun will turn into a\\
+        \textbf{white dwarf}}
+    \end{center}
+  \end{textblock}
+}
+
+\end{frame}
+
+
+\begin{frame}[c]
+  \frametitle{Massive stars burn until Iron, then gravity wins}
+
+  \begin{textblock}{1}[0.5,0.5](0.6,0.6)
+    \centering
     \includegraphics[width=0.7\textwidth]{onion.png}
-  \end{textblock}
-
-  \begin{textblock}{0.4}[0.5,0.5](0.755,0.56)
-    \begin{rotate}{30}
+    \end{textblock}
+\begin{textblock}{0.4}[0.5,0.5](0.67,0.56)
+    \begin{rotate}{32}
       \centering
       ``Onion'' structure
     \end{rotate}
@@ -1820,6 +1842,12 @@
   \end{textblock}
 \end{frame}
 \egroup
+
+
+\begin{frame}{Nuclear specific binding energy}
+  \centering
+  \includegraphics[height=\textheight]{binding_nuc}
+\end{frame}
 
 \begin{frame}[c]
   \frametitle{Do BHs receive kicks\textcolor{red}{\bf ?}}
