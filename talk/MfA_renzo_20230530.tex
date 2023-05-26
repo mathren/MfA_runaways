@@ -274,7 +274,7 @@
     \includegraphics[width=\textwidth]{WD}
   \end{textblock}
 
-  \begin{textblock}{0.355}[0,0](0.03,0.14)
+  \begin{textblock}{0.355}[0,0](0.03,0.12)
     \begin{center}
       \textcolor{whiteish}{The Sun will turn into a\\
         \textbf{white dwarf}}
@@ -311,81 +311,10 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Stars are like people: they get bigger as they grow}
-  \only<1>{\includegraphics[height=\textheight]{16MsunRadius_empty}
-  \note{Introduce log-scale}}
-  \only<2>{\includegraphics[height=\textheight]{16MsunRadius_MS}}
-  \only<3-4>{\includegraphics[height=\textheight]{16MsunRadius_no_annotations}}
+  \frametitle{Supernova explosion: the birth Neutron Stars or Black
+    Holes }
 
-  \only<2>{
-    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
-      \centering
-      \textbf{Main sequence:}\\
-      H$\rightarrow$ He, 90\% of stellar lifetime
-    \end{textblock}
-  }
-
-  \only<2-4>{
-    \begin{textblock}{0.1}[0.5,0.5](0.15,0.75)
-      \includegraphics[width=\textwidth]{MS}
-    \end{textblock}
-  }
-
-  \only<3>{
-    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
-      \centering
-      \textbf{Red (super) giant:}\\
-      Core+shell burning, 10\% of stellar lifetime
-    \end{textblock}
-  }
-
-  \only<3-4>{
-    \begin{textblock}{0.3}[0.5,0.5](0.28,0.35)
-      \includegraphics[width=\textwidth]{RSG}
-    \end{textblock}
-  }
-
-
-%   \only<4>{
-%     \begin{textblock}{0.55}[1,0.5](1.05,0.5)
-%       \includegraphics[width=\textwidth]{onion.pdf}
-%     \end{textblock}
-%     \frametitle{Only the center is hot enough to burn heavy fuel}
-%     \begin{textblock}{0.4}[0.,0.5](0.5,0.35)
-%       \centering
-%       ``Onion'' structure
-%     \end{textblock}
-
-
-%     \note{Fe cannot release energy through nuclear fusion}
-% }
-
-
-  \only<4>{
-    \begin{textblock}{0.2}[0.5,0.5](0.53,0.27)
-      \includegraphics[width=\textwidth]{SN}
-    \end{textblock}
-
-    \begin{textblock}{0.4}[0.5,0.5](0.75,0.53)
-      \centering
-      \textbf{Core collapse} and possibly \textbf{supernova
-        explosion}:\\
-      $$\tau(M)\propto M^{-\alpha} \simeq 3-50\,\mathrm{Myr}$$
-      \hfill\textcolor{gray!50}{\tiny for $M\gtrsim 7.5\,M_\odot$, e.g., Zapartas et al. 2017}
-    \end{textblock}
-
-  }
-
-  \begin{textblock}{0.3}[0.5,1](0.75,0.99)
-    \centering
-    \small
-    \color{gray!50}{\tiny Simulation output from}\\
-    \includegraphics[width=0.35\textwidth]{MESA}
-  \end{textblock}
 \end{frame}
-
-
-
 
 
 \AtBeginSection[]{}
@@ -830,7 +759,8 @@
         {\small \centering (\textcolor{red}{if} relatively \textcolor{red}{nearby})}
         \vspace*{5pt}
       \item<2->[] Doppler shifts \hfill
-        \textcolor{Blue}{$\Rightarrow$}
+        \textcolor{Blue}{$\Rightarrow$}\\
+        \only<2>{\tiny (like the ambulance!)}
         \vspace*{5pt}
       \item<3>[] Proper motions\\
         {\small \centering (\textcolor{red}{if} distance known)}
@@ -979,7 +909,7 @@
 \section{\textcolor{Blue}{Why some star ``run''?}}
 % \note{By this I mean their ``peculiar'' velocity with respect to the
 %   Galactic rotation curve is high (say $>30\,\mathrm{km\ s^{-1}}$)}
-\subsection{\textcolor{Blue}{\textbullet}~Binary SuperNova scenario
+\subsection{\textcolor{Blue}{\textbullet}~Binary SuperNova Scenario
   (BSN) \\\textcolor{Blue}{\textbullet}~Dynamical Ejection Scenario (DES)}
 
 
@@ -1137,64 +1067,6 @@
   }
 
 \end{frame}
-
-\bgroup
-\metroset{progressbar=none}
-\setbeamercolor{background canvas}{bg=black}
-\begin{frame}
-  \note{What causes these natal kicks responsible for the binary
-  disruption?
-  From an observational point of view we know they exists because
-  we see pulsars moving much faster than their parent O and early B
-  type stars. From a theoretical perspective, we think that these
-  kicks are due to asymmetries in the explosion dynamics, either in
-  the neutrino flux that drives the explosion (although this is
-  presently a bit disfavored) or because of the hydrodynamical
-  instabilities in the explosion. For instance, here you see an
-  entropy rendering of the core of an exploding 15Msun star, but
-  for simplicity you can think of the color as the density. As you
-  can see, this is not spherically symmetric: here you have a big
-  red clump, which if it is denser, can gravitationally pull the
-  proto-compact object (for up to a second) and as long as we have
-  some ejecta in the other direction to conserve momentum, we can
-  accelerate the proto compact object in the direction of the
-  densest ejecta. }
-  \frametitle{\textcolor{white!80!Yellow}{Asymmetries in the explosion
-    cause the ``kick''}}
-  \centering
-  % \begin{textblock}{1}[0.5,1](0.5,0.13)
-  %   \textcolor{white!80!Yellow}{Observationally:~$v_\mathrm{pulsar} \gg v_\mathrm{OB-stars}$}
-  % \end{textblock}
-
-  \only<1>{
-    \begin{textblock}{0.2}[1,1](0.99,0.35)
-      \includegraphics[width=\textwidth]{onion.png}
-    \end{textblock}
-    \begin{textblock}{0.3}[0.,0](0.0,0.15)
-      \begin{itemize}
-        \color{whiteish}
-      \item[\textcolor{whiteish}{\textbullet}] $\nu$-driven convection
-      \item[\textcolor{whiteish}{\textbullet}] rotation
-      \item[\textcolor{whiteish}{\textbullet}] hydrodynamical flow
-      \end{itemize}
-    \end{textblock}
-  }
-  % \vspace*{30pt}
-  % {
-  %   \Large \centering
-  %   \textcolor{white!80!Yellow}{
-  %   Physically:~$\nu$ emission and/or ejecta anisotropies}\linebreak
-  %   \phantom{Bla}
-  % }
-  % \vspace*{10pt}
-  \only<1>{\includegraphics[height=0.95\textheight]{SN_asymmetry}} \only<2>{\hspace*{-6pt}\vspace*{-1pt}\includegraphics[height=0.95\textheight]{SN_asymmetry2}}
-
-
-  \begin{textblock}{1}[1, 1](0.99,0.99)
-    \hfill\textcolor{gray!50}{\tiny Credits: S.~Drasco}\,
-  \end{textblock}
-\end{frame}
-\egroup
 
 
 \begin{frame}{Kicks do not change companion velocity}
@@ -2181,6 +2053,138 @@
       \textcolor{gray!50}{\tiny Renzo \& G\"otberg 2021, Renzo \emph{et al.} 2023}\,
     \end{textblock}
   }
+\end{frame}
+
+\bgroup
+\metroset{progressbar=none}
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+  \note{What causes these natal kicks responsible for the binary
+  disruption?
+  From an observational point of view we know they exists because
+  we see pulsars moving much faster than their parent O and early B
+  type stars. From a theoretical perspective, we think that these
+  kicks are due to asymmetries in the explosion dynamics, either in
+  the neutrino flux that drives the explosion (although this is
+  presently a bit disfavored) or because of the hydrodynamical
+  instabilities in the explosion. For instance, here you see an
+  entropy rendering of the core of an exploding 15Msun star, but
+  for simplicity you can think of the color as the density. As you
+  can see, this is not spherically symmetric: here you have a big
+  red clump, which if it is denser, can gravitationally pull the
+  proto-compact object (for up to a second) and as long as we have
+  some ejecta in the other direction to conserve momentum, we can
+  accelerate the proto compact object in the direction of the
+  densest ejecta. }
+  \frametitle{\textcolor{white!80!Yellow}{Asymmetries in the explosion
+    cause the ``kick''}}
+  \centering
+  % \begin{textblock}{1}[0.5,1](0.5,0.13)
+  %   \textcolor{white!80!Yellow}{Observationally:~$v_\mathrm{pulsar} \gg v_\mathrm{OB-stars}$}
+  % \end{textblock}
+
+  \only<1>{
+    \begin{textblock}{0.2}[1,1](0.99,0.35)
+      \includegraphics[width=\textwidth]{onion.png}
+    \end{textblock}
+    \begin{textblock}{0.3}[0.,0](0.0,0.15)
+      \begin{itemize}
+        \color{whiteish}
+      \item[\textcolor{whiteish}{\textbullet}] $\nu$-driven convection
+      \item[\textcolor{whiteish}{\textbullet}] rotation
+      \item[\textcolor{whiteish}{\textbullet}] hydrodynamical flow
+      \end{itemize}
+    \end{textblock}
+  }
+  % \vspace*{30pt}
+  % {
+  %   \Large \centering
+  %   \textcolor{white!80!Yellow}{
+  %   Physically:~$\nu$ emission and/or ejecta anisotropies}\linebreak
+  %   \phantom{Bla}
+  % }
+  % \vspace*{10pt}
+  \only<1>{\includegraphics[height=0.95\textheight]{SN_asymmetry}} \only<2>{\hspace*{-6pt}\vspace*{-1pt}\includegraphics[height=0.95\textheight]{SN_asymmetry2}}
+
+
+  \begin{textblock}{1}[1, 1](0.99,0.99)
+    \hfill\textcolor{gray!50}{\tiny Credits: S.~Drasco}\,
+  \end{textblock}
+\end{frame}
+\egroup
+
+\begin{frame}
+  \frametitle{Stars are like people: they get bigger as they grow}
+  \only<1>{\includegraphics[height=\textheight]{16MsunRadius_empty}
+  \note{Introduce log-scale}}
+  \only<2>{\includegraphics[height=\textheight]{16MsunRadius_MS}}
+  \only<3-4>{\includegraphics[height=\textheight]{16MsunRadius_no_annotations}}
+
+  \only<2>{
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
+      \centering
+      \textbf{Main sequence:}\\
+      H$\rightarrow$ He, 90\% of stellar lifetime
+    \end{textblock}
+  }
+
+  \only<2-4>{
+    \begin{textblock}{0.1}[0.5,0.5](0.15,0.75)
+      \includegraphics[width=\textwidth]{MS}
+    \end{textblock}
+  }
+
+  \only<3>{
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
+      \centering
+      \textbf{Red (super) giant:}\\
+      Core+shell burning, 10\% of stellar lifetime
+    \end{textblock}
+  }
+
+  \only<3-4>{
+    \begin{textblock}{0.3}[0.5,0.5](0.28,0.35)
+      \includegraphics[width=\textwidth]{RSG}
+    \end{textblock}
+  }
+
+
+%   \only<4>{
+%     \begin{textblock}{0.55}[1,0.5](1.05,0.5)
+%       \includegraphics[width=\textwidth]{onion.pdf}
+%     \end{textblock}
+%     \frametitle{Only the center is hot enough to burn heavy fuel}
+%     \begin{textblock}{0.4}[0.,0.5](0.5,0.35)
+%       \centering
+%       ``Onion'' structure
+%     \end{textblock}
+
+
+%     \note{Fe cannot release energy through nuclear fusion}
+% }
+
+
+  \only<4>{
+    \begin{textblock}{0.2}[0.5,0.5](0.53,0.27)
+      \includegraphics[width=\textwidth]{SN}
+    \end{textblock}
+
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.53)
+      \centering
+      \textbf{Core collapse} and possibly \textbf{supernova
+        explosion}:\\
+      $$\tau(M)\propto M^{-\alpha} \simeq 3-50\,\mathrm{Myr}$$
+      \hfill\textcolor{gray!50}{\tiny for $M\gtrsim 7.5\,M_\odot$, e.g., Zapartas et al. 2017}
+    \end{textblock}
+
+  }
+
+  \begin{textblock}{0.3}[0.5,1](0.75,0.99)
+    \centering
+    \small
+    \color{gray!50}{\tiny Simulation output from}\\
+    \includegraphics[width=0.35\textwidth]{MESA}
+  \end{textblock}
 \end{frame}
 
 

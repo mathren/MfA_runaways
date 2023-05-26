@@ -71,62 +71,71 @@ space telescope /Gaia/, in particular the third data release (DR3).
   your own notebooks for others to use without them needing to manage
   a python installation (useful for example with students!).
 
-  For today, we will use a Flatiron Institute instance of binder,
-  already set up, which allows you to run this notebook on Flatiron's
-  computers. This requires using a Google account, and works better on
-  Chrome than Firefox (I have not tested it with other browsers). To
-  use it go to:
+  For today, we will use a Flatiron Institute instance of binder ([[https://wiki.flatironinstitute.org/SCC/BinderHub][FI
+  binder]]). This allows you to run the code already written for you on
+  Flatiron's computers. You can then modify and expand it
+  interactively using =python= (and specifically =astropy= and =astroquery=)
+  to interact with the /Gaia/ DR3 data.
 
   *Disclaimer: *All storage is temporary and regularly purged.
   Do not store any sensitive or critical data.*
 
-  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+*** Requirements
 
-  After logging in with your Google credentials, enter my username
-  (will be provided) and the name of this repo =MfA_runaways=, and each
-  google user will be able to run one kernel and modify this notebook.
+  The Fatiron You have to log in with a Google account
+
+
+*** Instructions
+  1. click on: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+  2. sign-in with your Google credentials
+  3. authorize access to see your JupyterHub username and group (to be
+     able to access FI resources)
+  4. type the credential provided at the event in =Owner=
+  5. type =MfA_runaway= in =Project=
+  6. leave the optional =Path to a notebook= empty
+  7. click =Launch=
+  8. you are now inside the repository in a FI computer (see [[https://wiki.flatironinstitute.org/SCC/BinderHub][the
+     docs]]), click on =playground=
+  9. click =explore_Gaia_dr3_catalog.ipynb= and start reading along!
+  10. you can scroll and look at the code I have already run
+  11. you can run the code by putting your mouse in a cell and pressing
+      =Shift+Enter= (your cursor will advance to the next cell). You
+      want to start from the top cell and move downwards.
+  12. you can edit the code and re-run each cell. The notebook
+      "remembers" the order in which you run the cells, so each time
+      you modify a variable, it is modified for all subsequent
+      operations in all other cells.
+  13. suggestion: In this example notebook I've not really dealt with
+      error-bars, and data-quality cuts are very rough. You have now
+      access to all the data to improve on this and produce
+      publication-quality science!
 
 *** Tips
 
-  The Flatiron binder allows *one server per user*. If you run into an
+  - The Flatiron binder allows *one server per user*. If you run into an
   error saying that there is already a server running, use the link in
-  the top right to kill your existing server, go back, and retry
-  clicking =launch=.
-
-  In this example notebook I've not really dealt with error-bars, and
-  quality cuts are very rough. But you can improve all that -- and
-  maybe find something not yet known to the astrophysics community!
+  the top right (=control panel=) to kill your existing server, go back,
+  and retry clicking =launch=.
+  - When binder has to build the environment, in Firefox I cannot see
+  the logs.
 
 
-*** Image credits
+** Collection of ideas
 
-  In the notebook I use a composite image of the Orion Nebula
-  downloaded from NSF's Noirlab [[https://noirlab.edu/public/products/education/edu024/][source zip]].
+ - *Find the peculiar velocity of the Sun*: Download a sample of stars
+   "nearby" and find the velocity common to all of those (which is a
+   reflection of the peculiar motion of the Sun)
 
-  You don't need to do anything to use it in the Flatiron binder
-  enviromnet. To obtain it locally on your machine, download the
-  fullRGB image and unpack it inside of =./playground/=.
+  - *Distribution of velocities of all the bright stars*: similar to the
+    figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data rather than
+    /Gaia/'s predecessor /Hipparcos/.
 
-
-** Ideas of exercises
-
- - Find the peculiar velocity of the Sun
-
-   Download a sample of stars "nearby" and find the velocity common to
-   all of those (which is a reflection of the peculiar motion of the
-   Sun)
-
-  - Distribution of velocities of all the bright stars
-
-    Similar to the figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data
-    rather than /Gaia/'s predecessor /Hipparcos/.
-
-  - Galactic rotation
-
-    Visualize the rotation of the Galaxy with the absolute proper
+  - *Galactic rotation*: the rotation of the Galaxy with the absolute proper
     motions of a large sample of /Gaia/ data
 
-  - Find structures
+  - *Find structures*: clusters, associations of stars, galactic
+    structures (spiral arms) and whole galaxies. Feel free to search
+    online for coordinates (easiest in RA, DEC, parallax). Try for instance
 
 **** Galactic disk
 **** Large Magellanic Cloud (LMC):
