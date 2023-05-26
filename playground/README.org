@@ -116,14 +116,14 @@ space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particula
 *** Tips
 
   - The Flatiron binder allows *one server per user*. If you run into an
-  error saying that there is already a server running, use the link in
-  the top right (=control panel=) to kill your existing server, go back,
-  and retry clicking =launch=.
+    error saying that there is already a server running, use the link
+    in the top right (=control panel=) to kill your existing server, go
+    back, and retry clicking =launch=.
   - Look into [[https://mybinder.org/][mybinder.org]] for free-tier options if you want to deploy
-  your own notebooks for others to use (maybe your students?) without
-  them needing to manage a python installation.
+    your own notebooks for others to use (maybe your students?)
+    without them needing to manage a python installation.
   - When Binder has to build the environment, in Firefox I cannot see
-  the logs.
+    the logs.
 
 
 ** Collection of ideas
