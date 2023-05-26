@@ -266,8 +266,7 @@
   \frametitle{Core burns heavier fuel, shells burn the leftovers}
   \begin{textblock}{1}[0.5,0.5](0.6,0.6)
     \centering
-    \only<1>{\includegraphics[width=0.7\textwidth]{onion_sun0.png}}
-    \only<2>{\includegraphics[width=0.7\textwidth]{onion_sun.png}}
+    \only<1>{\includegraphics[width=0.7\textwidth]{onion_sun0.png}} \only<2>{\includegraphics[width=0.7\textwidth]{onion_sun.png}}
   \end{textblock}
   \only<2>{
 
@@ -298,6 +297,12 @@
       \centering
       ``Onion'' structure
     \end{rotate}
+  \end{textblock}
+
+  \begin{textblock}{0.3}[0.,0.5](0.01,0.325)
+    \centering
+    Fusion of Iron \textbf{costs} energy
+    \includegraphics[width=0.8\textwidth]{nucleosynthesis}
   \end{textblock}
 
   \begin{textblock}{1}[0,1](0.01,0.99)
@@ -365,13 +370,11 @@
       \centering
       \textbf{Core collapse} and possibly \textbf{supernova
         explosion}:\\
-      $\tau(M)\propto M^{-\alpha} \simeq 3-50$\,Myr\\
-      \hfill\textcolor{gray!50}{\tiny e.g., Zapartas et al. 2017}
+      $$\tau(M)\propto M^{-\alpha} \simeq 3-50\,\mathrm{Myr}$$
+      \hfill\textcolor{gray!50}{\tiny for $M\gtrsim 7.5\,M_\odot$, e.g., Zapartas et al. 2017}
     \end{textblock}
 
   }
-
-
 
   \begin{textblock}{0.3}[0.5,1](0.75,0.99)
     \centering
@@ -460,9 +463,9 @@
       \includegraphics[width=50pt]{BHNS.png}\\
       \centering
       \small
-      Compact objects\\
-      \& transients\\
-      (incl.~GW)\\
+      NS, BH\\
+      \& \\
+      gravitational waves
     };
     \Connectw{O}{SNe}
   }
@@ -477,7 +480,7 @@
       \includegraphics[width=50pt]{reion}\\
       \centering
       \small
-      Ionizing rad.
+      \hspace*{-10pt}Ionizing radiation
       % \\[-3pt]
       % \hfill \textcolor{gray!50}{\tiny Hopkins \emph{et al.} 2014}
     };
@@ -659,28 +662,40 @@
     \color{whiteish}
     \tikz[remember picture, overlay]\node [xshift=85pt, yshift=-13pt] at (current page.west)  (O) {};
 
+    % \tikz[remember picture, overlay]\node [xshift=-30pt,yshift=60pt, text width=
+    % 90pt] at (current page.center)
+    % (SNe) {\centering
+    %   \includegraphics[width=50pt]{BHNS.png}\\
+    %   \centering
+    %   \small
+    %   Compact objects\\
+    %   \& transients\\
+    %   (incl.~GW)\\
+    % };
+    % \Connectw{O}{SNe}
     \tikz[remember picture, overlay]\node [xshift=-30pt,yshift=60pt, text width=
     90pt] at (current page.center)
     (SNe) {\centering
       \includegraphics[width=50pt]{BHNS.png}\\
       \centering
       \small
-      Compact objects\\
-      \& transients\\
-      (incl.~GW)\\
+      NS, BH\\
+      \& \\
+      gravitational waves
     };
     \Connectw{O}{SNe}
+
+
     \tikz[remember picture, overlay]\node [xshift=140pt,yshift=15pt, text width=
     180pt] at (current page.center)
     (SF) {
       \includegraphics[width=50pt]{reion}\\
       \centering
       \small
-      Ionizing rad.
+      \hspace*{-10pt}Ionizing radiation
       % \\[-3pt]
       % \hfill \textcolor{gray!50}{\tiny Hopkins \emph{et al.} 2014}
     };
-
 
     \tikz[remember picture, overlay]\node [xshift=160pt,yshift=-55pt, text width=
     90pt] at (current page.center)
@@ -962,8 +977,8 @@
 
 
 \section{\textcolor{Blue}{Why some star ``run''?}}
-\note{By this I mean their ``peculiar'' velocity with respect to the
-  Galactic rotation curve is high (say $>30\,\mathrm{km\ s^{-1}}$)}
+% \note{By this I mean their ``peculiar'' velocity with respect to the
+%   Galactic rotation curve is high (say $>30\,\mathrm{km\ s^{-1}}$)}
 \subsection{\textcolor{Blue}{\textbullet}~Binary SuperNova scenario
   (BSN) \\\textcolor{Blue}{\textbullet}~Dynamical Ejection Scenario (DES)}
 
