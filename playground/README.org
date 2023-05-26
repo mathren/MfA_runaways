@@ -1,5 +1,6 @@
-* Playground with /Gaia/ DR3 data
 #+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
+
+* Playground with /Gaia/ DR3 data
 
 The aim is to allow you to download *real bleeding-edge*  data from ESA's
 space telescope /Gaia/, in particular the third data release (DR3).
@@ -65,8 +66,8 @@ space telescope /Gaia/, in particular the third data release (DR3).
   Nebula, and makes plots of their velocities and positions.
 
   Anyone can scroll the notebook to see the output. You can also run
-  it *without setting up a whole tool-chain for python* using [[https://mybinder.readthedocs.io/en/latest/index.html][BinderHub]].
-  Look into [[mybinder.org]] for free-tier options if you want to deploy
+  it *without setting up a whole tool-chain for python* using [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]].
+  Look into [[https://mybinder.org/][mybinder.org]] for free-tier options if you want to deploy
   your own notebooks for others to use without them needing to manage
   a python installation (useful for example with students!).
 
@@ -76,18 +77,16 @@ space telescope /Gaia/, in particular the third data release (DR3).
   Chrome than Firefox (I have not tested it with other browsers). To
   use it go to:
 
+  *Disclaimer: *All storage is temporary and regularly purged.
+  Do not store any sensitive or critical data.*
+
   https://binder.flatironinstitute.org/
 
-  *Disclaimer*:
-  #+begin_src
-  All storage is temporary and regularly purged.
-  Do not store any sensitive or critical data.
-  #+end_src
+  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
 
   After logging in with your Google credentials, enter my username
   (will be provided) and the name of this repo =MfA_runaways=, and each
   google user will be able to run one kernel and modify this notebook.
-
 
 *** Tips
 
@@ -140,8 +139,3 @@ space telescope /Gaia/, in particular the third data release (DR3).
     - RA range: Approximately 10 to 22 degrees
     - DEC range: Approximately -76 to -66 degrees
     - parallax: negative or zero
-
-** TODO list
-
-  - binder update, how to fix?
-  - how to make local files available?
