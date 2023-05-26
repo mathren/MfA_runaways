@@ -16,3 +16,4 @@ playground/.ipynb_checkpoints/*
 playground/orion/*
 orion.zip
 *.fits
+*.pdfpc
