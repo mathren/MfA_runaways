@@ -5,13 +5,18 @@
 This repo contains materials for a workshop with high-school teachers
 run at [[https://www.mathforamerica.org/][Math for America]].
 
+** *Jump to exploring /Gaia/ DR3 data*:
+
+[[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+
+(see [[file:./playground/README.org][instructions]])
+
+** Structure of this repo
+
 The folder [[./talk]] contains the source code for the slides of the
 [[file:talk/MfA_renzo_20230530.pdf][presentation (PDF, 95Mb)]]. Images and videos are not in the repo).
 
 The folder [[./playground][./playground]] contains materials for suggested exercises using
-/Gaia/ third data release. See the [[file:./playground/README.org][instructions there]] for how to
-start playing with /Gaia/ DR3 data
-
-Jump to running an ipython notebook exploring /Gaia/ DR3 data: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+/Gaia/ third data release.
 
 Feel free to fork this repo to build on it.

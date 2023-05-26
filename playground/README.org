@@ -3,13 +3,11 @@
 * Playground with /Gaia/ DR3 data
 
 The aim is to allow you to download *real bleeding-edge*  data from ESA's
-space telescope /Gaia/, in particular the third data release (DR3).
+space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particular the [[https://www.cosmos.esa.int/web/gaia/data-release-3][third data release (DR3)]].
 
 ** No code
 
- If you don't feel like coding anything to analyze these data, you can
- still play with the data! Of course there is a limit on what you can
- achieve, but that should be plenty for today
+ If you don't feel like coding, you can still play with the data!
 
  Go to https://flathub.flatironinstitute.org/ and select the =Gaia DR3=
  catalog. This will bring you to this interface:
@@ -19,46 +17,60 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
  This allows you to use the copy of the /Gaia/ DR3 data hosted at the
  Flatiron Institute, which contains >1.8 billion stars (see the number
- in the bottom left)
+ in the bottom left!) There is a limit on what you can achieve, but
+ that should be plenty for today.
 
 *** Tips
 
   The tools on the right allow you to select which columns of the
-  dataset you want to download Try the =All Fields= tab, where all the
+  dataset you want to download. Try the =All Fields= tab, where all the
   available columns of the dataset are listed. This is 152 columns,
-  i.e. /Gaia/ DR3 contains 152 information on each star (position,
-  velocity, errors, metadata, etc.). You probably never want all of
-  them, but what you want to plot determines what you select there.
-  Quantities you typically want:
-  - (=ra=, =dec=) which are the angles defining a position on the sky,
+  i.e., /Gaia/ DR3 contains 152 information on each star (position,
+  velocity, respective errors, luminosity, colors, metadata, etc.).
+  You probably never want all of them, and the more you use the slower
+  the interface.
+
+  Typically, what you want to plot determines what you select there.
+  Quantities you may want are:
+  - (=pos ra=, =pos dec=) which are the angles defining a position on the sky,
   - =pmra=, =pmdec=, =rv= which are the  velocity component (in the sky and along the line of sight),
   - =ruwe= which stands "renormalized unit weight error", a quality
     control on the data that should be <1.4 for good data
   - ...
 
-
-
   The =Filter= tab allows to filter the data (e.g., remove bad
   datapoints, select one region in the sky). You could for example
   select stars in a patch of the sky and see if you find a cluster.
+
+  Under =Random Sample= you can specify to use just a random sub-sample
+  of the stars matching your filtering criteria (e.g., for statistical
+  applications, or, commonly to test on smaller but representative
+  datasets).
 
   The top right contains a tool for on-the-fly plotting. Select the
   type of plot, x- and y-axis and see it appear. For example you could
   try to find the location of the Galactic disk where most stars
   reside.
 
-*** Downloading data
+  Try finding the Galactic disk with a =heatmap= plot with x-axis =pos ra=
+  and y-axis =pos-dec= of a subset of stars!
 
-  From FlatironHub you can download the data as =csv=, which can then be
+*** How to save the data
+
+  FlatHub is an official host of the /Gaia/ DR2 (older) and DR3
+  datasets. You can download the data as =csv=, which can then be
   analyzed using spread sheets. Look at the bottom right format and
-  download button.
+  download button. This is publicly available to anyone that wants it!
 
 
-** Low code (requires Google account)
+** Low code
+
+  *Requirements*: a google account and willingness to read some =python=
+  code. No other coding experience required!
 
   The ipython notebook [[explore_Gaia_dr3_catalog.ipynb]] provides a
   starting point to explore /Gaia/ data closer to how some astronomer
-  might work. You can hopefully use it as a starting point for your
+  might work  You can hopefully use it as a starting point for your
   exploration, feel free to search for the documentation of the python
   libraries used (e.g., [[https://www.astropy.org/][astropy]]).
 
@@ -67,10 +79,6 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
   Anyone can scroll the notebook to see the output. You can also run
   it *without setting up a whole tool-chain for python* using [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]].
-  Look into [[https://mybinder.org/][mybinder.org]] for free-tier options if you want to deploy
-  your own notebooks for others to use without them needing to manage
-  a python installation (useful for example with students!).
-
   For today, we will use a Flatiron Institute instance of binder ([[https://wiki.flatironinstitute.org/SCC/BinderHub][FI
   binder]]). This allows you to run the code already written for you on
   Flatiron's computers. You can then modify and expand it
@@ -79,11 +87,6 @@ space telescope /Gaia/, in particular the third data release (DR3).
 
   *Disclaimer: *All storage is temporary and regularly purged.
   Do not store any sensitive or critical data.*
-
-*** Requirements
-
-  The Fatiron You have to log in with a Google account
-
 
 *** Instructions
   1. click on: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
@@ -116,7 +119,10 @@ space telescope /Gaia/, in particular the third data release (DR3).
   error saying that there is already a server running, use the link in
   the top right (=control panel=) to kill your existing server, go back,
   and retry clicking =launch=.
-  - When binder has to build the environment, in Firefox I cannot see
+  - Look into [[https://mybinder.org/][mybinder.org]] for free-tier options if you want to deploy
+  your own notebooks for others to use (maybe your students?) without
+  them needing to manage a python installation.
+  - When Binder has to build the environment, in Firefox I cannot see
   the logs.
 
 
