@@ -32,8 +32,7 @@
     each star. You probably never want all of them, and *the more use
     the slower the interface*. What you want to plot determines what
     data you select. Select for example:
-    - =pos ra=, =pos dec,= /right ascension/ and /declination/, the angles
-    defining a position on the sky (e.g. where a star is),
+    - =pos ra=, =pos dec,= /right ascension/ and /declination/, the angles defining a position on the sky (e.g. where a star is),
     - =pm=, =pmra=, =pmdec=, the /proper motion/ and its components
     - =parallax=
     - =phot_g_mean_flux=, this is the brightness of the star. It is
