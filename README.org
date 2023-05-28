@@ -17,13 +17,13 @@ dataset.
 ** No code
 
  If you don't feel like coding, you can still play with the data
- through FlatironHub. See [[./no_code.org][instructions here]].
+ through FlatironHub. See [[./playground/no_code.org][instructions here]].
 
 ** Low code
 
   *Requirements*: a google account and willingness to read some =python=
   code. No other coding experience required to start playing with the
-  data. See [[./low_code.org][instructions]] or jump to running code:
+  data. See [[./playground/low_code.org][instructions]] or jump to running code:
   [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
 
   The ipython notebook selects data around the Orion Nebula Cluster, applies
@@ -34,7 +34,6 @@ dataset.
 
 The folder [[./talk]] contains the source code for the slides of the
 [[file:talk/MfA_renzo_20230530.pdf][presentation (PDF, 95Mb)]]. Images and videos are available on request.
-
 The folder [[./playground][./playground]] contains materials for suggested exercises using
 /Gaia/ third data release.
 
