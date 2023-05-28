@@ -34,31 +34,37 @@
     data you select. Select for example:
     - =pos ra=, =pos dec,= /right ascension/ and /declination/, the angles
     defining a position on the sky (e.g. where a star is),
-    - =pm= section, i.e. =pmra=, =pmdec=, =pmra_error, =pmdec_error= the /proper motion/
-    components and relative errors
-    - =parallax_error=, =parallax_over_error=
+    - =pm=, =pmra=, =pmdec=, the /proper motion/ and its components
+    - =parallax=
+    - =phot_g_mean_flux=, this is the brightness of the star. It is
+      measured in /Gaia/'s G band.
+    - you can deselect =source_id=, a unique number for each source in
+      /Gaia/.
     Now these "columns" of the dataset are available for each star ("row").
  6. Now the =Filter= tab allows you to select filters based on the
     available data. *Hint*: if too many stars meet your filtering
     criteria interface slows down, you can always cancel the query and
-    restart from where you were. Add filters to select a region, for
-    example:
-    - =pos ra= between =200= and =360= degrees
-    - =pos dec= between =-89= and =89= degrees
+    restart from where you were. Add filters, for example:
+    - =phot_g phot_g_mean_mag= between the minimum and 16, this selects
+      the brightest stars (the highest the parameter the faintest the
+      star, astronomy is weird sometimes)
  7. On the top right, there is a control panel for the plot area
-    to visualize the data you selected. Try =histogram= of =pos ra=.
-    TODO IMPROVE
- 8. You can set other filters on =parallax=, =pmra=, =pmdec=.
+    to visualize the data you selected. Try =histogram= of =pm=, and
+    recall the plot in my talk (from [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]])
+ 8. Try adding filters, e.g. on =pos ra= and =pos dec= to find structures
+    (see [[./playground/README.org][this list]] for inspiration). Use =parallax= to filter in
+    distance and, =pmra=, =pmdec=, and =rv= for the velocity. Use the errors
+    to do quality cuts.
  9. To speedup your tests, Under =Random Sample= you can select at
     random a fraction of the stars matching your filters at the bottom
     (and to keep things reproducible you can specify a seed random
     number that always will pick the same random set of stars).
- 10. *How to save the data*: at the bottom right there is a =FORMAT= and
-     =DOWNLOAD= button. You can download the subset of data you are
-     playing with as "comma separated value" =csv= file (see drop down
-     menu for other options). This format can then be open and analyzed
-     using spread sheets without any coding.
- 11. Try to search online for galactic structures (e.g., arms) or
-     clusters and see if you can find them in the data!
+ 11. *How to save the data*: at the bottom right there is a =FORMAT= and
+    =DOWNLOAD= button. You can download the subset of data you are
+    playing with as "comma separated value" =csv= file (see drop down
+    menu for other options). This format can then be open and analyzed
+    using spread sheets without any coding.
+ 12. Try to search online for galactic structures (e.g., arms) or
+    clusters and see if you can find them in the data!
 
  See the also the Flathub [[https://flathub.flatironinstitute.org/html/redoc][documentation]].

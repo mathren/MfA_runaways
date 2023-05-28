@@ -2,7 +2,8 @@
  This is a list of potential things to look for in the data.
 
  - *Find the peculiar velocity of the Sun*: Download a sample of stars "nearby" and find the velocity common to all of those (which is a reflection of the peculiar motion of the Sun)
- - *Distribution of velocities of all the bright stars*: similar to the figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data rather than /Gaia/'s predecessor /Hipparcos/.
+ - *Distribution of velocities of all the bright stars*: similar to the
+   figure by [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data rather than /Gaia/'s predecessor /Hipparcos/.
  - *Galactic rotation*: the rotation of the Galaxy with the absolute proper motions of a large sample of /Gaia/ data
  - *Find structures*: clusters, associations of stars, galactic structures (spiral arms) and whole galaxies. Feel free to search online for coordinates (easiest in RA, DEC, parallax).
    Try for instance:
