@@ -11,11 +11,11 @@ space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particula
 
 ** Low code
 
-  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
-
   *Requirements*: a google account and willingness to read some =python=
   code. No other coding experience required to start playing with the
   data.
+
+  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
 
   This notebook selects data around the Orion Nebula Cluster, does
   some rough quality cuts, and plots position and proper motions of
@@ -26,26 +26,21 @@ space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particula
 ** Collection of ideas
 
  - *Find the peculiar velocity of the Sun*: Download a sample of stars
-   "nearby" and find the velocity common to all of those (which is a
-   reflection of the peculiar motion of the Sun)
-
-  - *Distribution of velocities of all the bright stars*: similar to the
-    figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data rather than
-    /Gaia/'s predecessor /Hipparcos/.
-
-  - *Galactic rotation*: the rotation of the Galaxy with the absolute proper
-    motions of a large sample of /Gaia/ data
-
-  - *Find structures*: clusters, associations of stars, galactic
-    structures (spiral arms) and whole galaxies. Feel free to search
-    online for coordinates (easiest in RA, DEC, parallax). Try for instance
-
-**** Galactic disk
-**** Large Magellanic Cloud (LMC):
-    - RA range: Approximately 76 to 94 degrees
-    - DEC range: Approximately -74 to -66 degrees
-    - parallax: negative or zero
-**** Small Magellanic Cloud (SMC):
-    - RA range: Approximately 10 to 22 degrees
-    - DEC range: Approximately -76 to -66 degrees
-    - parallax: negative or zero
+ "nearby" and find the velocity common to all of those (which is a
+ reflection of the peculiar motion of the Sun)
+ - *Distribution of velocities of all the bright stars*: similar to the
+ figure [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]], but using /Gaia/ data rather than
+ /Gaia/'s predecessor /Hipparcos/.
+ - *Galactic rotation*: the rotation of the Galaxy with the absolute proper
+ motions of a large sample of /Gaia/ data
+ - *Find structures*: clusters, associations of stars, galactic
+ structures (spiral arms) and whole galaxies. Feel free to search
+ online for coordinates (easiest in RA, DEC, parallax). Try for instance
+*** Large Magellanic Cloud (LMC):
+   - RA range: Approximately 76 to 94 degrees
+   - DEC range: Approximately -74 to -66 degrees
+   - parallax: negative or zero
+*** Small Magellanic Cloud (SMC):
+   - RA range: Approximately 10 to 22 degrees
+   - DEC range: Approximately -76 to -66 degrees
+   - parallax: negative or zero
