@@ -61,4 +61,4 @@
  11. Try to search online for galactic structures (e.g., arms) or
      clusters and see if you can find them in the data!
 
- See the also the Flathub [[ahttps://flathub.flatironinstitute.org/html/redoc][documentation]].
+ See the also the Flathub [[https://flathub.flatironinstitute.org/html/redoc][documentation]].
