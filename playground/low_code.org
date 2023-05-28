@@ -15,8 +15,8 @@
   interactively using =python= (and specifically =astropy= and =astroquery=)
   to interact with the /Gaia/ DR3 data.
 
-  *Disclaimer: *All storage is temporary and regularly purged.
-  Do not store any sensitive or critical data.*
+  *Disclaimer: All storage is temporary and regularly purged. Do not
+  store any sensitive or critical data.*
 
 ** Instructions
   1. click on: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
