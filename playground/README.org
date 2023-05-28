@@ -1,29 +1,5 @@
-#+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
-* Playground with /Gaia/ DR3 data
-
-The aim is to allow you to download *real bleeding-edge*  data from ESA's
-space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particular the [[https://www.cosmos.esa.int/web/gaia/data-release-3][third data release (DR3)]].
-
-** No code
-
- If you don't feel like coding, you can still play with the data!
- See [[./no_code.org][instructions here]].
-
-** Low code
-
-  *Requirements*: a google account and willingness to read some =python=
-  code. No other coding experience required to start playing with the
-  data.
-
-  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
-
-  This notebook selects data around the Orion Nebula Cluster, does
-  some rough quality cuts, and plots position and proper motions of
-  the stars.
-
-  [[./low_code.org][instructions]]
-
-** Collection of ideas
+* Collection of ideas
+ This is a list of potential things to look for in the data.
 
  - *Find the peculiar velocity of the Sun*: Download a sample of stars
  "nearby" and find the velocity common to all of those (which is a
@@ -36,11 +12,11 @@ space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particula
  - *Find structures*: clusters, associations of stars, galactic
  structures (spiral arms) and whole galaxies. Feel free to search
  online for coordinates (easiest in RA, DEC, parallax). Try for instance
-*** Large Magellanic Cloud (LMC):
+ - Large Magellanic Cloud (LMC):
    - RA range: Approximately 76 to 94 degrees
    - DEC range: Approximately -74 to -66 degrees
    - parallax: negative or zero
-*** Small Magellanic Cloud (SMC):
+ - Small Magellanic Cloud (SMC):
    - RA range: Approximately 10 to 22 degrees
    - DEC range: Approximately -76 to -66 degrees
    - parallax: negative or zero

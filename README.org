@@ -2,15 +2,44 @@
 
 * Live fast and die young: Massive, exploding, and speeding stars
 
-This repo contains materials for a workshop with high-school teachers
-run at [[https://www.mathforamerica.org/][Math for America]].
+*Jump to exploring Gaia DR3 data:* [[file:./playground/README.org][instructions]], [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
 
-**Jump to exploring Gaia DR3 data**: [[file:./playground/README.org][instructions]], [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+This materials is designed for a workshop with high-school teachers
+run at [[https://www.mathforamerica.org/][Math for America]]. After a presentation focused on massive
+runaway stars, participants are invited to play with the /Gaia/ DR3
+dataset.
+
+* Playground with /Gaia/ DR3 data
+
+ The aim is to allow you to download *real bleeding-edge*  data from ESA's
+ space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particular the [[https://www.cosmos.esa.int/web/gaia/data-release-3][third data release (DR3)]].
+
+ No prior coding experience is required, and two levels of
+ exploration are possible.
+
+** No code
+
+ If you don't feel like coding, you can still play with the data
+ through FlatironHub. See [[./no_code.org][instructions here]].
+
+** Low code
+
+  *Requirements*: a google account and willingness to read some =python=
+  code. No other coding experience required to start playing with the
+  data.
+
+  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+
+  This notebook selects data around the Orion Nebula Cluster, does
+  some rough quality cuts, and plots position and proper motions of
+  the stars.
+
+  [[./low_code.org][instructions]]
 
 ** Structure of this repo
 
 The folder [[./talk]] contains the source code for the slides of the
-[[file:talk/MfA_renzo_20230530.pdf][presentation (PDF, 95Mb)]]. Images and videos are not in the repo).
+[[file:talk/MfA_renzo_20230530.pdf][presentation (PDF, 95Mb)]]. Images and videos are available on request.
 
 The folder [[./playground][./playground]] contains materials for suggested exercises using
 /Gaia/ third data release.
