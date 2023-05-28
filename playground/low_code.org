@@ -1,0 +1,60 @@
+#+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
+* Explore /Gaia/ DR3 dataset
+
+  The ipython notebook [[explore_Gaia_dr3_catalog.ipynb]] provides a
+  starting point to explore /Gaia/ data closer to how some astronomer
+  might work. You can hopefully use it as a starting point for your
+  exploration, feel free to search for the documentation of the python
+  libraries used (e.g., [[https://www.astropy.org/][astropy]] and [[https://astroquery.readthedocs.io/en/latest/gaia/gaia.html][astroquery Gaia TAP+]]).
+
+  Anyone can scroll the notebook to see the output. You can also run
+  it *without setting up a whole tool-chain for python* using [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]].
+  For today, we will use a Flatiron Institute instance of binder ([[https://wiki.flatironinstitute.org/SCC/BinderHub][FI
+  binder]]). This allows you to run the code already written for you on
+  Flatiron's computers. You can then modify and expand it
+  interactively using =python= (and specifically =astropy= and =astroquery=)
+  to interact with the /Gaia/ DR3 data.
+
+  *Disclaimer: *All storage is temporary and regularly purged.
+  Do not store any sensitive or critical data.*
+
+** Instructions
+  1. click on: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+  2. sign-in with your Google credentials
+  3. authorize access to see your JupyterHub username and group (to be
+     able to access FI resources)
+  4. type the credential provided at the event in =Owner=
+  5. type =MfA_runaway= in =Project=
+  6. leave the optional =Path to a notebook= empty
+  7. click =Launch=
+  8. you are now inside the repository in a FI computer (see [[https://wiki.flatironinstitute.org/SCC/BinderHub][the
+     docs]]), click on =playground=
+  9. click =explore_Gaia_dr3_catalog.ipynb= and start reading along!
+  10. you can scroll and look at the code I have already run
+  11. you can run the code by putting your mouse in a cell and pressing
+      =Shift+Enter= (your cursor will advance to the next cell). You
+      want to start from the top cell and move downwards.
+  12. you can edit the code and re-run each cell. The notebook
+      "remembers" the order in which you run the cells, so each time
+      you modify a variable, it is modified for all subsequent
+      operations in all other cells.
+  13. suggestion: In this example notebook I've not really dealt with
+      error-bars, and data-quality cuts are very rough. You have now
+      access to all the data to improve on this and produce
+      publication-quality science!
+
+** Tips & notes
+
+  - The Flatiron binder allows *one server per user*. If you run into an
+    error saying that there is already a server running, use the link
+    in the top right (=control panel=) to kill your existing server, go
+    back, and retry clicking =launch=.
+  - Look into [[https://mybinder.org/][mybinder.org]] for free-tier options if you want to deploy
+    your own notebooks for others to use (maybe your students?)
+    without them needing to manage a python installation.
+  - as of now I have not tested this repo on the free service
+    [[https://mybinder.org/][mybinder.org]]. If you are interested in using it there, it may be
+    possible, let me know.
+  - When Binder has to build the environment, in Firefox I cannot see
+    the logs.
+  - all the dependencies for this project are listed in [[file:../environment.yml][environment.yml]].

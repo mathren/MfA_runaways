@@ -1,5 +1,4 @@
 #+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
-
 * Playground with /Gaia/ DR3 data
 
 The aim is to allow you to download *real bleeding-edge*  data from ESA's
@@ -8,123 +7,21 @@ space telescope [[https://www.cosmos.esa.int/web/gaia/home][Gaia]], in particula
 ** No code
 
  If you don't feel like coding, you can still play with the data!
-
- Go to https://flathub.flatironinstitute.org/ and select the =Gaia DR3=
- catalog. This will bring you to this interface:
-
-#+DOWNLOADED: screenshot @ 2023-05-25 15:22:05
-[[file:.org_notes_figures/Playground_with_/Gaia/_DR3_data/2023-05-25_15-22-05_screenshot.png]]
-
- This allows you to use the copy of the /Gaia/ DR3 data hosted at the
- Flatiron Institute, which contains >1.8 billion stars (see the number
- in the bottom left!) There is a limit on what you can achieve, but
- that should be plenty for today.
-
-*** Tips
-
-  The tools on the right allow you to select which columns of the
-  dataset you want to download. Try the =All Fields= tab, where all the
-  available columns of the dataset are listed. This is 152 columns,
-  i.e., /Gaia/ DR3 contains 152 information on each star (position,
-  velocity, respective errors, luminosity, colors, metadata, etc.).
-  You probably never want all of them, and the more you use the slower
-  the interface.
-
-  Typically, what you want to plot determines what you select there.
-  Quantities you may want are:
-  - (=pos ra=, =pos dec=) which are the angles defining a position on the sky,
-  - =pmra=, =pmdec=, =rv= which are the  velocity component (in the sky and along the line of sight),
-  - =ruwe= which stands "renormalized unit weight error", a quality
-    control on the data that should be <1.4 for good data
-  - ...
-
-  The =Filter= tab allows to filter the data (e.g., remove bad
-  datapoints, select one region in the sky). You could for example
-  select stars in a patch of the sky and see if you find a cluster.
-
-  Under =Random Sample= you can specify to use just a random sub-sample
-  of the stars matching your filtering criteria (e.g., for statistical
-  applications, or, commonly to test on smaller but representative
-  datasets).
-
-  The top right contains a tool for on-the-fly plotting. Select the
-  type of plot, x- and y-axis and see it appear. For example you could
-  try to find the location of the Galactic disk where most stars
-  reside.
-
-  Try finding the Galactic disk with a =heatmap= plot with x-axis =pos ra=
-  and y-axis =pos-dec= of a subset of stars!
-
-*** How to save the data
-
-  FlatHub is an official host of the /Gaia/ DR2 (older) and DR3
-  datasets. You can download the data as =csv=, which can then be
-  analyzed using spread sheets. Look at the bottom right format and
-  download button. This is publicly available to anyone that wants it!
-
+ See [[./no_code.org][instructions here]].
 
 ** Low code
 
+  [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+
   *Requirements*: a google account and willingness to read some =python=
-  code. No other coding experience required!
+  code. No other coding experience required to start playing with the
+  data.
 
-  The ipython notebook [[explore_Gaia_dr3_catalog.ipynb]] provides a
-  starting point to explore /Gaia/ data closer to how some astronomer
-  might work  You can hopefully use it as a starting point for your
-  exploration, feel free to search for the documentation of the python
-  libraries used (e.g., [[https://www.astropy.org/][astropy]]).
+  This notebook selects data around the Orion Nebula Cluster, does
+  some rough quality cuts, and plots position and proper motions of
+  the stars.
 
-  The notebook downloads /Gaia/ DR3 data for stars around the Orion
-  Nebula, and makes plots of their velocities and positions.
-
-  Anyone can scroll the notebook to see the output. You can also run
-  it *without setting up a whole tool-chain for python* using [[https://mybinder.readthedocs.io/en/latest/index.html][Binder]].
-  For today, we will use a Flatiron Institute instance of binder ([[https://wiki.flatironinstitute.org/SCC/BinderHub][FI
-  binder]]). This allows you to run the code already written for you on
-  Flatiron's computers. You can then modify and expand it
-  interactively using =python= (and specifically =astropy= and =astroquery=)
-  to interact with the /Gaia/ DR3 data.
-
-  *Disclaimer: *All storage is temporary and regularly purged.
-  Do not store any sensitive or critical data.*
-
-*** Instructions
-  1. click on: [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
-  2. sign-in with your Google credentials
-  3. authorize access to see your JupyterHub username and group (to be
-     able to access FI resources)
-  4. type the credential provided at the event in =Owner=
-  5. type =MfA_runaway= in =Project=
-  6. leave the optional =Path to a notebook= empty
-  7. click =Launch=
-  8. you are now inside the repository in a FI computer (see [[https://wiki.flatironinstitute.org/SCC/BinderHub][the
-     docs]]), click on =playground=
-  9. click =explore_Gaia_dr3_catalog.ipynb= and start reading along!
-  10. you can scroll and look at the code I have already run
-  11. you can run the code by putting your mouse in a cell and pressing
-      =Shift+Enter= (your cursor will advance to the next cell). You
-      want to start from the top cell and move downwards.
-  12. you can edit the code and re-run each cell. The notebook
-      "remembers" the order in which you run the cells, so each time
-      you modify a variable, it is modified for all subsequent
-      operations in all other cells.
-  13. suggestion: In this example notebook I've not really dealt with
-      error-bars, and data-quality cuts are very rough. You have now
-      access to all the data to improve on this and produce
-      publication-quality science!
-
-*** Tips
-
-  - The Flatiron binder allows *one server per user*. If you run into an
-    error saying that there is already a server running, use the link
-    in the top right (=control panel=) to kill your existing server, go
-    back, and retry clicking =launch=.
-  - Look into [[https://mybinder.org/][mybinder.org]] for free-tier options if you want to deploy
-    your own notebooks for others to use (maybe your students?)
-    without them needing to manage a python installation.
-  - When Binder has to build the environment, in Firefox I cannot see
-    the logs.
-
+  [[./low_code.org][instructions]]
 
 ** Collection of ideas
 

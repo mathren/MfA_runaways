@@ -1,0 +1,64 @@
+#+author: [[mrenzo@flatironinstitute.org][Mathieu Renzo]]
+* Explore /Gaia/ DR3 dataset -- no coding required
+
+ The [[https://flathub.flatironinstitute.org/][Flatiron Institute Data Exploration and Comparison Hub]] (FlatHub)
+ is an official host of the /Gaia/ data releases ([[(https://ui.adsabs.harvard.edu/abs/2018A%26A...616A...1G/abstract][DR2]] in 2018 and [[https://ui.adsabs.harvard.edu/abs/2022arXiv220800211G/abstract][DR3]] in
+ 2022). From there you can download the entire datasets (very large!),
+ or more likely the subset of the data you need for a project. These
+ data are the result of the processing of raw instrumental reading
+ from the instruments on the /Gaia/ satellite by the /Gaia/ Data Processing and Analysis
+ Consortium ([[https://www.cosmos.esa.int/web/gaia/dpac][DPAC]]).
+
+ FlatHub also provides an interface to visualize the data and play
+ with it in your browser without the need to use any coding. There is
+ a limit on what you can achieve, but that should be plenty for today.
+
+#+DOWNLOADED: screenshot @ 2023-05-25 15:22:05 :width 300px
+[[file:.org_notes_figures/Playground_with_/Gaia/_DR3_data/2023-05-25_15-22-05_screenshot.png]]
+
+** Instructions
+
+ 1. Go to https://flathub.flatironinstitute.org/
+ 2. Select the =Gaia DR3= catalog. This will bring you to the interface
+    in the above screenshot.
+ 3. Notice the number at the bottom left: /Gaia/ DR3 contains more than
+    1.8 billion stars! We will select only a subset of these stars,
+    and we will use only some of the data available for each star.
+ 4. The tabs =Filter=, =Python=, =All Fields=, and =About= top right provide
+    tools to make a sub-selection. Click on the =All Fields= tab.
+ 5. Scroll the lists of data available for each star and select some.
+    You can select/unselect entire "sections" of data (e.g., =pos= for
+    positional, =pm= for proper motion, etc.). There are 152 option for
+    each star. You probably never want all of them, and *the more use
+    the slower the interface*. What you want to plot determines what
+    data you select. Select for example:
+    - =pos ra=, =pos dec,= /right ascension/ and /declination/, the angles
+    defining a position on the sky (e.g. where a star is),
+    - =pm= section, i.e. =pmra=, =pmdec=, =pmra_error, =pmdec_error= the /proper motion/
+    components and relative errors
+    - =parallax_error=, =parallax_over_error=
+    Now these "columns" of the dataset are available for each star ("row").
+ 6. Now the =Filter= tab allows you to select filters based on the
+    available data. *Hint*: if too many stars meet your filtering
+    criteria interface slows down, you can always cancel the query and
+    restart from where you were. Add filters to select a region, for
+    example:
+    - =pos ra= between =200= and =360= degrees
+    - =pos dec= between =-89= and =89= degrees
+ 7. On the top right, there is a control panel for the plot area
+    to visualize the data you selected. Try =histogram= of =pos ra=.
+    TODO IMPROVE
+ 8. You can set other filters on =parallax=, =pmra=, =pmdec=.
+ 9. To speedup your tests, Under =Random Sample= you can select at
+    random a fraction of the stars matching your filters at the bottom
+    (and to keep things reproducible you can specify a seed random
+    number that always will pick the same random set of stars).
+ 10. *How to save the data*: at the bottom right there is a =FORMAT= and
+     =DOWNLOAD= button. You can download the subset of data you are
+     playing with as "comma separated value" =csv= file (see drop down
+     menu for other options). This format can then be open and analyzed
+     using spread sheets without any coding.
+ 11. Try to search online for galactic structures (e.g., arms) or
+     clusters and see if you can find them in the data!
+
+ See the also the Flathub [[ahttps://flathub.flatironinstitute.org/html/redoc][documentation]].
