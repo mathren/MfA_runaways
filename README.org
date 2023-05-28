@@ -2,8 +2,6 @@
 
 * Live fast and die young: Massive, exploding, and speeding stars
 
-*Jump to exploring Gaia DR3 data:* [[file:./playground/README.org][instructions]], [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
-
 This materials is designed for a workshop with high-school teachers
 run at [[https://www.mathforamerica.org/][Math for America]]. After a presentation focused on massive
 runaway stars, participants are invited to play with the /Gaia/ DR3
