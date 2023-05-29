@@ -1,5 +1,5 @@
 * Collection of ideas
- This is a list of potential things to look for in the data.
+ This is a list of potential things to look for in the /Gaia/ DR3 data.
 
  - *Find the peculiar velocity of the Sun*: Download a sample of stars "nearby" and find the velocity common to all of those (which is a reflection of the peculiar motion of the Sun)
  - *Distribution of velocities of all the bright stars*: similar to the
@@ -7,6 +7,7 @@
  - *Galactic rotation*: the rotation of the Galaxy with the absolute proper motions of a large sample of /Gaia/ data
  - *Find structures*: clusters, associations of stars, galactic structures (spiral arms) and whole galaxies. Feel free to search online for coordinates (easiest in RA, DEC, parallax).
    Try for instance:
+   - Galactic center
    - Large Magellanic Cloud (LMC):
      - RA range: Approximately 76 to 94 degrees
      - DEC range: Approximately -74 to -66 degrees
