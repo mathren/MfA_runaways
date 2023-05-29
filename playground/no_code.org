@@ -18,6 +18,10 @@
 
 ** Instructions
 
+ We will download the data for one of the satellite Galaxies of the
+ Milky Way, specifically the [[https://en.wikipedia.org/wiki/Large_Magellanic_Cloud][Large Magellanic Cloud]] (LMC, where the 30
+ Doradus region (aka Tarantula Nebula) and the [[https://en.wikipedia.org/wiki/R136][R136 cluster]] reside.
+
  1. Go to https://flathub.flatironinstitute.org/
  2. Select the =Gaia DR3= catalog. This will bring you to the interface
     in the above screenshot.
@@ -46,10 +50,26 @@
     restart from where you were. Add filters, for example:
     - =phot_g phot_g_mean_mag= between the minimum and 16, this selects
       the brightest stars (the highest the parameter the faintest the
-      star, astronomy is weird sometimes)
+      star, astronomy is weird sometimes) and guarantees your dataset
+      will not be too large to work with.
  7. On the top right, there is a control panel for the plot area
-    to visualize the data you selected. Try =histogram= of =pm=, and
-    recall the plot in my talk (from [[https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..190T/abstract][Tetzlaff et al. 2011]])
+    to visualize the data you selected. Try plotting a =heatmap= with
+    =pos ra= as x axis and =pos dec= as y axis using the drop down menus.
+
+#+DOWNLOADED: screenshot @ 2023-05-28 20:17:30
+[[file:.org_notes_figures/Explore_/Gaia/_DR3_dataset_--_no_coding_required/2023-05-28_20-17-30_screenshot.png]]
+
+
+    This is a plot on the plane of the sky of where the bright stars
+    (because of our =Filter=) are in the /Gaia/ DR3 dataset.
+ 8. Add additional filters to select stars in a particular region of
+     the sky and very far away (i.e. very small parallax, probably
+     with large errors)
+    - =pos ra= between 74 and 94 degrees
+    - =pos dec= between -74 and -64 degrees
+    - =parallax= smaller than 0.02 milliarcsec.
+    The plot updates alone, and you should see where most bright stars
+    are in the LMC (but likely still with spurious contaminants)!
  8. Try adding filters, e.g. on =pos ra= and =pos dec= to find structures
     (see [[./playground/README.org][this list]] for inspiration). Use =parallax= to filter in
     distance and, =pmra=, =pmdec=, and =rv= for the velocity. Use the errors
@@ -58,12 +78,12 @@
     random a fraction of the stars matching your filters at the bottom
     (and to keep things reproducible you can specify a seed random
     number that always will pick the same random set of stars).
- 11. *How to save the data*: at the bottom right there is a =FORMAT= and
+ 10. *How to save the data*: at the bottom right there is a =FORMAT= and
     =DOWNLOAD= button. You can download the subset of data you are
     playing with as "comma separated value" =csv= file (see drop down
     menu for other options). This format can then be open and analyzed
-    using spread sheets without any coding.
- 12. Try to search online for galactic structures (e.g., arms) or
-    clusters and see if you can find them in the data!
+    using spread sheets without any coding. You can also download the
+    plots you make from the drop down menu in the top right of the
+     plot area.
 
  See the also the Flathub [[https://flathub.flatironinstitute.org/html/redoc][documentation]].
