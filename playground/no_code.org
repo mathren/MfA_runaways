@@ -52,17 +52,16 @@
       the brightest stars (the highest the parameter the faintest the
       star, astronomy is weird sometimes) and guarantees your dataset
       will not be too large to work with.
- 7. On the top right, there is a control panel for the plot area
-    to visualize the data you selected. Try plotting a =heatmap= with
-    =pos ra= as x axis and =pos dec= as y axis using the drop down menus.
-    This produces
-#+DOWNLOADED: screenshot @ 2023-05-28 20:17:30
-[[file:.org_notes_figures/Explore_/Gaia/_DR3_dataset_--_no_coding_required/2023-05-28_20-17-30_screenshot.png]]
-    a plot on the plane of the sky of where the bright stars
-    (because of our =Filter=) are in the /Gaia/ DR3 dataset.
+ 7. On the top right, there is a control panel for the plot area to
+    visualize the data you selected. Try plotting a =heatmap= with =pos
+    ra= as x axis and =pos dec= as y axis using the drop down menus. This
+    produces a plot[fn:1] the number of bright stars (because of our =Filter=)
+    as a function of position on the sky in the /Gaia/ DR3 dataset.
+    *N.B.:* The color represents the number of stars, not
+    how bright they are.
  8. Add additional filters to select stars in a particular region of
-     the sky and very far away (i.e. very small parallax, probably
-     with large errors)
+    the sky and very far away (i.e. very small parallax, probably with
+    large errors)
     - =pos ra= between 74 and 94 degrees
     - =pos dec= between -74 and -64 degrees
     - =parallax= smaller than 0.02 milliarcsec.
@@ -71,17 +70,23 @@
  9. Try adding filters, e.g. on =pos ra= and =pos dec= to find structures
     (see [[./playground/README.org][this list]] for inspiration). Use =parallax= to filter in
     distance and, =pmra=, =pmdec=, and =rv= for the velocity. Use the errors
-    to do quality cuts.
- 10. To speedup your tests, Under =Random Sample= you can select at
+    to do quality cuts. At this point you may also want to look at the
+    [[file:./low_code.org][low code option]] for playing with the data of the Orion Nebula
+    Cluster.
+10. To speedup your tests, Under =Random Sample= you can select at
     random a fraction of the stars matching your filters at the bottom
     (and to keep things reproducible you can specify a seed random
     number that always will pick the same random set of stars).
- 11. *How to save the data*: at the bottom right there is a =FORMAT= and
+11. *How to save the data*: at the bottom right there is a =FORMAT= and
     =DOWNLOAD= button. You can download the subset of data you are
     playing with as "comma separated value" =csv= file (see drop down
     menu for other options). This format can then be open and analyzed
     using spread sheets without any coding. You can also download the
     plots you make from the drop down menu in the top right of the
-     plot area.
+    plot area.
 
  See the also the Flathub [[https://flathub.flatironinstitute.org/html/redoc][documentation]].
+
+* Footnotes
+
+[fn:1] See my version [[file:.org_notes_figures/Explore_/Gaia/_DR3_dataset_--_no_coding_required/2023-05-28_20-17-30_screenshot.png][here]].
