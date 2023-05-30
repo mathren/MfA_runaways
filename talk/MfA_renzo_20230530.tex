@@ -131,6 +131,7 @@
   \end{textblock}
 
   \includegraphics[height=0.7\textheight]{Cartesius_0}\\
+
   \begin{textblock}{0.4}[0.5,1](0.64,0.835)
     \color{black} \tiny Dutch national supercomputer Cartesius
   \end{textblock}
@@ -144,7 +145,7 @@
   \end{textblock}
 
 
-  \begin{textblock}{0.4}[0.5,0.5](0.5,0.5)
+  \begin{textblock}{0.35}[0.5,0.5](0.5,0.51)
     \includegraphics[width=0.75\textwidth]{binary}
   \end{textblock}
 
@@ -876,8 +877,8 @@
 
   \begin{textblock}{0.45}[0,0.](0.01,0.56)
     \begin{itemize}\color{black}
-    \item Parallax$\equiv$ distance
-    \item Velocities ($\mu$ and RV)
+    \item Distance $\leftrightarrow$ parallax
+    \item Velocities $\leftrightarrow$ pm and RV
     \end{itemize}
     \vspace*{-10pt}
     % \hspace*{40pt}for $\gtrsim 10^9$ stars\\
@@ -901,7 +902,7 @@
   \begin{textblock}{0.5}[0,0](0.01,0.01)
     \centering
     \textcolor{Blue}{{\large Apparent motion}\\
-      {\small reflection of Earth's orbit around the Sun}}\\[70pt]
+      {\small reflection of Earth's orbit around the Sun}}\\[20pt]
     \vfill
       \movie[width=0.9\textwidth,
       height=0.5\textheight,showcontrols=true,autostart=true]{}{./fig_slides/Gaia_parallax.mp4}\\
@@ -910,12 +911,17 @@
     \begin{textblock}{0.5}[0,0](0.5,0.01)
       \centering
       \textcolor{Blue}{{\large Long term drift}\\
-        {\small Stars' orbit around Galaxy + intrinsic motion}}\\[68pt]
+        {\small Stars' orbit around Galaxy + intrinsic motion}}\\[18pt]
       \vfill
       \movie[width=0.9\textwidth,
       height=0.5\textheight,showcontrols=true,autostart=false]{}{./fig_slides/Gaia_motion.mp4}\\
       \textcolor{gray!50}{\tiny \url{https://www.youtube.com/watch?v=cEsfqFDSpm0}}
-  \end{textblock}
+    \end{textblock}
+    \begin{textblock}{0.8}[0.5,0.5](0.5, 0.85)
+      \centering
+      \emph{Gaia} requires multiple years of observations\\
+      \includegraphics[height=25pt]{Gaia_mission_duration}
+    \end{textblock}
 \end{frame}
 
 
@@ -1068,8 +1074,7 @@
 
   \begin{textblock}{1}[0,1](0.01,0.99)
     \textcolor{gray!50}{\tiny Cordes \emph{et al.} 1993, Chatterjee
-      \& Cordes 2004, de~Vries
-      \emph{et al.} 2022, }
+      \& Cordes 2004, de~Vries \emph{et al.} 2022}
   \end{textblock}
   \begin{textblock}{1}[0.5,1](0.5,0.15)
     \centering \textcolor{gray!50}{\tiny \emph{HST}}
@@ -1746,6 +1751,82 @@
 \egroup
 
 
+
+\begin{frame}
+  \frametitle{Stars are like people: they get bigger as they grow}
+  \only<1>{\includegraphics[height=\textheight]{16MsunRadius_empty}
+  \note{Introduce log-scale}}
+  \only<2>{\includegraphics[height=\textheight]{16MsunRadius_MS}}
+  \only<3-4>{\includegraphics[height=\textheight]{16MsunRadius_no_annotations}}
+
+  \only<2>{
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
+      \centering
+      \textbf{Main sequence:}\\
+      H$\rightarrow$ He, 90\% of stellar lifetime
+    \end{textblock}
+  }
+
+  \only<2-4>{
+    \begin{textblock}{0.1}[0.5,0.5](0.15,0.75)
+      \includegraphics[width=\textwidth]{MS}
+    \end{textblock}
+  }
+
+  \only<3>{
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
+      \centering
+      \textbf{Red (super) giant:}\\
+      Core+shell burning, 10\% of stellar lifetime
+    \end{textblock}
+  }
+
+  \only<3-4>{
+    \begin{textblock}{0.3}[0.5,0.5](0.28,0.35)
+      \includegraphics[width=\textwidth]{RSG}
+    \end{textblock}
+  }
+
+
+%   \only<4>{
+%     \begin{textblock}{0.55}[1,0.5](1.05,0.5)
+%       \includegraphics[width=\textwidth]{onion.pdf}
+%     \end{textblock}
+%     \frametitle{Only the center is hot enough to burn heavy fuel}
+%     \begin{textblock}{0.4}[0.,0.5](0.5,0.35)
+%       \centering
+%       ``Onion'' structure
+%     \end{textblock}
+
+
+%     \note{Fe cannot release energy through nuclear fusion}
+% }
+
+
+  \only<4>{
+    \begin{textblock}{0.2}[0.5,0.5](0.53,0.27)
+      \includegraphics[width=\textwidth]{SN}
+    \end{textblock}
+
+    \begin{textblock}{0.4}[0.5,0.5](0.75,0.53)
+      \centering
+      \textbf{Core collapse} and possibly \textbf{supernova
+        explosion}:\\
+      $$\tau(M)\propto M^{-\alpha} \simeq 3-50\,\mathrm{Myr}$$
+      \hfill\textcolor{gray!50}{\tiny for $M\gtrsim 7.5\,M_\odot$, e.g., Zapartas et al. 2017}
+    \end{textblock}
+
+  }
+
+  \begin{textblock}{0.3}[0.5,1](0.75,0.99)
+    \centering
+    \small
+    \color{gray!50}{\tiny Simulation output from}\\
+    \includegraphics[width=0.35\textwidth]{MESA}
+  \end{textblock}
+\end{frame}
+
+
 \begin{frame}{Nuclear specific binding energy}
   \centering
   \includegraphics[height=\textheight]{binding_nuc}
@@ -2069,6 +2150,7 @@
     \end{textblock}
   }
 \end{frame}
+\egroup
 
 \bgroup
 \metroset{progressbar=none}
@@ -2127,80 +2209,6 @@
   \end{textblock}
 \end{frame}
 \egroup
-
-\begin{frame}
-  \frametitle{Stars are like people: they get bigger as they grow}
-  \only<1>{\includegraphics[height=\textheight]{16MsunRadius_empty}
-  \note{Introduce log-scale}}
-  \only<2>{\includegraphics[height=\textheight]{16MsunRadius_MS}}
-  \only<3-4>{\includegraphics[height=\textheight]{16MsunRadius_no_annotations}}
-
-  \only<2>{
-    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
-      \centering
-      \textbf{Main sequence:}\\
-      H$\rightarrow$ He, 90\% of stellar lifetime
-    \end{textblock}
-  }
-
-  \only<2-4>{
-    \begin{textblock}{0.1}[0.5,0.5](0.15,0.75)
-      \includegraphics[width=\textwidth]{MS}
-    \end{textblock}
-  }
-
-  \only<3>{
-    \begin{textblock}{0.4}[0.5,0.5](0.75,0.5)
-      \centering
-      \textbf{Red (super) giant:}\\
-      Core+shell burning, 10\% of stellar lifetime
-    \end{textblock}
-  }
-
-  \only<3-4>{
-    \begin{textblock}{0.3}[0.5,0.5](0.28,0.35)
-      \includegraphics[width=\textwidth]{RSG}
-    \end{textblock}
-  }
-
-
-%   \only<4>{
-%     \begin{textblock}{0.55}[1,0.5](1.05,0.5)
-%       \includegraphics[width=\textwidth]{onion.pdf}
-%     \end{textblock}
-%     \frametitle{Only the center is hot enough to burn heavy fuel}
-%     \begin{textblock}{0.4}[0.,0.5](0.5,0.35)
-%       \centering
-%       ``Onion'' structure
-%     \end{textblock}
-
-
-%     \note{Fe cannot release energy through nuclear fusion}
-% }
-
-
-  \only<4>{
-    \begin{textblock}{0.2}[0.5,0.5](0.53,0.27)
-      \includegraphics[width=\textwidth]{SN}
-    \end{textblock}
-
-    \begin{textblock}{0.4}[0.5,0.5](0.75,0.53)
-      \centering
-      \textbf{Core collapse} and possibly \textbf{supernova
-        explosion}:\\
-      $$\tau(M)\propto M^{-\alpha} \simeq 3-50\,\mathrm{Myr}$$
-      \hfill\textcolor{gray!50}{\tiny for $M\gtrsim 7.5\,M_\odot$, e.g., Zapartas et al. 2017}
-    \end{textblock}
-
-  }
-
-  \begin{textblock}{0.3}[0.5,1](0.75,0.99)
-    \centering
-    \small
-    \color{gray!50}{\tiny Simulation output from}\\
-    \includegraphics[width=0.35\textwidth]{MESA}
-  \end{textblock}
-\end{frame}
 
 
 

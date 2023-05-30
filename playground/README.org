@@ -16,3 +16,5 @@
      - RA range: Approximately 10 to 22 degrees
      - DEC range: Approximately -76 to -66 degrees
      - parallax: negative or zero
+
+  [[https://solarsystem.nasa.gov/missions/gaia/in-depth/][Gaia mission duration]]
