@@ -5,7 +5,7 @@
 % uncomment these for adding comments for secondary screen with
 % \note
 % \setbeameroption{show notes}
-\setbeameroption{show notes on second screen=right}
+% \setbeameroption{show notes on second screen=right}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% \setbeamertemplate{background}[grid][step=10]        %%%%Grid on slides to help positioning
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,7 +168,14 @@
     \item<2>[\textbf{Q.}] \emph{What would \underline{you} want from
         researchers?}
     \end{enumerate}
+  \end{textblock}
 
+
+  \begin{textblock}{0.2}[1,1](0.97, 0.88)
+    \includegraphics[width=\textwidth]{Gaia_spacecraft_cut_out}
+  \end{textblock}
+  \begin{textblock}{0.15}[0.5,1](0.8, 0.99)
+    \includegraphics[width=\textwidth]{Gaialogo}
   \end{textblock}
 
 \end{frame}
@@ -179,7 +186,7 @@
 
 \bgroup
 \setbeamercolor{background canvas}{bg=black}
-\begin{frame}{\color{whiteish} The nearest star to us is the Sun}
+\begin{frame}{\textcolor{whiteish}{The nearest star to us is the Sun}}
 \note{The main thing that is special to astrophysicists about the Sun
   is that it is much much closer than any other star.}
   \begin{textblock}{0.45}[0,0.5](0,0.55)
@@ -209,12 +216,6 @@
 
 
 \begin{frame}{\textcolor{whiteish}{Stars are large balls of matter that ``resist'' their own weight}}
-      \note{Analogy: if someone pushes a door, and you are behind and
-        try to keep the door closed, it takes you energy.\\
-
-        Similarly the weight of a star tries to crush it to a point, but
-        the star resist. But to do so the star has to spend energy}
-
     \begin{textblock}{0.45}[0,0.5](0,0.55)
       \includegraphics[width=\linewidth]{./fig_slides/physics_gravity.jpg}
     \end{textblock}
@@ -223,7 +224,9 @@
     \centering
     \textcolor{whiteish}{
       Pushing against gravity \\
-      costs energy}
+      costs energy\\[10pt]
+  Energy leaks as $\gamma$ (and $\nu$)
+    }
   \end{textblock}
 
 \end{frame}
@@ -242,11 +245,6 @@
         \centering
         \textcolor{whiteish}{Pushing against gravity \\
           costs energy}\\[10pt]
-        % \begin{center}
-        %   \begin{sideways}
-        %     \Leftrightarrow
-        %   \end{sideways}
-        % \end{center}
         \textcolor{whiteish}{Energy leaks as $\gamma$ (and $\nu$)\\[10pt]
           To compensate,\\
           stars produce energy by\\
@@ -299,10 +297,11 @@
     \end{rotate}
   \end{textblock}
 
-  \begin{textblock}{0.3}[0.,0.5](0.01,0.325)
+  \begin{textblock}{0.32}[0.,0.5](0.01,0.325)
     \centering
-    Fusion of Iron \textbf{costs} energy
-    \includegraphics[width=0.8\textwidth]{nucleosynthesis}
+    Fusion of Iron \textbf{costs} energy:\\
+    the star stops burning
+    \includegraphics[width=0.78\textwidth]{nucleosynthesis}
   \end{textblock}
 
   \begin{textblock}{1}[0,1](0.01,0.99)
@@ -310,12 +309,22 @@
   \end{textblock}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Supernova explosion: the birth Neutron Stars or Black
-    Holes }
 
+\bgroup
+\metroset{progressbar=none}
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}{\textcolor{whiteish}{Supernova explosion: the birth Neutron Stars or Black Holes}}
+
+  \begin{textblock}{1}[0.5,0.5](0.5,0.5)
+    \centering
+    \movie[width=0.9\textwidth,
+    height=0.95\textheight,showcontrols=true,autostart=true]{}{./fig_slides/CCSN_pan.mp4}
+  \end{textblock}
+  \begin{textblock}{1}[0,1](0.01, 0.99)
+    \textcolor{gray!50}{\tiny Credits: Kuo-Chuan Pan}\hfill \textcolor{gray!50}{\tiny \url{https://www.youtube.com/watch?v=bxKwMGgAkdQ}}
+  \end{textblock}
 \end{frame}
-
+\egroup
 
 \AtBeginSection[]{}
 \section*{\textcolor{Blue}{Massive stars drive the evolution of the Universe}}
@@ -746,24 +755,29 @@
       \textcolor{black}{``Bow shock''}\\[-3pt]
       \textcolor{black}{$v>c_s$}
     \end{textblock}
+
   }
+
+  \begin{textblock}{0.25}[0, 0](0.03, 0.15)
+    \includegraphics[width=\textwidth]{./fig_slides/Zoph}
+  \end{textblock}
 
   \begin{center}
     \begin{minipage}[hb]{0.25\linewidth}
       \vspace*{-95pt}
-      \includegraphics[width=\textwidth]{./fig_slides/Zoph}\\
+      \phantom{\includegraphics[width=\textwidth]{./fig_slides/Zoph}}
     \end{minipage} \vspace*{30pt}
     \begin{minipage}[hb]{0.4\linewidth}
       \begin{itemize}\Large
       \item<1->[$\Leftarrow$] Special features\\
         {\small \centering (\textcolor{red}{if} relatively \textcolor{red}{nearby})}
         \vspace*{5pt}
-      \item<2->[] Doppler shifts \hfill
+      \item<2->[] Radial velocities \hfill
         \textcolor{Blue}{$\Rightarrow$}\\
-        \only<2>{\tiny (like the ambulance!)}
+        \only<2->{\small (\textcolor{red}{Doppler shift})}
         \vspace*{5pt}
       \item<3>[] Proper motions\\
-        {\small \centering (\textcolor{red}{if} distance known)}
+        \only<3>{\small (\textcolor{red}{if} distance known)}
         \begin{center}
           \begin{sideways}
             $\Leftarrow$
@@ -1318,7 +1332,7 @@
 
 
 \section{\textcolor{Blue}{Why some star ``run''?}}
-\subsection{\textcolor{gray!40}{\textbullet~Binary SuperNova scenario
+\subsection{\textcolor{gray!40}{\textbullet~Binary SuperNova Scenario
   (BSN)} \\\textcolor{Blue}{\textbullet}~Dynamical Ejection Scenario (DES)}
 
 \bgroup
@@ -1368,7 +1382,7 @@
 \setbeamercolor{background canvas}{bg=black}
 \begin{frame}{\textcolor{red}{DES:}~\textcolor{whiteish}{typically eject the lowest mass star}}
   \centering
-  \movie[width=0.9\textwidth,
+  \movie[width=0.5\textwidth,
   height=0.95\textheight,showcontrols=true,autostart=true]{}{./fig_slides/nopn_dvd.mp4}
 
   \begin{textblock}{1}[0.,1](0.01,0.99)
