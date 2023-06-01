@@ -7,6 +7,7 @@ run at [[https://www.mathforamerica.org/][Math for America]]. After a presentati
 runaway stars, participants are invited to play with the /Gaia/ DR3
 dataset.
 
+
 * Playground with /Gaia/ DR3 data
 
  The aim is to allow you to download *real bleeding-edge*  data from ESA's
@@ -25,6 +26,9 @@ dataset.
   code. No other coding experience required to start playing with the
   data. See [[./playground/low_code.org][instructions]] or jump to running code:
   [[https://binder.flatironinstitute.org][https://mybinder.org/badge_logo.svg]]
+
+  *Post-workshop note*: this is still usable, but you need credentials.
+  Contact me if intersted.
 
   The ipython notebook selects data around the Orion Nebula Cluster, applies
   some rough quality cuts, and plots position and proper motions of
